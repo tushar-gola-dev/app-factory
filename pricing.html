@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pricing & Plans | App Factory</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#166c3c",
+            "primary-dark": "#0d4a28",
+            "primary-light": "#1e8f50",
+            "primary-fixed": "#a2f5b8",
+            "primary-fixed-dim": "#87d89d",
+            "primary-container": "#bdf1ca",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#00210d",
+            "on-primary-fixed": "#00210d",
+            "on-primary-fixed-variant": "#00522a",
+            secondary: "#53634f",
+            "secondary-container": "#d7e8cf",
+            "secondary-fixed": "#d7e8cf",
+            "secondary-fixed-dim": "#bbcbb4",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#111f0f",
+            "on-secondary-fixed": "#111f0f",
+            "on-secondary-fixed-variant": "#394d14",
+            tertiary: "#5d5e61",
+            "tertiary-container": "#e1e2e5",
+            "tertiary-fixed": "#e4e2dc",
+            "tertiary-fixed-dim": "#c8c6c1",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#1d1c1a",
+            "on-tertiary-fixed": "#1b1c18",
+            "on-tertiary-fixed-variant": "#474743",
+            error: "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            background: "#F6F6F6",
+            surface: "#F6F6F6",
+            "surface-dim": "#d9dbd8",
+            "surface-bright": "#f6f6f6",
+            "surface-variant": "#dee5dc",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f1f4f1",
+            "surface-container": "#edf0ed",
+            "surface-container-high": "#e7e9e6",
+            "surface-container-highest": "#e1e3e0",
+            "on-surface": "#191c19",
+            "on-surface-variant": "#414941",
+            "on-background": "#191c19",
+            outline: "#717971",
+            "outline-variant": "#c1c9be",
+            "inverse-surface": "#2e312e",
+            "inverse-on-surface": "#f0f1ec",
+            "inverse-primary": "#87d89d",
+            "surface-tint": "#166c3c",
+          },
+          fontFamily: {
+            headline: ["Nunito Sans", "sans-serif"],
+            body: ["Nunito Sans", "sans-serif"],
+            label: ["Nunito Sans", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            sm: "0.25rem",
+            md: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            "2xl": "1.5rem",
+            "3xl": "2rem",
+            full: "9999px",
+          },
+          animation: {
+            "float": "float 6s ease-in-out infinite",
+            "float-delay": "float 6s ease-in-out 2s infinite",
+            "spin-slow": "spin 20s linear infinite",
+            "pulse-slow": "pulse 4s ease-in-out infinite",
+            "slide-up": "slideUp 0.6s ease-out forwards",
+            "fade-in": "fadeIn 0.8s ease-out forwards",
+            "marquee": "marquee 30s linear infinite",
+          },
+          keyframes: {
+            float: {
+              "0%, 100%": { transform: "translateY(0px)" },
+              "50%": { transform: "translateY(-16px)" },
+            },
+            slideUp: {
+              from: { opacity: "0", transform: "translateY(30px)" },
+              to: { opacity: "1", transform: "translateY(0)" },
+            },
+            fadeIn: {
+              from: { opacity: "0" },
+              to: { opacity: "1" },
+            },
+            marquee: {
+              "0%": { transform: "translateX(0)" },
+              "100%": { transform: "translateX(-50%)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --primary: #166c3c;
+      --primary-dark: #0d4a28;
+      --primary-light: #1e8f50;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Nunito Sans", sans-serif;
+      background-color: #F6F6F6;
+      color: #191c19;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-headline {
+      font-family: "Nunito Sans", sans-serif; font-weight: 800;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+    .fill-icon { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
+
+    /* Glass nav */
+    .glass-nav {
+      background: rgba(246, 246, 246, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    /* Mega menu — full width fixed */
+    .mega-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+    .nav-item:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    /* Gradients */
+    .emerald-gradient { background: linear-gradient(135deg, #006948 0%, #1e8f50 100%); }
+    .emerald-gradient-subtle { background: linear-gradient(135deg, rgba(22, 108, 60, 0.08) 0%, rgba(22, 108, 60, 0.03) 100%); }
+    .dark-gradient { background: linear-gradient(135deg, #0d1f15 0%, #1a3626 100%); }
+
+    /* Glow effects */
+    .glow-primary { box-shadow: 0 0 40px rgba(22, 108, 60, 0.2); }
+    .glow-primary-sm { box-shadow: 0 0 20px rgba(22, 108, 60, 0.15); }
+    .editorial-shadow { box-shadow: 0px 12px 40px rgba(26, 28, 28, 0.06); }
+    .card-shadow { box-shadow: 0 4px 24px rgba(26, 28, 28, 0.08); }
+
+    /* Glass surface */
+    .glass-surface {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    /* Noise texture overlay */
+    .noise::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    /* Hero orb */
+    .hero-orb {
+      background: radial-gradient(circle at center, rgba(22,108,60,0.15) 0%, transparent 70%);
+    }
+
+    /* Ticker */
+    .ticker-track { display: flex; width: max-content; }
+
+    /* Accordion */
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .accordion-content.open { max-height: 400px; }
+
+    /* Active nav link */
+    .nav-link-active {
+      color: var(--primary);
+      position: relative;
+    }
+    .nav-link-active::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 99px;
+    }
+
+    /* Scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f4f1; }
+    ::-webkit-scrollbar-thumb { background: #c1c9be; border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: #717971; }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: max-height 0.35s ease, opacity 0.35s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 80vh;
+      opacity: 1;
+      overflow-y: auto;
+    }
+
+    /* Button states */
+    .btn-primary {
+      background: linear-gradient(135deg, #006948, #1e8f50);
+      color: white;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22, 108, 60, 0.35); }
+    .btn-primary:active { transform: scale(0.97); }
+
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      transition: all 0.2s ease;
+    }
+    .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+    .btn-outline:active { transform: scale(0.97); }
+
+    /* Plan card hover */
+    .plan-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .plan-card:hover { transform: translateY(-6px); }
+
+    /* Stat ring animation */
+    @keyframes ring-fill {
+      from { stroke-dashoffset: 300; }
+      to { stroke-dashoffset: var(--dash-offset); }
+    }
+
+    /* Floating badge */
+    @keyframes badgeFloat {
+      0%,100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-8px) rotate(-2deg); }
+    }
+    .badge-float { animation: badgeFloat 4s ease-in-out infinite; }
+    .badge-float-2 { animation: badgeFloat 4s ease-in-out 1.5s infinite; }
+
+    /* Ticker */
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-inner { animation: ticker 28s linear infinite; }
+    .ticker-inner:hover { animation-play-state: paused; }
+  </style>
+</head>
+
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+<!-- ═══════════════════════════════════════════════════
+     NAVIGATION
+═══════════════════════════════════════════════════ -->
+<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20">
+  <div class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between gap-8">
+
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+      <div class="w-8 h-8 rounded-lg emerald-gradient flex items-center justify-center">
+        <span class="material-symbols-outlined text-white text-lg">rocket_launch</span>
+      </div>
+      <span class="text-lg font-headline font-bold text-on-surface tracking-tight">App <span class="text-primary">Factory</span></span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex items-center gap-1 h-full flex-1 justify-center">
+
+      <!-- Products mega — full width -->
+      <div class="nav-item h-full flex items-center relative">
+        <a href="products.html" class="px-4 py-2 text-sm font-semibold text-primary rounded-lg nav-link-active flex items-center gap-1">
+          Products
+          <span class="material-symbols-outlined text-base">expand_more</span>
+        </a>
+
+        <!-- FULL-WIDTH MEGA MENU -->
+        <div class="mega-menu fixed top-[72px] left-0 right-0 w-full bg-white border-b border-outline-variant/15 shadow-2xl z-50" style="box-shadow:0 24px 60px rgba(26,28,28,0.12);">
+          <div class="max-w-7xl mx-auto px-8 py-10">
+
+            <!-- Header row -->
+            <div class="flex items-end justify-between mb-8">
+              <div>
+                <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-1">Our Solutions</p>
+                <h3 class="text-2xl font-extrabold text-on-surface tracking-tight">10 Ready-to-Launch <span class="text-primary italic">Platforms</span></h3>
+                <p class="text-on-surface-variant text-sm mt-1">Pick your vertical. Customize your brand. Go live in 7 days.</p>
+              </div>
+              <a href="products.html" class="inline-flex items-center gap-2 text-sm font-bold text-primary border border-primary/30 px-5 py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all">
+                View all products <span class="material-symbols-outlined text-base">arrow_forward</span>
+              </a>
+            </div>
+
+            <!-- 10 product cards — 5 columns × 2 rows -->
+            <div class="grid grid-cols-5 gap-4">
+
+              <!-- Taxi -->
+              <a href="products.html#taxi" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center emerald-gradient group-hover/mi:scale-110 transition-transform duration-200">
+                  <span class="material-symbols-outlined text-white text-xl">local_taxi</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">Taxi & Mobility</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Ride-hailing & dispatch like Uber or Ola</p>
+                </div>
+              </a>
+
+              <!-- Food -->
+              <a href="products.html#food" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#b45309,#d97706)">
+                  <span class="material-symbols-outlined text-white text-xl">restaurant</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">Food Delivery</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">End-to-end delivery like Swiggy or Zomato</p>
+                </div>
+              </a>
+
+              <!-- Grocery -->
+              <a href="products.html#grocery" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#065f46,#059669)">
+                  <span class="material-symbols-outlined text-white text-xl">shopping_basket</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">Grocery</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">10-min delivery like Zepto or Blinkit</p>
+                </div>
+              </a>
+
+              <!-- Home Services -->
+              <a href="products.html#home" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#1e3a5f,#2563eb)">
+                  <span class="material-symbols-outlined text-white text-xl">home_repair_service</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">Home Services</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">On-demand experts like Urban Company</p>
+                </div>
+              </a>
+
+              <!-- Logistics -->
+              <a href="products.html#logistics" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#374151,#6b7280)">
+                  <span class="material-symbols-outlined text-white text-xl">local_shipping</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">Logistics</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Smart courier & freight management</p>
+                </div>
+              </a>
+
+              <!-- Pharmacy -->
+              <a href="products.html#pharmacy" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">
+                  <span class="material-symbols-outlined text-white text-xl">medical_services</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">Pharmacy</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Healthcare delivery like PharmEasy</p>
+                </div>
+              </a>
+
+              <!-- EdTech -->
+              <a href="products.html" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#1e3a5f,#1d4ed8)">
+                  <span class="material-symbols-outlined text-white text-xl">school</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">EdTech</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">LMS & interactive learning platform</p>
+                </div>
+              </a>
+
+              <!-- Astrology -->
+              <a href="products.html" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#581c87,#9333ea)">
+                  <span class="material-symbols-outlined text-white text-xl">auto_awesome</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">Astrology</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Modern spiritual insights app</p>
+                </div>
+              </a>
+
+              <!-- Laundry -->
+              <a href="products.html" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#9d174d,#ec4899)">
+                  <span class="material-symbols-outlined text-white text-xl">local_laundry_service</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">Laundry</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Doorstep dry cleaning solution</p>
+                </div>
+              </a>
+
+              <!-- E-commerce -->
+              <a href="products.html#ecommerce" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
+                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#6d28d9,#7c3aed)">
+                  <span class="material-symbols-outlined text-white text-xl">shopping_cart</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm text-on-surface">E-commerce</p>
+                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Full-stack retail storefront</p>
+                </div>
+              </a>
+
+            </div>
+
+            <!-- Bottom strip -->
+            <div class="mt-8 pt-6 border-t border-outline-variant/10 flex items-center justify-between">
+              <div class="flex items-center gap-6">
+                <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                  <span class="material-symbols-outlined text-primary text-base fill-icon">bolt</span>
+                  <span>All apps go live in <strong class="text-on-surface">7 days</strong></span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                  <span class="material-symbols-outlined text-primary text-base fill-icon">verified_user</span>
+                  <span>Starting at <strong class="text-on-surface">₹3,000/mo</strong></span>
+                </div>
+                <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                  <span class="material-symbols-outlined text-primary text-base fill-icon">code</span>
+                  <span><strong class="text-on-surface">No coding</strong> required</span>
+                </div>
+              </div>
+              <a href="pricing.html" class="btn-primary px-5 py-2.5 rounded-xl font-bold text-sm inline-flex items-center gap-2">
+                <span class="material-symbols-outlined text-base">rocket_launch</span> Get Started
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <a href="case-studies.html" class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all">Case Studies</a>
+      <a href="pricing.html" class="px-4 py-2 text-sm font-semibold text-primary rounded-lg nav-link-active">Pricing</a>
+      <a href="resources.html" class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all">Resources</a>
+      <a href="about.html" class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all">About</a>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex items-center gap-2 shrink-0">
+      <button class="hidden md:flex p-2.5 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all" aria-label="Language">
+        <span class="material-symbols-outlined text-xl">language</span>
+      </button>
+      <a href="pricing.html" class="hidden md:block btn-primary px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm">
+        Get Started
+      </a>
+      <!-- Mobile hamburger -->
+      <button id="hamburger" class="md:hidden p-2.5 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all" aria-label="Menu">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="md:hidden border-t border-outline-variant/20 bg-white">
+    <div class="px-4 py-4 space-y-1">
+      <a href="products.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-semibold text-on-surface transition-all">
+        <span class="material-symbols-outlined text-primary text-lg">grid_view</span> Products
+      </a>
+      <a href="case-studies.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all">
+        <span class="material-symbols-outlined text-lg">insights</span> Case Studies
+      </a>
+      <a href="pricing.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all">
+        <span class="material-symbols-outlined text-lg">payments</span> Pricing
+      </a>
+      <a href="resources.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all">
+        <span class="material-symbols-outlined text-lg">library_books</span> Resources
+      </a>
+      <a href="about.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all">
+        <span class="material-symbols-outlined text-lg">info</span> About
+      </a>
+      <div class="pt-3 border-t border-outline-variant/20">
+        <a href="pricing.html" class="btn-primary w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm">
+          <span class="material-symbols-outlined text-lg">rocket_launch</span> Get Started
+        </a>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+<section class="pt-[100px] bg-surface">
+  <div class="max-w-7xl mx-auto px-6 pt-14 pb-16">
+    <div class="max-w-3xl reveal">
+      <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-primary mb-4 block">Pricing & Plans</span>
+      <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.05] tracking-tighter mb-6">
+        Transparent <span class="text-primary italic">pricing.</span>
+      </h1>
+      <p class="text-xl text-on-surface-variant leading-relaxed">No hidden fees. Choose flexible monthly scaling or full ownership. Both built for ambitious founders.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pb-24 bg-surface" id="pricing">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto reveal">
+      <div class="plan-card bg-surface-container-lowest p-10 rounded-3xl border border-outline-variant/20 flex flex-col card-shadow relative overflow-hidden">
+        <div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary-fixed to-primary-fixed rounded-t-3xl"></div>
+        <div class="mb-8">
+          <p class="text-xs font-extrabold uppercase tracking-widest text-on-surface-variant mb-3">The Subscription</p>
+          <div class="flex items-end gap-2"><span class="font-headline text-6xl font-extrabold">₹3,000</span><span class="text-lg text-on-surface-variant mb-2">/month</span></div>
+          <p class="text-on-surface-variant text-sm mt-3">Best for rapid testing and agility. Cancel anytime.</p>
+        </div>
+        <ul class="space-y-4 flex-1 mb-8 border-t border-outline-variant/10 pt-8">
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary fill-icon text-lg">check_circle</span><span>Managed Cloud Infrastructure</span></li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary fill-icon text-lg">check_circle</span><span>Automatic Rolling Updates</span></li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary fill-icon text-lg">check_circle</span><span>24/7 Monitoring & Support</span></li>
+          <li class="flex items-center gap-3 text-sm"><span class="material-symbols-outlined text-primary fill-icon text-lg">check_circle</span><span>No upfront setup fee</span></li>
+        </ul>
+        <a href="contact.html" class="btn-outline w-full py-4 rounded-xl font-bold text-center block">Subscribe Now</a>
+      </div>
+      <div class="plan-card relative overflow-hidden rounded-3xl flex flex-col" style="background:linear-gradient(145deg,#0f1f16,#1a3626)">
+        <div class="absolute top-0 right-0 emerald-gradient px-5 py-1.5 text-[10px] font-extrabold uppercase tracking-widest text-white rounded-bl-2xl">Recommended</div>
+        <div class="p-10 flex flex-col h-full">
+          <div class="mb-8">
+            <p class="text-xs font-extrabold uppercase tracking-widest text-primary-fixed mb-3">White-label Ownership</p>
+            <div class="flex items-end gap-2"><span class="font-headline text-6xl font-extrabold text-white">₹1,00,000</span></div>
+            <p class="text-outline-variant text-sm mt-3">One-time. Own everything forever. Zero recurring fees.</p>
+          </div>
+          <ul class="space-y-4 flex-1 mb-8 border-t border-white/10 pt-8">
+            <li class="flex items-center gap-3 text-sm text-white"><span class="material-symbols-outlined text-primary-fixed fill-icon text-lg">verified</span><span>Full Source Code Ownership</span></li>
+            <li class="flex items-center gap-3 text-sm text-white"><span class="material-symbols-outlined text-primary-fixed fill-icon text-lg">verified</span><span>Private AWS Deployment</span></li>
+            <li class="flex items-center gap-3 text-sm text-white"><span class="material-symbols-outlined text-primary-fixed fill-icon text-lg">verified</span><span>Unlimited Customization</span></li>
+            <li class="flex items-center gap-3 text-sm text-white"><span class="material-symbols-outlined text-primary-fixed fill-icon text-lg">verified</span><span>Full Legal IP Transfer</span></li>
+            <li class="flex items-center gap-3 text-sm text-white"><span class="material-symbols-outlined text-primary-fixed fill-icon text-lg">verified</span><span>12 Months Engineering Support</span></li>
+          </ul>
+          <a href="contact.html" class="btn-primary w-full py-4 rounded-xl font-bold text-center block">Buy Full Ownership</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-surface-container-low border-y border-outline-variant/20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <h2 class="font-headline text-3xl md:text-4xl font-extrabold tracking-tighter text-on-surface mb-3">Deep capability comparison.</h2>
+      <p class="text-on-surface-variant">A full look at what each plan includes.</p>
+    </div>
+    <div class="bg-surface-container-lowest rounded-3xl overflow-hidden border border-outline-variant/10 card-shadow reveal">
+      <table class="w-full text-left border-collapse">
+        <thead><tr class="border-b border-outline-variant/10"><th class="p-8 text-xs uppercase tracking-widest text-on-surface-variant font-bold">Feature</th><th class="p-8 text-xs uppercase tracking-widest text-on-surface-variant font-bold">Subscription</th><th class="p-8 text-xs uppercase tracking-widest text-on-surface-variant font-bold">White-label</th></tr></thead>
+        <tbody class="divide-y divide-outline-variant/10">
+          <tr class="hover:bg-surface transition-colors"><td class="p-8 font-semibold text-on-surface">Managed Cloud</td><td class="p-8 text-sm text-on-surface-variant">Included (AWS/GCP)</td><td class="p-8 text-sm text-on-surface-variant">Optional or Self-Hosted</td></tr>
+          <tr class="hover:bg-surface transition-colors"><td class="p-8 font-semibold text-on-surface">Rolling Updates</td><td class="p-8 text-sm text-on-surface-variant">Automatic</td><td class="p-8 text-sm text-on-surface-variant">On-demand / Manual</td></tr>
+          <tr class="hover:bg-surface transition-colors"><td class="p-8 font-semibold text-on-surface">Legal IP Status</td><td class="p-8 text-sm text-on-surface-variant">Licensed Usage</td><td class="p-8 text-sm font-semibold text-on-surface">Full Ownership</td></tr>
+          <tr class="hover:bg-surface transition-colors"><td class="p-8 font-semibold text-on-surface">Support Channel</td><td class="p-8 text-sm text-on-surface-variant">Email + Community</td><td class="p-8 text-sm font-semibold text-on-surface">Direct Slack + Phone</td></tr>
+          <tr class="hover:bg-surface transition-colors"><td class="p-8 font-semibold text-on-surface">Source Code</td><td class="p-8 text-sm text-on-surface-variant">—</td><td class="p-8 text-sm font-semibold text-on-surface">Full Repository Access</td></tr>
+          <tr class="hover:bg-surface transition-colors"><td class="p-8 font-semibold text-on-surface">Scale Limits</td><td class="p-8 text-sm text-on-surface-variant">100k requests/mo</td><td class="p-8 text-sm font-semibold text-on-surface">Unlimited</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 reveal">
+      <div class="lg:col-span-4">
+        <span class="text-[10px] font-bold tracking-[0.25em] uppercase text-primary mb-4 block">FAQ</span>
+        <h2 class="font-headline text-4xl font-extrabold tracking-tighter text-on-surface mb-4 leading-tight">Common questions.</h2>
+        <p class="text-on-surface-variant leading-relaxed text-sm">Everything you need to know before getting started.</p>
+      </div>
+      <div class="lg:col-span-8 space-y-4" id="faq">
+        <div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"><button class="accordion-trigger w-full p-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)"><span class="font-bold text-sm">Can I switch from Subscription to White-label later?</span><span class="material-symbols-outlined text-on-surface-variant transition-transform text-xl accordion-icon">add</span></button><div class="accordion-content px-6 pb-6"><p class="text-on-surface-variant text-sm leading-relaxed">Yes. You can start with a subscription to test your market and later upgrade to White-label. We even offer a 20% loyalty credit from your total subscription spend toward the one-time purchase.</p></div></div>
+        <div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"><button class="accordion-trigger w-full p-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)"><span class="font-bold text-sm">Who truly owns the source code?</span><span class="material-symbols-outlined text-on-surface-variant transition-transform text-xl accordion-icon">add</span></button><div class="accordion-content px-6 pb-6"><p class="text-on-surface-variant text-sm leading-relaxed">With the White-label plan, the code is 100% yours. You receive the full source code, documentation, and a formal IP transfer agreement. You can host it anywhere, modify anything, and hire any developer to work on it.</p></div></div>
+        <div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"><button class="accordion-trigger w-full p-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)"><span class="font-bold text-sm">What happens to support after the one-time payment?</span><span class="material-symbols-outlined text-on-surface-variant transition-transform text-xl accordion-icon">add</span></button><div class="accordion-content px-6 pb-6"><p class="text-on-surface-variant text-sm leading-relaxed">White-label includes 12 months of high-priority engineering support. After that, you can opt for a maintenance retainer or handle updates in-house using your own dev team.</p></div></div>
+        <div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"><button class="accordion-trigger w-full p-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)"><span class="font-bold text-sm">How is it really launched in 7 days?</span><span class="material-symbols-outlined text-on-surface-variant transition-transform text-xl accordion-icon">add</span></button><div class="accordion-content px-6 pb-6"><p class="text-on-surface-variant text-sm leading-relaxed">We've spent years pre-building all the foundational modules — auth, payments, maps, notifications, admin dashboards. Your 7-day sprint is focused purely on customizing these to your brand and deploying.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════ -->
+<footer class="bg-zinc-950 w-full pt-24 pb-14">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-12 mb-20">
+      <!-- Brand -->
+      <div class="col-span-2">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-lg emerald-gradient flex items-center justify-center">
+            <span class="material-symbols-outlined text-white text-xl">rocket_launch</span>
+          </div>
+          <span class="text-xl font-headline font-bold text-white tracking-tight">App <span class="text-emerald-400">Factory</span></span>
+        </div>
+        <p class="text-zinc-400 text-base leading-relaxed mb-7 max-w-xs">
+          High-speed software development for on-demand businesses. We plant the code, you harvest the revenue.
+        </p>
+        <div class="flex gap-3">
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-emerald-500/20 flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-zinc-400 hover:text-emerald-400 text-xl">public</span>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-emerald-500/20 flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-zinc-400 hover:text-emerald-400 text-xl">person</span>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-emerald-500/20 flex items-center justify-center transition-colors">
+            <span class="material-symbols-outlined text-zinc-400 hover:text-emerald-400 text-xl">share</span>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <h5 class="text-emerald-500 font-bold mb-6 text-sm uppercase tracking-widest">Solutions</h5>
+        <ul class="space-y-4">
+          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Taxi & Mobility</a></li>
+          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Food Delivery</a></li>
+          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Home Services</a></li>
+          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Logistics</a></li>
+          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">E-commerce</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-emerald-500 font-bold mb-6 text-sm uppercase tracking-widest">Company</h5>
+        <ul class="space-y-4">
+          <li><a href="about.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">About Us</a></li>
+          <li><a href="case-studies.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Case Studies</a></li>
+          <li><a href="#" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Careers</a></li>
+          <li><a href="#" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Press</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h5 class="text-emerald-500 font-bold mb-6 text-sm uppercase tracking-widest">Resources</h5>
+        <ul class="space-y-4">
+          <li><a href="resources.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Blog</a></li>
+          <li><a href="#" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Documentation</a></li>
+          <li><a href="pricing.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Pricing</a></li>
+          <li><a href="#" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">API Reference</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-zinc-600 text-sm">© 2025 App Factory Inc. All rights reserved.</p>
+      <div class="flex gap-6">
+        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-sm transition-colors">Privacy Policy</a>
+        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-sm transition-colors">Terms of Service</a>
+        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-sm transition-colors">Cookie Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu toggle
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const icon = hamburger.querySelector('.material-symbols-outlined');
+    icon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+  });
+
+  // Accordion
+  function toggleAccordion(trigger) {
+    const content = trigger.nextElementSibling;
+    const icon = trigger.querySelector('.accordion-icon');
+    const isOpen = content.classList.contains('open');
+
+    // Close all
+    document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.accordion-icon').forEach(el => {
+      el.textContent = 'add';
+      el.style.transform = 'rotate(0deg)';
+    });
+
+    if (!isOpen) {
+      content.classList.add('open');
+      icon.textContent = 'remove';
+    }
+  }
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    const icon = hamburger.querySelector('.material-symbols-outlined');
+    icon.textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+  });
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  reveals.forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
