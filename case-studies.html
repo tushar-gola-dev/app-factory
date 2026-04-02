@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Case Studies | App Factory</title>
+  <title>Case Studies | Applume</title>
   <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -288,230 +288,269 @@
 <!-- ═══════════════════════════════════════════════════
      NAVIGATION
 ═══════════════════════════════════════════════════ -->
-<nav class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20">
-  <div class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between gap-8">
-
-    <!-- Logo -->
-    <a href="index.html" class="flex items-center gap-2.5 shrink-0">
+    <nav
+      class="fixed top-0 w-full z-50 glass-nav border-b border-outline-variant/20"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between gap-8"
+      >
+        <!-- Logo -->
+       <a href="index.html" class="flex items-center gap-2.5 shrink-0">
       <div class="w-8 h-8 rounded-lg emerald-gradient flex items-center justify-center">
         <span class="material-symbols-outlined text-white text-lg">rocket_launch</span>
       </div>
-      <span class="text-lg font-headline font-bold text-on-surface tracking-tight">App <span class="text-primary">Factory</span></span>
+      <span class="text-lg font-headline font-bold text-on-surface tracking-tight">Appl<span class="text-primary">ume</span></span>
     </a>
 
-    <!-- Desktop Nav -->
-    <div class="hidden md:flex items-center gap-1 h-full flex-1 justify-center">
+        <!-- Desktop Nav -->
+        <div
+          class="hidden md:flex items-center gap-1 h-full flex-1 justify-center"
+        >
+          <!-- Products mega — full width -->
+          <div class="nav-item h-full flex items-center relative">
+            <a
+              href="products.html"
+              class="px-4 py-2 text-sm font-semibold text-primary rounded-lg nav-link-active flex items-center gap-1"
+            >
+              Products
+              <span class="material-symbols-outlined text-base"
+                >expand_more</span
+              >
+            </a>
 
-      <!-- Products mega — full width -->
-      <div class="nav-item h-full flex items-center relative">
-        <a href="products.html" class="px-4 py-2 text-sm font-semibold text-primary rounded-lg nav-link-active flex items-center gap-1">
-          Products
-          <span class="material-symbols-outlined text-base">expand_more</span>
-        </a>
+            <!-- FULL-WIDTH MEGA MENU -->
+          <div
+              class="mega-menu fixed top-[72px] left-0 right-0 w-full bg-white border-b border-outline-variant/15 shadow-2xl z-50"
+              style="box-shadow: 0 24px 60px rgba(26, 28, 28, 0.12)"
+            >
+              <div class="max-w-7xl mx-auto px-8 py-10">
+                <!-- Header row -->
+                <div class="flex items-end justify-between mb-8">
+                  <div>
+                    <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-1">Our Solutions</p>
+                    <h3 class="text-2xl font-extrabold text-on-surface tracking-tight">
+                      7 Ready-to-Launch <span class="text-primary italic">Platforms</span>
+                    </h3>
+                    <p class="text-on-surface-variant text-sm mt-1">Quick commerce & delivery — pick your vertical, launch in 7 days.</p>
+                  </div>
+                  <a href="products.html" class="inline-flex items-center gap-2 text-sm font-bold text-primary border border-primary/30 px-5 py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all">
+                    View all products <span class="material-symbols-outlined text-base">arrow_forward</span>
+                  </a>
+                </div>
 
-        <!-- FULL-WIDTH MEGA MENU -->
-        <div class="mega-menu fixed top-[72px] left-0 right-0 w-full bg-white border-b border-outline-variant/15 shadow-2xl z-50" style="box-shadow:0 24px 60px rgba(26,28,28,0.12);">
-          <div class="max-w-7xl mx-auto px-8 py-10">
+                <!-- 7 product cards — horizontally laid out -->
+                <div class="grid grid-cols-7 gap-3">
 
-            <!-- Header row -->
-            <div class="flex items-end justify-between mb-8">
-              <div>
-                <p class="text-[10px] font-bold uppercase tracking-[0.25em] text-primary mb-1">Our Solutions</p>
-                <h3 class="text-2xl font-extrabold text-on-surface tracking-tight">10 Ready-to-Launch <span class="text-primary italic">Platforms</span></h3>
-                <p class="text-on-surface-variant text-sm mt-1">Pick your vertical. Customize your brand. Go live in 7 days.</p>
-              </div>
-              <a href="products.html" class="inline-flex items-center gap-2 text-sm font-bold text-primary border border-primary/30 px-5 py-2.5 rounded-xl hover:bg-primary hover:text-white transition-all">
-                View all products <span class="material-symbols-outlined text-base">arrow_forward</span>
-              </a>
-            </div>
+                  <!-- Grocery -->
+                  <a href="product.html" class="group/mi flex flex-col items-center gap-2 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200 text-center">
+                    <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#065f46,#059669)">
+                      <span class="material-symbols-outlined text-white text-xl">shopping_basket</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-on-surface">Grocery</p>
+                      <p class="text-xs text-on-surface-variant leading-snug mt-0.5">10-min delivery like Zepto</p>
+                    </div>
+                  </a>
 
-            <!-- 10 product cards — 5 columns × 2 rows -->
-            <div class="grid grid-cols-5 gap-4">
+                  <!-- E-commerce -->
+                  <a href="products.html#ecommerce" class="group/mi flex flex-col items-center gap-2 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200 text-center">
+                    <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#6d28d9,#7c3aed)">
+                      <span class="material-symbols-outlined text-white text-xl">shopping_cart</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-on-surface">E-commerce</p>
+                      <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Full-stack retail storefront</p>
+                    </div>
+                  </a>
 
-              <!-- Taxi -->
-              <a href="products.html#taxi" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center emerald-gradient group-hover/mi:scale-110 transition-transform duration-200">
-                  <span class="material-symbols-outlined text-white text-xl">local_taxi</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">Taxi & Mobility</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Ride-hailing & dispatch like Uber or Ola</p>
-                </div>
-              </a>
+                  <!-- Food Delivery -->
+                  <a href="products.html#food" class="group/mi flex flex-col items-center gap-2 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200 text-center">
+                    <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#b45309,#d97706)">
+                      <span class="material-symbols-outlined text-white text-xl">restaurant</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-on-surface">Food Delivery</p>
+                      <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Like Swiggy or Zomato</p>
+                    </div>
+                  </a>
 
-              <!-- Food -->
-              <a href="products.html#food" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#b45309,#d97706)">
-                  <span class="material-symbols-outlined text-white text-xl">restaurant</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">Food Delivery</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">End-to-end delivery like Swiggy or Zomato</p>
-                </div>
-              </a>
+                  <!-- Pharmacy -->
+                  <a href="products.html#pharmacy" class="group/mi flex flex-col items-center gap-2 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200 text-center">
+                    <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">
+                      <span class="material-symbols-outlined text-white text-xl">medical_services</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-on-surface">Pharmacy</p>
+                      <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Healthcare delivery</p>
+                    </div>
+                  </a>
 
-              <!-- Grocery -->
-              <a href="products.html#grocery" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#065f46,#059669)">
-                  <span class="material-symbols-outlined text-white text-xl">shopping_basket</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">Grocery</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">10-min delivery like Zepto or Blinkit</p>
-                </div>
-              </a>
+                  <!-- Dairy -->
+                  <a href="products.html#dairy" class="group/mi flex flex-col items-center gap-2 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200 text-center">
+                    <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center emerald-gradient group-hover/mi:scale-110 transition-transform duration-200">
+                      <span class="material-symbols-outlined text-white text-xl">water_drop</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-on-surface">Dairy</p>
+                      <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Milk & daily essentials</p>
+                    </div>
+                  </a>
 
-              <!-- Home Services -->
-              <a href="products.html#home" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#1e3a5f,#2563eb)">
-                  <span class="material-symbols-outlined text-white text-xl">home_repair_service</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">Home Services</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">On-demand experts like Urban Company</p>
-                </div>
-              </a>
+                  <!-- Laundry -->
+                  <a href="products.html#laundry" class="group/mi flex flex-col items-center gap-2 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200 text-center">
+                    <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#9d174d,#ec4899)">
+                      <span class="material-symbols-outlined text-white text-xl">local_laundry_service</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-on-surface">Laundry</p>
+                      <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Doorstep dry cleaning</p>
+                    </div>
+                  </a>
 
-              <!-- Logistics -->
-              <a href="products.html#logistics" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#374151,#6b7280)">
-                  <span class="material-symbols-outlined text-white text-xl">local_shipping</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">Logistics</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Smart courier & freight management</p>
-                </div>
-              </a>
+                  <!-- Salon -->
+                  <a href="products.html#salon" class="group/mi flex flex-col items-center gap-2 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200 text-center">
+                    <div class="w-12 h-12 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#7c2d12,#c2410c)">
+                      <span class="material-symbols-outlined text-white text-xl">content_cut</span>
+                    </div>
+                    <div>
+                      <p class="font-bold text-sm text-on-surface">Salon</p>
+                      <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Beauty at your doorstep</p>
+                    </div>
+                  </a>
 
-              <!-- Pharmacy -->
-              <a href="products.html#pharmacy" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">
-                  <span class="material-symbols-outlined text-white text-xl">medical_services</span>
                 </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">Pharmacy</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Healthcare delivery like PharmEasy</p>
-                </div>
-              </a>
 
-              <!-- EdTech -->
-              <a href="products.html" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#1e3a5f,#1d4ed8)">
-                  <span class="material-symbols-outlined text-white text-xl">school</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">EdTech</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">LMS & interactive learning platform</p>
-                </div>
-              </a>
-
-              <!-- Astrology -->
-              <a href="products.html" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#581c87,#9333ea)">
-                  <span class="material-symbols-outlined text-white text-xl">auto_awesome</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">Astrology</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Modern spiritual insights app</p>
-                </div>
-              </a>
-
-              <!-- Laundry -->
-              <a href="products.html" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#9d174d,#ec4899)">
-                  <span class="material-symbols-outlined text-white text-xl">local_laundry_service</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">Laundry</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Doorstep dry cleaning solution</p>
-                </div>
-              </a>
-
-              <!-- E-commerce -->
-              <a href="products.html#ecommerce" class="group/mi flex items-start gap-3 p-4 rounded-2xl hover:bg-surface-container-low border border-transparent hover:border-outline-variant/20 transition-all duration-200">
-                <div class="w-11 h-11 rounded-xl shrink-0 flex items-center justify-center group-hover/mi:scale-110 transition-transform duration-200" style="background:linear-gradient(135deg,#6d28d9,#7c3aed)">
-                  <span class="material-symbols-outlined text-white text-xl">shopping_cart</span>
-                </div>
-                <div>
-                  <p class="font-bold text-sm text-on-surface">E-commerce</p>
-                  <p class="text-xs text-on-surface-variant leading-snug mt-0.5">Full-stack retail storefront</p>
-                </div>
-              </a>
-
-            </div>
-
-            <!-- Bottom strip -->
-            <div class="mt-8 pt-6 border-t border-outline-variant/10 flex items-center justify-between">
-              <div class="flex items-center gap-6">
-                <div class="flex items-center gap-2 text-sm text-on-surface-variant">
-                  <span class="material-symbols-outlined text-primary text-base fill-icon">bolt</span>
-                  <span>All apps go live in <strong class="text-on-surface">7 days</strong></span>
-                </div>
-                <div class="flex items-center gap-2 text-sm text-on-surface-variant">
-                  <span class="material-symbols-outlined text-primary text-base fill-icon">verified_user</span>
-                  <span>Starting at <strong class="text-on-surface">₹3,000/mo</strong></span>
-                </div>
-                <div class="flex items-center gap-2 text-sm text-on-surface-variant">
-                  <span class="material-symbols-outlined text-primary text-base fill-icon">code</span>
-                  <span><strong class="text-on-surface">No coding</strong> required</span>
+                <!-- Bottom strip -->
+                <div class="mt-8 pt-6 border-t border-outline-variant/10 flex items-center justify-between">
+                  <div class="flex items-center gap-6">
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                      <span class="material-symbols-outlined text-primary text-base fill-icon">bolt</span>
+                      <span>All apps go live in <strong class="text-on-surface">7 days</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                      <span class="material-symbols-outlined text-primary text-base fill-icon">local_shipping</span>
+                      <span>Focused on <strong class="text-on-surface">Quick Commerce</strong></span>
+                    </div>
+                    <div class="flex items-center gap-2 text-sm text-on-surface-variant">
+                      <span class="material-symbols-outlined text-primary text-base fill-icon">code</span>
+                      <span><strong class="text-on-surface">No coding</strong> required</span>
+                    </div>
+                  </div>
+                  <a href="pricing.html" class="btn-primary px-5 py-2.5 rounded-xl font-bold text-sm inline-flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base">rocket_launch</span> Get Started
+                  </a>
                 </div>
               </div>
-              <a href="pricing.html" class="btn-primary px-5 py-2.5 rounded-xl font-bold text-sm inline-flex items-center gap-2">
-                <span class="material-symbols-outlined text-base">rocket_launch</span> Get Started
-              </a>
             </div>
 
+            
+            
           </div>
+
+          <a
+            href="case-studies.html"
+            class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all"
+            >Case Studies</a
+          >
+          <a
+            href="pricing.html"
+            class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all"
+            >Pricing</a
+          >
+          <a
+            href="resources.html"
+            class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all"
+            >Resources</a
+          >
+          <a
+            href="about.html"
+            class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all"
+            >About</a
+          >
+        </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-2 shrink-0">
+          <button
+            class="hidden md:flex p-2.5 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all"
+            aria-label="Language"
+          >
+            <span class="material-symbols-outlined text-xl">language</span>
+          </button>
+          <a
+            href="pricing.html"
+            class="hidden md:block btn-primary px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm"
+          >
+            Get Started
+          </a>
+          <!-- Mobile hamburger -->
+          <button
+            id="hamburger"
+            class="md:hidden p-2.5 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all"
+            aria-label="Menu"
+          >
+            <span class="material-symbols-outlined">menu</span>
+          </button>
         </div>
       </div>
 
-      <a href="case-studies.html" class="px-4 py-2 text-sm font-semibold text-primary rounded-lg nav-link-active">Case Studies</a>
-      <a href="pricing.html" class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all">Pricing</a>
-      <a href="resources.html" class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all">Resources</a>
-      <a href="about.html" class="px-4 py-2 text-sm font-medium text-on-surface-variant hover:text-primary hover:bg-surface-container-low rounded-lg transition-all">About</a>
-    </div>
-
-    <!-- Actions -->
-    <div class="flex items-center gap-2 shrink-0">
-      <button class="hidden md:flex p-2.5 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all" aria-label="Language">
-        <span class="material-symbols-outlined text-xl">language</span>
-      </button>
-      <a href="pricing.html" class="hidden md:block btn-primary px-5 py-2.5 rounded-xl font-bold text-sm shadow-sm">
-        Get Started
-      </a>
-      <!-- Mobile hamburger -->
-      <button id="hamburger" class="md:hidden p-2.5 text-on-surface-variant hover:bg-surface-container-low rounded-lg transition-all" aria-label="Menu">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-    </div>
-  </div>
-
-  <!-- Mobile Menu -->
-  <div id="mobile-menu" class="md:hidden border-t border-outline-variant/20 bg-white">
-    <div class="px-4 py-4 space-y-1">
-      <a href="products.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-semibold text-on-surface transition-all">
-        <span class="material-symbols-outlined text-primary text-lg">grid_view</span> Products
-      </a>
-      <a href="case-studies.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all">
-        <span class="material-symbols-outlined text-lg">insights</span> Case Studies
-      </a>
-      <a href="pricing.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all">
-        <span class="material-symbols-outlined text-lg">payments</span> Pricing
-      </a>
-      <a href="resources.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all">
-        <span class="material-symbols-outlined text-lg">library_books</span> Resources
-      </a>
-      <a href="about.html" class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all">
-        <span class="material-symbols-outlined text-lg">info</span> About
-      </a>
-      <div class="pt-3 border-t border-outline-variant/20">
-        <a href="pricing.html" class="btn-primary w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm">
-          <span class="material-symbols-outlined text-lg">rocket_launch</span> Get Started
-        </a>
+      <!-- Mobile Menu -->
+      <div
+        id="mobile-menu"
+        class="md:hidden border-t border-outline-variant/20 bg-white"
+      >
+        <div class="px-4 py-4 space-y-1">
+          <a
+            href="products.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-semibold text-on-surface transition-all"
+          >
+            <span class="material-symbols-outlined text-primary text-lg"
+              >grid_view</span
+            >
+            Products
+          </a>
+          <a
+            href="case-studies.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all"
+          >
+            <span class="material-symbols-outlined text-lg">insights</span> Case
+            Studies
+          </a>
+          <a
+            href="pricing.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all"
+          >
+            <span class="material-symbols-outlined text-lg">payments</span>
+            Pricing
+          </a>
+          <a
+            href="resources.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all"
+          >
+            <span class="material-symbols-outlined text-lg">library_books</span>
+            Resources
+          </a>
+          <a
+            href="about.html"
+            class="flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-surface-container-low text-sm font-medium text-on-surface-variant transition-all"
+          >
+            <span class="material-symbols-outlined text-lg">info</span> About
+          </a>
+          <div class="pt-3 border-t border-outline-variant/20">
+            <a
+              href="pricing.html"
+              class="btn-primary w-full flex items-center justify-center gap-2 py-3 rounded-xl font-bold text-sm"
+            >
+              <span class="material-symbols-outlined text-lg"
+                >rocket_launch</span
+              >
+              Get Started
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
+
 
 
 
@@ -525,7 +564,7 @@
         <h1 class="font-headline text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.05] tracking-tighter mb-8">
           Real Growth.<br/><span class="text-primary italic">Launched by Founders.</span>
         </h1>
-        <p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">Discover how visionaries are using App Factory to transform ideas into market-leading businesses in record time.</p>
+        <p class="text-lg text-on-surface-variant max-w-2xl leading-relaxed">Discover how visionaries are using Applume to transform ideas into market-leading businesses in record time.</p>
       </div>
       <div class="lg:col-span-4 flex justify-end reveal">
         <div class="grid grid-cols-2 gap-4 text-center">
@@ -547,7 +586,7 @@
           <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider ml-auto">Featured</span>
         </div>
         <h2 class="font-headline text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight mb-6">From zero to 50,000 daily orders in 4 months.</h2>
-        <p class="text-on-surface-variant leading-relaxed mb-10 text-base">App Factory's infrastructure never broke a sweat. The platform scaled without us worrying about a single line of code. We focused entirely on growth.</p>
+        <p class="text-on-surface-variant leading-relaxed mb-10 text-base">Applume infrastructure never broke a sweat. The platform scaled without us worrying about a single line of code. We focused entirely on growth.</p>
         <div class="grid grid-cols-2 gap-8 mb-10">
           <div><p class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 font-bold">Daily Orders</p><p class="font-headline text-4xl font-extrabold text-primary">50,000</p></div>
           <div><p class="text-[10px] uppercase tracking-widest text-on-surface-variant mb-2 font-bold">Time to Scale</p><p class="font-headline text-4xl font-extrabold text-primary">4 mo</p></div>
@@ -619,7 +658,7 @@
       <div class="absolute inset-0 pointer-events-none"><div class="absolute -top-16 -right-16 w-64 h-64 rounded-full opacity-20" style="background:radial-gradient(circle,#4ade80 0%,transparent 70%);"></div><div class="absolute -bottom-16 -left-16 w-64 h-64 rounded-full opacity-20" style="background:radial-gradient(circle,#86efac 0%,transparent 70%);"></div></div>
       <div class="relative z-10">
         <h2 class="font-headline text-white text-4xl md:text-5xl font-extrabold tracking-tighter mb-6">Your story could be next.</h2>
-        <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">500+ founders have already shipped with App Factory. Join them and launch your app in 7 days.</p>
+        <p class="text-white/80 text-lg mb-10 max-w-2xl mx-auto">500+ founders have already shipped with Applume. Join them and launch your app in 7 days.</p>
         <a href="contact.html" class="inline-flex items-center gap-2.5 bg-white text-primary font-bold text-base px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all shadow-lg hover:-translate-y-0.5 duration-200"><span class="material-symbols-outlined text-xl">rocket_launch</span> Start Building Today</a>
       </div>
     </div>
@@ -631,71 +670,107 @@
 <!-- ═══════════════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════════════ -->
-<footer class="bg-zinc-950 w-full pt-24 pb-14">
+ <footer class="bg-zinc-950 w-full pt-16 pb-10">
   <div class="max-w-7xl mx-auto px-6">
-    <div class="grid grid-cols-2 md:grid-cols-5 gap-12 mb-20">
-      <!-- Brand -->
-      <div class="col-span-2">
-        <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 rounded-lg emerald-gradient flex items-center justify-center">
-            <span class="material-symbols-outlined text-white text-xl">rocket_launch</span>
-          </div>
-          <span class="text-xl font-headline font-bold text-white tracking-tight">App <span class="text-emerald-400">Factory</span></span>
-        </div>
-        <p class="text-zinc-400 text-base leading-relaxed mb-7 max-w-xs">
-          High-speed software development for on-demand businesses. We plant the code, you harvest the revenue.
-        </p>
-        <div class="flex gap-3">
-          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-emerald-500/20 flex items-center justify-center transition-colors">
-            <span class="material-symbols-outlined text-zinc-400 hover:text-emerald-400 text-xl">public</span>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-emerald-500/20 flex items-center justify-center transition-colors">
-            <span class="material-symbols-outlined text-zinc-400 hover:text-emerald-400 text-xl">person</span>
-          </a>
-          <a href="#" class="w-10 h-10 rounded-lg bg-white/5 hover:bg-emerald-500/20 flex items-center justify-center transition-colors">
-            <span class="material-symbols-outlined text-zinc-400 hover:text-emerald-400 text-xl">share</span>
-          </a>
-        </div>
-      </div>
-
+    <!-- Newsletter -->
+    <div class="border-b border-white/5 pb-10 mb-10 flex flex-col md:flex-row items-center justify-between gap-4">
       <div>
-        <h5 class="text-emerald-500 font-bold mb-6 text-sm uppercase tracking-widest">Solutions</h5>
-        <ul class="space-y-4">
-          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Taxi & Mobility</a></li>
-          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Food Delivery</a></li>
-          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Home Services</a></li>
-          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Logistics</a></li>
-          <li><a href="products.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">E-commerce</a></li>
-        </ul>
+        <p class="text-white font-bold mb-0.5">Get the founder playbook — free.</p>
+        <p class="text-zinc-500 text-sm">Weekly insights on launching & scaling on-demand apps.</p>
       </div>
-
-      <div>
-        <h5 class="text-emerald-500 font-bold mb-6 text-sm uppercase tracking-widest">Company</h5>
-        <ul class="space-y-4">
-          <li><a href="about.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">About Us</a></li>
-          <li><a href="case-studies.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Case Studies</a></li>
-          <li><a href="#" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Careers</a></li>
-          <li><a href="#" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Press</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h5 class="text-emerald-500 font-bold mb-6 text-sm uppercase tracking-widest">Resources</h5>
-        <ul class="space-y-4">
-          <li><a href="resources.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Blog</a></li>
-          <li><a href="#" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Documentation</a></li>
-          <li><a href="pricing.html" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">Pricing</a></li>
-          <li><a href="#" class="text-zinc-500 hover:text-emerald-400 text-base transition-colors block">API Reference</a></li>
-        </ul>
+      <div class="flex gap-3 w-full md:w-auto">
+        <input type="email" placeholder="your@email.com" class="flex-1 md:w-56 px-4 py-2.5 rounded-xl text-sm text-white placeholder-zinc-600 focus:outline-none" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);"/>
+        <button class="px-5 py-2.5 rounded-xl font-bold text-sm text-white whitespace-nowrap hover:opacity-90 transition-all" style="background:linear-gradient(135deg,#006948,#1e8f50);">Subscribe</button>
       </div>
     </div>
-
-    <div class="pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-zinc-600 text-sm">© 2025 App Factory Inc. All rights reserved.</p>
-      <div class="flex gap-6">
-        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-sm transition-colors">Privacy Policy</a>
-        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-sm transition-colors">Terms of Service</a>
-        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-sm transition-colors">Cookie Policy</a>
+    <!-- Grid -->
+    <div class="grid grid-cols-2 lg:grid-cols-12 gap-8 mb-10">
+      <!-- Brand -->
+      <div class="col-span-2 lg:col-span-4">
+        <div class="flex items-center gap-2.5 mb-4">
+          <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:linear-gradient(135deg,#006948,#1e8f50);">
+            <span class="material-symbols-outlined text-white text-base">rocket_launch</span>
+          </div>
+          <span class="text-lg font-extrabold text-white tracking-tight">Appl<span class="text-emerald-400">ume</span></span>
+        </div>
+        <p class="text-zinc-400 text-sm leading-relaxed mb-5 max-w-xs">Launch your on-demand app in 7 days. No coding. No complexity. Built for founders.</p>
+        <div class="flex gap-2 mb-5">
+          <a href="#" class="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-all" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+            <svg class="w-3.5 h-3.5 fill-zinc-400" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L2.25 2.25H8.08l4.258 5.63L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-all" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+            <svg class="w-3.5 h-3.5 fill-zinc-400" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-all" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+            <svg class="w-3.5 h-3.5 fill-zinc-400" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069ZM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0Zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324ZM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8Zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881Z"/></svg>
+          </a>
+          <a href="#" class="w-8 h-8 rounded-lg flex items-center justify-center hover:scale-110 transition-all" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);">
+            <svg class="w-3.5 h-3.5 fill-zinc-400" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814ZM9.545 15.568V8.432L15.818 12l-6.273 3.568Z"/></svg>
+          </a>
+        </div>
+        <div class="space-y-2.5">
+          <a href="/cdn-cgi/l/email-protection#066e636a6a69466776766067657269747f286f68" class="flex items-center gap-2 text-xs text-zinc-500 hover:text-emerald-400 transition-colors">
+            <span class="material-symbols-outlined text-sm" style="color:#166c3c;">mail</span><span class="__cf_email__" data-cfemail="86eee3eaeae9c6e7f6f6e0e7e5f2e9f4ffa8efe8">[email&#160;protected]</span>
+          </a>
+          <a href="tel:+919876543210" class="flex items-center gap-2 text-xs text-zinc-500 hover:text-emerald-400 transition-colors">
+            <span class="material-symbols-outlined text-sm" style="color:#166c3c;">call</span>+91 98765 43210
+          </a>
+          <div class="flex items-start gap-2 text-xs text-zinc-500">
+            <span class="material-symbols-outlined text-sm mt-0.5 shrink-0" style="color:#166c3c;">location_on</span>
+            <span>Tower 4, Assotech Business Cresterra,<br/>202, Sector 135, Noida, UP 201301</span>
+          </div>
+        </div>
+      </div>
+      <!-- Spacer -->
+      <div class="hidden lg:block lg:col-span-1"></div>
+      <!-- Products -->
+      <div class="lg:col-span-2">
+        <h5 class="text-xs font-extrabold uppercase tracking-[0.2em] text-emerald-500 mb-4">Products</h5>
+        <ul class="space-y-2.5">
+          <li><a href="products.html#grocery" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Grocery</a></li>
+          <li><a href="products.html#ecommerce" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>E-commerce</a></li>
+          <li><a href="products.html#food" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Food Delivery</a></li>
+          <li><a href="products.html#pharmacy" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Pharmacy</a></li>
+          <li><a href="products.html#dairy" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Dairy</a></li>
+          <li><a href="products.html#laundry" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Laundry</a></li>
+          <li><a href="products.html#salon" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Salon</a></li>
+        </ul>
+      </div>
+      <!-- Company -->
+      <div class="lg:col-span-2">
+        <h5 class="text-xs font-extrabold uppercase tracking-[0.2em] text-emerald-500 mb-4">Company</h5>
+        <ul class="space-y-2.5">
+          <li><a href="about.html" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>About Us</a></li>
+          <li><a href="case-studies.html" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Case Studies</a></li>
+          <li><a href="#" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Careers <span class="text-[10px] font-bold text-emerald-500 ml-1">Hiring</span></a></li>
+          <li><a href="#" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Blog & Insights</a></li>
+          <li><a href="#" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Documentation</a></li>
+        </ul>
+      </div>
+      <!-- Get Started -->
+      <div class="lg:col-span-3">
+        <h5 class="text-xs font-extrabold uppercase tracking-[0.2em] text-emerald-500 mb-4">Get Started</h5>
+        <ul class="space-y-2.5 mb-6">
+          <li><a href="pricing.html" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>View Pricing Plans</a></li>
+          <li><a href="products.html" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Browse All Products</a></li>
+          <li><a href="case-studies.html" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Read Case Studies</a></li>
+          <li><a href="about.html" class="text-zinc-500 hover:text-white text-xs transition-colors flex items-center gap-2 group"><span class="w-1 h-1 rounded-full bg-zinc-700 group-hover:bg-emerald-500 transition-colors"></span>Meet Our Team</a></li>
+        </ul>
+        <div class="p-4 rounded-xl" style="background:rgba(22,108,60,0.12);border:1px solid rgba(22,108,60,0.25);">
+          <p class="text-sm font-bold text-white mb-0.5">Ready to launch?</p>
+          <p class="text-xs text-zinc-500 mb-3">7 days. Your app. Live.</p>
+          <a href="pricing.html" class="inline-flex items-center gap-1 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors">Start now <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+      </div>
+    </div>
+    <!-- Bottom bar -->
+    <div class="pt-6 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-zinc-600 text-xs text-center md:text-left">© 2025 Applume Technologies Pvt. Ltd. · All rights reserved.</p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">Privacy Policy</a>
+        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">Terms of Service</a>
+        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">Cookie Policy</a>
+        <a href="#" class="text-zinc-600 hover:text-zinc-400 text-xs transition-colors">Refund Policy</a>
       </div>
     </div>
   </div>
