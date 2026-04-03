@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Build vs. Buy: The Real Cost of Building a Delivery App in 2 | Applume
+      Resources
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#166c3c",
+              "primary-dark": "#0d4a28",
+              "primary-light": "#1e8f50",
+              "primary-fixed": "#a2f5b8",
+              "primary-fixed-dim": "#87d89d",
+              "primary-container": "#bdf1ca",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#00210d",
+              "on-primary-fixed": "#00210d",
+              "on-primary-fixed-variant": "#00522a",
+              secondary: "#53634f",
+              "secondary-container": "#d7e8cf",
+              "secondary-fixed": "#d7e8cf",
+              "secondary-fixed-dim": "#bbcbb4",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#111f0f",
+              "on-secondary-fixed": "#111f0f",
+              "on-secondary-fixed-variant": "#394d14",
+              tertiary: "#5d5e61",
+              "tertiary-container": "#e1e2e5",
+              "tertiary-fixed": "#e4e2dc",
+              "tertiary-fixed-dim": "#c8c6c1",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#1d1c1a",
+              "on-tertiary-fixed": "#1b1c18",
+              "on-tertiary-fixed-variant": "#474743",
+              error: "#ba1a1a",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              background: "#F6F6F6",
+              surface: "#F6F6F6",
+              "surface-dim": "#d9dbd8",
+              "surface-bright": "#f6f6f6",
+              "surface-variant": "#dee5dc",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f1f4f1",
+              "surface-container": "#edf0ed",
+              "surface-container-high": "#e7e9e6",
+              "surface-container-highest": "#e1e3e0",
+              "on-surface": "#191c19",
+              "on-surface-variant": "#414941",
+              "on-background": "#191c19",
+              outline: "#717971",
+              "outline-variant": "#c1c9be",
+              "inverse-surface": "#2e312e",
+              "inverse-on-surface": "#f0f1ec",
+              "inverse-primary": "#87d89d",
+              "surface-tint": "#166c3c",
+            },
+            fontFamily: {
+              headline: ["Nunito Sans", "sans-serif"],
+              body: ["Nunito Sans", "sans-serif"],
+              label: ["Nunito Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              sm: "0.25rem",
+              md: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              "3xl": "2rem",
+              full: "9999px",
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "float-delay": "float 6s ease-in-out 2s infinite",
+              "spin-slow": "spin 20s linear infinite",
+              "pulse-slow": "pulse 4s ease-in-out infinite",
+              "slide-up": "slideUp 0.6s ease-out forwards",
+              "fade-in": "fadeIn 0.8s ease-out forwards",
+              marquee: "marquee 30s linear infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-16px)" },
+              },
+              slideUp: {
+                from: { opacity: "0", transform: "translateY(30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeIn: {
+                from: { opacity: "0" },
+                to: { opacity: "1" },
+              },
+              marquee: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --primary: #166c3c;
+        --primary-dark: #0d4a28;
+        --primary-light: #1e8f50;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        background-color: #f6f6f6;
+        color: #191c19;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-headline {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .fill-icon {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* Glass nav */
+      .glass-nav {
+        background: rgba(246, 246, 246, 0.85);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+
+      /* Mega menu — full width fixed */
+      .mega-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+      }
+      .nav-item:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: all;
+      }
+
+      /* Gradients */
+      .emerald-gradient {
+        background: linear-gradient(135deg, #006948 0%, #1e8f50 100%);
+      }
+      .emerald-gradient-subtle {
+        background: linear-gradient(
+          135deg,
+          rgba(22, 108, 60, 0.08) 0%,
+          rgba(22, 108, 60, 0.03) 100%
+        );
+      }
+      .dark-gradient {
+        background: linear-gradient(135deg, #0d1f15 0%, #1a3626 100%);
+      }
+
+      /* Glow effects */
+      .glow-primary {
+        box-shadow: 0 0 40px rgba(22, 108, 60, 0.2);
+      }
+      .glow-primary-sm {
+        box-shadow: 0 0 20px rgba(22, 108, 60, 0.15);
+      }
+      .editorial-shadow {
+        box-shadow: 0px 12px 40px rgba(26, 28, 28, 0.06);
+      }
+      .card-shadow {
+        box-shadow: 0 4px 24px rgba(26, 28, 28, 0.08);
+      }
+
+      /* Glass surface */
+      .glass-surface {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Noise texture overlay */
+      .noise::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        border-radius: inherit;
+      }
+
+      /* Hero orb */
+      .hero-orb {
+        background: radial-gradient(
+          circle at center,
+          rgba(22, 108, 60, 0.15) 0%,
+          transparent 70%
+        );
+      }
+
+      /* Ticker */
+      .ticker-track {
+        display: flex;
+        width: max-content;
+      }
+
+      /* Accordion */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .accordion-content.open {
+        max-height: 400px;
+      }
+
+      /* Active nav link */
+      .nav-link-active {
+        color: var(--primary);
+        position: relative;
+      }
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 99px;
+      }
+
+      /* Scroll reveal — safe: visible by default, JS adds .anim */
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal.anim {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.anim.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f4f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c1c9be;
+        border-radius: 99px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #717971;
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        transition:
+          max-height 0.35s ease,
+          opacity 0.35s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 80vh;
+        opacity: 1;
+        overflow-y: auto;
+      }
+
+      /* Button states */
+      .btn-primary {
+        background: linear-gradient(135deg, #006948, #1e8f50);
+        color: white;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          opacity 0.2s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(22, 108, 60, 0.35);
+      }
+      .btn-primary:active {
+        transform: scale(0.97);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        transition: all 0.2s ease;
+      }
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-2px);
+      }
+      .btn-outline:active {
+        transform: scale(0.97);
+      }
+
+      /* Plan card hover */
+      .plan-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .plan-card:hover {
+        transform: translateY(-6px);
+      }
+
+      /* Stat ring animation */
+      @keyframes ring-fill {
+        from {
+          stroke-dashoffset: 300;
+        }
+        to {
+          stroke-dashoffset: var(--dash-offset);
+        }
+      }
+
+      /* Floating badge */
+      @keyframes badgeFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-8px) rotate(-2deg);
+        }
+      }
+      .badge-float {
+        animation: badgeFloat 4s ease-in-out infinite;
+      }
+      .badge-float-2 {
+        animation: badgeFloat 4s ease-in-out 1.5s infinite;
+      }
+
+      /* Ticker */
+      @keyframes ticker {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .ticker-inner {
+        animation: ticker 28s linear infinite;
+      }
+      .ticker-inner:hover {
+        animation-play-state: paused;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal.anim {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.anim.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .tag-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 3px 10px;
+        border-radius: 99px;
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+      .blog-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .blog-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 60px rgba(26, 28, 26, 0.1);
+      }
+      .prose h2 {
+        font-size: 1.75rem;
+        font-weight: 800;
+        line-height: 1.25;
+        margin: 2.5rem 0 1rem;
+        color: #191c19;
+        letter-spacing: -0.03em;
+      }
+      .prose h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.3;
+        margin: 2rem 0 0.75rem;
+        color: #191c19;
+      }
+      .prose p {
+        font-size: 1rem;
+        line-height: 1.8;
+        margin: 0 0 1.25rem;
+        color: #414941;
+      }
+      .prose ul {
+        margin: 0 0 1.25rem 1.25rem;
+        list-style: disc;
+      }
+      .prose li {
+        font-size: 1rem;
+        line-height: 1.75;
+        color: #414941;
+        margin-bottom: 0.4rem;
+      }
+      .prose strong {
+        font-weight: 700;
+        color: #191c19;
+      }
+      .prose blockquote {
+        border-left: 4px solid #166c3c;
+        padding: 1rem 1.5rem;
+        background: rgba(22, 108, 60, 0.04);
+        border-radius: 0 12px 12px 0;
+        margin: 1.5rem 0;
+        font-style: italic;
+      }
+      .prose blockquote p {
+        margin: 0;
+        color: #414941;
+      }
+      .reading-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 3px;
+        background: linear-gradient(90deg, #166c3c, #1e8f50);
+        z-index: 9999;
+        transition: width 0.1s linear;
+      }
+    </style>
+  </head>
+  <body
+    class="antialiased selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <div class="reading-progress" id="rp"></div>
+    <div id="nav-bar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("nav-bar").innerHTML = data;
+        });
+    </script>
+
+    <section
+      style="
+        background: linear-gradient(
+          135deg,
+          #1e1b4b 0%,
+          #2d2071 60%,
+          #1e1b4b 100%
+        );
+        position: relative;
+        padding-top: 72px;
+        overflow: hidden;
+      "
+    >
+      <div class="absolute inset-0 pointer-events-none">
+        <svg
+          class="absolute inset-0 w-full h-full opacity-[0.04]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern
+              id="g"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="white"
+                stroke-width="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#g)" />
+        </svg>
+      </div>
+      <div class="relative max-w-4xl mx-auto px-6 py-20 md:py-28">
+        <a
+          href="resources.html"
+          class="inline-flex items-center gap-2 text-sm mb-10 hover:opacity-80 transition-opacity"
+          style="color: rgba(255, 255, 255, 0.5)"
+          ><span class="material-symbols-outlined text-base">arrow_back</span>
+          All Resources</a
+        >
+        <div class="flex items-center gap-3 mb-5">
+          <span
+            class="tag-chip"
+            style="
+              background: rgba(255, 255, 255, 0.12);
+              color: rgba(255, 255, 255, 0.85);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+            "
+            >Business Strategy</span
+          ><span class="text-sm" style="color: rgba(255, 255, 255, 0.4)"
+            >March 12, 2025 · 6 min read</span
+          >
+        </div>
+        <h1
+          class="font-headline font-extrabold text-white tracking-tighter leading-tight mb-6"
+          style="font-size: clamp(1.9rem, 4vw, 3rem)"
+        >
+          Build vs. Buy: The Real Cost of Building a Delivery App in 2025
+        </h1>
+        <p
+          class="text-lg leading-relaxed mb-10"
+          style="color: rgba(255, 255, 255, 0.55)"
+        >
+          A data-driven breakdown of what it actually costs to build an
+          on-demand delivery platform from scratch — versus using a ready-made
+          solution like Applume.
+        </p>
+        <div class="flex items-center gap-3">
+          <div
+            class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-white font-headline"
+            style="
+              background: rgba(255, 255, 255, 0.15);
+              border: 2px solid rgba(255, 255, 255, 0.2);
+            "
+          >
+            PS
+          </div>
+          <div>
+            <p class="font-bold text-sm text-white">Priya Sharma</p>
+            <p class="text-xs" style="color: rgba(255, 255, 255, 0.5)">
+              Business Strategy Lead, Applume
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-8">
+          <div
+            class="bg-surface-container-low border border-outline-variant/20 rounded-2xl p-7 mb-10"
+          >
+            <h3 class="font-bold text-base mb-4 flex items-center gap-2">
+              <span
+                class="material-symbols-outlined text-primary fill-icon text-xl"
+                >bolt</span
+              >TL;DR — Key Takeaways
+            </h3>
+            <ul class="space-y-3">
+              <li class="flex items-start gap-3">
+                <span
+                  class="material-symbols-outlined text-primary fill-icon text-base mt-0.5 shrink-0"
+                  >check_circle</span
+                ><span class="text-sm text-on-surface leading-relaxed"
+                  >Building from scratch costs ₹30–80 lakhs and takes 6–12
+                  months minimum</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="material-symbols-outlined text-primary fill-icon text-base mt-0.5 shrink-0"
+                  >check_circle</span
+                ><span class="text-sm text-on-surface leading-relaxed"
+                  >Hidden costs (maintenance, updates, server, bugs) add 30–40%
+                  annually to your total</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="material-symbols-outlined text-primary fill-icon text-base mt-0.5 shrink-0"
+                  >check_circle</span
+                ><span class="text-sm text-on-surface leading-relaxed"
+                  >Applume's platform eliminates upfront dev cost and launches
+                  in 7 days</span
+                >
+              </li>
+              <li class="flex items-start gap-3">
+                <span
+                  class="material-symbols-outlined text-primary fill-icon text-base mt-0.5 shrink-0"
+                  >check_circle</span
+                ><span class="text-sm text-on-surface leading-relaxed"
+                  >The real question isn't cost — it's time-to-market and
+                  opportunity cost</span
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="prose">
+            <h2>The hidden cost of custom development</h2>
+            <p>
+              When founders consider building their own delivery app, the
+              initial agency quote feels like the full cost. It isn't. The quote
+              — typically ₹30–80 lakhs for a full platform — is just the
+              development cost. What follows is often more expensive than the
+              build itself.
+            </p>
+            <p>
+              Post-launch maintenance typically runs at 15–20% of the initial
+              build cost annually. A ₹50 lakh build costs ₹7.5–10 lakhs per year
+              just to keep running. Add server infrastructure (₹1.5–3 lakhs/year
+              for a production-grade setup), App Store updates triggered by OS
+              changes (2–4 times per year), and bug fixes, and the true 3-year
+              cost of a custom build looks dramatically different from the
+              initial quote.
+            </p>
+            <p>
+              There's also the time cost. In the 9 months it takes to build and
+              launch a custom app, your market window may close. Competitors
+              move in. The opportunity cost of delayed market entry is real —
+              and almost always underestimated.
+            </p>
+            <h2>A real cost comparison: Custom build vs. Applume</h2>
+            <p>
+              Let's use a concrete example: a founder who wants to launch a food
+              delivery platform in a mid-sized Indian city.
+            </p>
+            <p>
+              <strong>Custom Build:</strong> Development quote: ₹55 lakhs.
+              Timeline: 8–10 months. First revenue: Month 11. Year 1
+              maintenance: ₹8 lakhs. Year 1 server costs: ₹2.4 lakhs. Total Year
+              1 investment: ₹65.4 lakhs.
+            </p>
+            <p>
+              <strong>Applume Platform:</strong> Setup: Subscription plan
+              (affordable monthly fee). Timeline: 7 days. First revenue: Week 2.
+              Year 1 cost: Subscription × 12. Total Year 1 investment: Fraction
+              of custom build cost.
+            </p>
+            <p>
+              The numbers speak for themselves. But the more important metric is
+              this: the custom build founder generates zero revenue for 10
+              months. The Applume founder generates revenue from Day 8.
+            </p>
+            <h2>When does building from scratch make sense?</h2>
+            <p>
+              To be fair: there are scenarios where custom development is the
+              right choice. If you're building something that has never existed
+              before — a truly novel interaction model or a deeply proprietary
+              algorithm — custom is the path.
+            </p>
+            <p>
+              If you're a funded startup raising ₹5Cr+ and have a strong
+              technical co-founder already on the team, building a custom
+              codebase gives you maximum flexibility at a cost your cap table
+              can absorb.
+            </p>
+            <p>
+              But for the vast majority of founders launching grocery, food
+              delivery, pharmacy, dairy, laundry, or salon platforms — the core
+              product is well-understood. The differentiation comes from
+              execution, community, and localisation — not from the underlying
+              code. In those cases, buying a proven platform and focusing your
+              energy on the business is almost always the superior strategy.
+            </p>
+            <h2>The opportunity cost that nobody talks about</h2>
+            <p>
+              Here's the calculation that changed the minds of many founders we
+              spoke to: if your delivery platform generates ₹5 lakhs per month
+              in revenue at steady state, and Applume lets you launch 9 months
+              earlier than a custom build, that's ₹45 lakhs of revenue you would
+              have missed.
+            </p>
+            <p>
+              That ₹45 lakhs in foregone revenue is your real cost of building
+              from scratch — on top of the ₹65+ lakhs you spend on development.
+            </p>
+            <p>
+              Time-to-market is capital. The faster you launch, the faster you
+              generate data, the faster you iterate, and the faster you build a
+              moat against competitors who are also looking at your market.
+            </p>
+            <h2>What to look for in a white-label platform</h2>
+            <p>
+              Not all ready-made solutions are created equal. When evaluating a
+              platform like Applume, there are five non-negotiable criteria:
+            </p>
+            <p>
+              <strong>Full white-labelling</strong> — customers should see your
+              brand, not the platform provider's.
+            </p>
+            <p>
+              <strong>Source code ownership option</strong> — if you outgrow the
+              platform, you should be able to take the code and continue
+              independently.
+            </p>
+            <p>
+              <strong>Proven production usage</strong> — the platform should
+              have real customers processing real orders. Ask for references.
+            </p>
+            <p>
+              <strong>Active maintenance</strong> — the provider should push
+              updates for OS compatibility, security patches, and payment
+              gateway changes without you having to ask.
+            </p>
+            <p>
+              <strong>Transparent pricing</strong> — understand the full cost
+              structure before you commit: subscription fees, transaction fees
+              (if any), and what's included in support.
+            </p>
+          </div>
+        </div>
+        <div class="lg:col-span-4">
+          <div class="sticky top-24 space-y-6">
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow"
+            >
+              <p
+                class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4"
+              >
+                About the Author
+              </p>
+              <div class="flex items-center gap-3 mb-4">
+                <div
+                  class="w-12 h-12 rounded-full flex items-center justify-center font-bold text-white font-headline emerald-gradient shrink-0"
+                >
+                  PS
+                </div>
+                <div>
+                  <p class="font-bold text-sm">Priya Sharma</p>
+                  <p class="text-xs text-on-surface-variant">
+                    Business Strategy Lead, Applume
+                  </p>
+                </div>
+              </div>
+              <p class="text-xs text-on-surface-variant leading-relaxed">
+                Priya has spent 8 years in tech consulting and startup advisory.
+                At Applume she helps founders make the right build/buy decisions
+                for their business.
+              </p>
+            </div>
+            <div
+              class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow"
+            >
+              <p
+                class="text-[10px] font-bold uppercase tracking-widest text-on-surface-variant mb-4"
+              >
+                Share this Article
+              </p>
+              <div class="flex gap-2">
+                <button
+                  class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold border border-outline-variant/20 hover:bg-surface-container transition-colors"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 fill-on-surface-variant"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L2.25 2.25H8.08l4.258 5.63L18.244 2.25Zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77Z"
+                    /></svg
+                  >X</button
+                ><button
+                  class="flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-bold border border-outline-variant/20 hover:bg-surface-container transition-colors"
+                >
+                  <svg
+                    class="w-3.5 h-3.5 fill-on-surface-variant"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286ZM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065Zm1.782 13.019H3.555V9h3.564v11.452ZM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003Z"
+                    /></svg
+                  >LinkedIn
+                </button>
+              </div>
+            </div>
+            <div class="rounded-2xl p-6 emerald-gradient">
+              <p class="font-bold text-white text-base mb-2">
+                See Applume's pricing in full transparency.
+              </p>
+              <p class="text-primary-fixed/80 text-xs leading-relaxed mb-4">
+                No hidden costs. No transaction fees. Everything your platform
+                needs, clearly priced.
+              </p>
+              <a
+                href="pricing.html"
+                class="block w-full bg-white text-primary font-bold text-sm py-3 rounded-xl text-center hover:bg-emerald-50 transition-colors"
+                >Get Started Today →</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-16 bg-surface-container-low border-t border-outline-variant/20"
+    >
+      <div class="max-w-4xl mx-auto px-6">
+        <h3 class="font-headline text-2xl font-extrabold tracking-tighter mb-8">
+          Keep <span class="text-primary italic">reading.</span>
+        </h3>
+        <div class="grid md:grid-cols-2 gap-5">
+          <a
+            href="blog-grocery-launch.html"
+            class="group flex items-center gap-4 p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 card-shadow blog-card"
+            ><div
+              class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+            >
+              <span
+                class="material-symbols-outlined text-white text-lg fill-icon"
+                >article</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[10px] font-bold uppercase tracking-wider text-primary mb-0.5"
+              >
+                Founder Playbook
+              </p>
+              <p
+                class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors leading-snug"
+              >
+                How to Launch a Grocery Delivery App in 7 Days
+              </p>
+              <p class="text-xs text-on-surface-variant mt-0.5">8 min read</p>
+            </div>
+            <span
+              class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
+              >arrow_forward</span
+            ></a
+          >
+          <a
+            href="blog-quick-commerce-india.html"
+            class="group flex items-center gap-4 p-4 rounded-2xl bg-surface-container-lowest border border-outline-variant/10 card-shadow blog-card"
+            ><div
+              class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+            >
+              <span
+                class="material-symbols-outlined text-white text-lg fill-icon"
+                >article</span
+              >
+            </div>
+            <div class="flex-1">
+              <p
+                class="text-[10px] font-bold uppercase tracking-wider text-primary mb-0.5"
+              >
+                Market Analysis
+              </p>
+              <p
+                class="font-bold text-sm text-on-surface group-hover:text-primary transition-colors leading-snug"
+              >
+                Why Quick Commerce is India's Biggest Startup Opportunity in
+                2025
+              </p>
+              <p class="text-xs text-on-surface-variant mt-0.5">7 min read</p>
+            </div>
+            <span
+              class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors"
+              >arrow_forward</span
+            ></a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        hamburger.querySelector(".material-symbols-outlined").textContent =
+          mobileMenu.classList.contains("open") ? "close" : "menu";
+      });
+      // Reading progress bar
+      const rp = document.getElementById("rp");
+      window.addEventListener("scroll", () => {
+        const total = document.body.scrollHeight - window.innerHeight;
+        rp.style.width = (window.scrollY / total) * 100 + "%";
+      });
+    </script>
+  </body>
+</html>

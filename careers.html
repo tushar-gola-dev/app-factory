@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Careers | Applume — Build the Future of Quick Commerce</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#166c3c",
+            "primary-dark": "#0d4a28",
+            "primary-light": "#1e8f50",
+            "primary-fixed": "#a2f5b8",
+            "primary-fixed-dim": "#87d89d",
+            "primary-container": "#bdf1ca",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#00210d",
+            "on-primary-fixed": "#00210d",
+            "on-primary-fixed-variant": "#00522a",
+            secondary: "#53634f",
+            "secondary-container": "#d7e8cf",
+            "secondary-fixed": "#d7e8cf",
+            "secondary-fixed-dim": "#bbcbb4",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#111f0f",
+            "on-secondary-fixed": "#111f0f",
+            "on-secondary-fixed-variant": "#394d14",
+            tertiary: "#5d5e61",
+            "tertiary-container": "#e1e2e5",
+            "tertiary-fixed": "#e4e2dc",
+            "tertiary-fixed-dim": "#c8c6c1",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#1d1c1a",
+            "on-tertiary-fixed": "#1b1c18",
+            "on-tertiary-fixed-variant": "#474743",
+            error: "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            background: "#F6F6F6",
+            surface: "#F6F6F6",
+            "surface-dim": "#d9dbd8",
+            "surface-bright": "#f6f6f6",
+            "surface-variant": "#dee5dc",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f1f4f1",
+            "surface-container": "#edf0ed",
+            "surface-container-high": "#e7e9e6",
+            "surface-container-highest": "#e1e3e0",
+            "on-surface": "#191c19",
+            "on-surface-variant": "#414941",
+            "on-background": "#191c19",
+            outline: "#717971",
+            "outline-variant": "#c1c9be",
+            "inverse-surface": "#2e312e",
+            "inverse-on-surface": "#f0f1ec",
+            "inverse-primary": "#87d89d",
+            "surface-tint": "#166c3c",
+          },
+          fontFamily: {
+            headline: ["Nunito Sans", "sans-serif"],
+            body: ["Nunito Sans", "sans-serif"],
+            label: ["Nunito Sans", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            sm: "0.25rem",
+            md: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            "2xl": "1.5rem",
+            "3xl": "2rem",
+            full: "9999px",
+          },
+          animation: {
+            "float": "float 6s ease-in-out infinite",
+            "float-delay": "float 6s ease-in-out 2s infinite",
+            "spin-slow": "spin 20s linear infinite",
+            "pulse-slow": "pulse 4s ease-in-out infinite",
+            "slide-up": "slideUp 0.6s ease-out forwards",
+            "fade-in": "fadeIn 0.8s ease-out forwards",
+            "marquee": "marquee 30s linear infinite",
+          },
+          keyframes: {
+            float: {
+              "0%, 100%": { transform: "translateY(0px)" },
+              "50%": { transform: "translateY(-16px)" },
+            },
+            slideUp: {
+              from: { opacity: "0", transform: "translateY(30px)" },
+              to: { opacity: "1", transform: "translateY(0)" },
+            },
+            fadeIn: {
+              from: { opacity: "0" },
+              to: { opacity: "1" },
+            },
+            marquee: {
+              "0%": { transform: "translateX(0)" },
+              "100%": { transform: "translateX(-50%)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --primary: #166c3c;
+      --primary-dark: #0d4a28;
+      --primary-light: #1e8f50;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Nunito Sans", sans-serif;
+      background-color: #F6F6F6;
+      color: #191c19;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-headline {
+      font-family: "Nunito Sans", sans-serif; font-weight: 800;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+    .fill-icon { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
+
+    /* Glass nav */
+    .glass-nav {
+      background: rgba(246, 246, 246, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    /* Mega menu — full width fixed */
+    .mega-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+    .nav-item:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    /* Gradients */
+    .emerald-gradient { background: linear-gradient(135deg, #006948 0%, #1e8f50 100%); }
+    .emerald-gradient-subtle { background: linear-gradient(135deg, rgba(22, 108, 60, 0.08) 0%, rgba(22, 108, 60, 0.03) 100%); }
+    .dark-gradient { background: linear-gradient(135deg, #0d1f15 0%, #1a3626 100%); }
+
+    /* Glow effects */
+    .glow-primary { box-shadow: 0 0 40px rgba(22, 108, 60, 0.2); }
+    .glow-primary-sm { box-shadow: 0 0 20px rgba(22, 108, 60, 0.15); }
+    .editorial-shadow { box-shadow: 0px 12px 40px rgba(26, 28, 28, 0.06); }
+    .card-shadow { box-shadow: 0 4px 24px rgba(26, 28, 28, 0.08); }
+
+    /* Glass surface */
+    .glass-surface {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    /* Noise texture overlay */
+    .noise::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    /* Hero orb */
+    .hero-orb {
+      background: radial-gradient(circle at center, rgba(22,108,60,0.15) 0%, transparent 70%);
+    }
+
+    /* Ticker */
+    .ticker-track { display: flex; width: max-content; }
+
+    /* Accordion */
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .accordion-content.open { max-height: 400px; }
+
+    /* Active nav link */
+    .nav-link-active {
+      color: var(--primary);
+      position: relative;
+    }
+    .nav-link-active::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 99px;
+    }
+
+    /* Scroll reveal — safe: visible by default, JS adds .anim */
+    .reveal { opacity: 1; transform: none; }
+    .reveal.anim { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.anim.visible { opacity: 1; transform: translateY(0); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f4f1; }
+    ::-webkit-scrollbar-thumb { background: #c1c9be; border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: #717971; }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: max-height 0.35s ease, opacity 0.35s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 80vh;
+      opacity: 1;
+      overflow-y: auto;
+    }
+
+    /* Button states */
+    .btn-primary {
+      background: linear-gradient(135deg, #006948, #1e8f50);
+      color: white;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22, 108, 60, 0.35); }
+    .btn-primary:active { transform: scale(0.97); }
+
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      transition: all 0.2s ease;
+    }
+    .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+    .btn-outline:active { transform: scale(0.97); }
+
+    /* Plan card hover */
+    .plan-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .plan-card:hover { transform: translateY(-6px); }
+
+    /* Stat ring animation */
+    @keyframes ring-fill {
+      from { stroke-dashoffset: 300; }
+      to { stroke-dashoffset: var(--dash-offset); }
+    }
+
+    /* Floating badge */
+    @keyframes badgeFloat {
+      0%,100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-8px) rotate(-2deg); }
+    }
+    .badge-float { animation: badgeFloat 4s ease-in-out infinite; }
+    .badge-float-2 { animation: badgeFloat 4s ease-in-out 1.5s infinite; }
+
+    /* Ticker */
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-inner { animation: ticker 28s linear infinite; }
+    .ticker-inner:hover { animation-play-state: paused; }
+  
+    /* Careers page */
+    .reveal { opacity:1; transform:none; }
+    .reveal.anim { opacity:0; transform:translateY(24px); transition:opacity .6s ease,transform .6s ease; }
+    .reveal.anim.visible { opacity:1; transform:translateY(0); }
+    .job-card { transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease; }
+    .job-card:hover { transform:translateY(-4px); box-shadow:0 20px 60px rgba(26,28,26,0.1); border-color:rgba(22,108,60,0.3) !important; }
+    .perk-card { transition:transform .3s ease,box-shadow .3s ease; }
+    .perk-card:hover { transform:translateY(-5px); }
+    .dept-pill { cursor:pointer; transition:all .2s ease; }
+    .dept-pill.active { background:var(--primary); color:white; border-color:var(--primary); }
+    .dept-pill:not(.active):hover { background:rgba(22,108,60,0.08); border-color:rgba(22,108,60,0.3); color:var(--primary); }
+    .job-item { display:none; }
+    .job-item.visible { display:block; }
+    @keyframes countUp { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:translateY(0); } }
+    .stat-anim { animation: countUp .5s ease forwards; }
+    .value-icon-wrap { background:linear-gradient(135deg,#006948,#1e8f50); }
+    .team-avatar { width:48px; height:48px; border-radius:50%; border:3px solid white; font-weight:800; display:flex; align-items:center; justify-content:center; color:white; font-size:14px; }
+
+  </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+
+    <div id="nav-bar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("nav-bar").innerHTML = data;
+        });
+    </script>
+
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+<section class="relative pt-[72px] overflow-hidden" style="background:linear-gradient(135deg,#0a1a10 0%,#0f2318 55%,#0d1f15 100%);">
+  <!-- BG decorations -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <div class="absolute top-0 right-1/4 w-[700px] h-[700px] rounded-full opacity-[0.18]" style="background:radial-gradient(circle,#166c3c 0%,transparent 65%)"></div>
+    <div class="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-10" style="background:radial-gradient(circle,#1e8f50 0%,transparent 70%)"></div>
+    <svg class="absolute inset-0 w-full h-full opacity-[0.035]" xmlns="http://www.w3.org/2000/svg">
+      <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="#a2f5b8" stroke-width="1"/></pattern></defs>
+      <rect width="100%" height="100%" fill="url(#grid)"/>
+    </svg>
+  </div>
+  <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-0">
+    <div class="grid lg:grid-cols-12 gap-12 items-center pb-24">
+      <!-- Left -->
+      <div class="lg:col-span-7">
+        <div class="inline-flex items-center gap-2 px-4 py-2 mb-7 rounded-full text-xs font-bold tracking-widest uppercase" style="background:rgba(162,245,184,0.1);color:#a2f5b8;border:1px solid rgba(162,245,184,0.2);">
+          <span class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-pulse"></span>
+          We're Hiring · Noida, India
+        </div>
+        <h1 class="font-extrabold text-white tracking-tighter leading-[0.93] mb-6" style="font-size:clamp(3rem,6.5vw,5.5rem);">
+          Build the future of<br/><span class="italic" style="color:#87d89d;">quick commerce.</span>
+        </h1>
+        <p class="text-xl leading-relaxed mb-10 max-w-xl" style="color:rgba(255,255,255,0.5);">
+          We're a small, fast-moving team helping 500+ founders launch their businesses in 7 days. Join us and work on problems that actually matter — at a pace that'll make you better.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#open-roles" class="btn-primary px-8 py-4 rounded-xl font-bold text-base inline-flex items-center gap-2" style="box-shadow:0 8px 32px rgba(22,108,60,0.4);">
+            <span class="material-symbols-outlined">work</span>View Open Roles
+          </a>
+          <a href="mailto:careers@applume.io" class="inline-flex items-center gap-2 px-8 py-4 rounded-xl font-bold text-base transition-all hover:-translate-y-0.5" style="background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);color:white;">
+            <span class="material-symbols-outlined">mail</span>Send Your CV
+          </a>
+        </div>
+      </div>
+      <!-- Right: team avatars + stats -->
+      <div class="lg:col-span-5">
+        <!-- Team photo cluster -->
+        <div class="relative mb-8">
+          <div class="rounded-3xl p-8 relative overflow-hidden" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);">
+            <p class="text-xs font-bold uppercase tracking-widest mb-4" style="color:rgba(255,255,255,0.35);">Our Team</p>
+            <div class="flex items-center gap-1 mb-5">
+              <div class="team-avatar" style="background:linear-gradient(135deg,#166c3c,#1e8f50)">RK</div>
+              <div class="team-avatar -ml-3" style="background:linear-gradient(135deg,#6d28d9,#7c3aed)">AS</div>
+              <div class="team-avatar -ml-3" style="background:linear-gradient(135deg,#b45309,#d97706)">PM</div>
+              <div class="team-avatar -ml-3" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">NJ</div>
+              <div class="team-avatar -ml-3" style="background:linear-gradient(135deg,#9d174d,#ec4899)">SK</div>
+              <div class="team-avatar -ml-3 text-xs font-bold" style="background:rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);">+12</div>
+            </div>
+            <p class="font-bold text-white text-base mb-1">17 people. 0 bureaucracy.</p>
+            <p class="text-sm" style="color:rgba(255,255,255,0.4)">Everyone ships. Everyone matters. Zero managers for the sake of it.</p>
+          </div>
+        </div>
+        <!-- Hero stats -->
+        <div class="grid grid-cols-3 gap-3">
+          <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
+            <p class="font-headline text-3xl font-extrabold text-white mb-0.5">17</p>
+            <p class="text-xs" style="color:rgba(255,255,255,0.4)">Team size</p>
+          </div>
+          <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
+            <p class="font-headline text-3xl font-extrabold" style="color:#87d89d;">7</p>
+            <p class="text-xs" style="color:rgba(255,255,255,0.4)">Open roles</p>
+          </div>
+          <div class="rounded-2xl p-5 text-center" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);">
+            <p class="font-headline text-3xl font-extrabold text-white mb-0.5">4.9</p>
+            <p class="text-xs" style="color:rgba(255,255,255,0.4)">Glassdoor ★</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     MISSION STRIP
+═══════════════════════════════════════════════════ -->
+<section class="py-16 bg-surface-container-low border-y border-outline-variant/20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-3 gap-8 text-center">
+      <div class="reveal">
+        <p class="font-headline text-4xl font-extrabold text-primary mb-2">500+</p>
+        <p class="font-bold text-sm text-on-surface mb-1">Founders Launched</p>
+        <p class="text-xs text-on-surface-variant">Real businesses. Real revenue. Our work is their livelihood.</p>
+      </div>
+      <div class="reveal">
+        <p class="font-headline text-4xl font-extrabold text-primary mb-2">7 Days</p>
+        <p class="font-bold text-sm text-on-surface mb-1">App to App Store</p>
+        <p class="text-xs text-on-surface-variant">Every team member ships something that a founder uses within a week.</p>
+      </div>
+      <div class="reveal">
+        <p class="font-headline text-4xl font-extrabold text-primary mb-2">₹50Cr+</p>
+        <p class="font-bold text-sm text-on-surface mb-1">Revenue Enabled</p>
+        <p class="text-xs text-on-surface-variant">The platforms we build generate real revenue for real people.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CULTURE / VALUES
+═══════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block">Our Culture</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">
+        How we work &amp; <span class="text-primary italic">what we believe.</span>
+      </h2>
+      <p class="text-on-surface-variant text-lg max-w-2xl mx-auto leading-relaxed">
+        We're not a big company trying to feel like a startup. We're 17 people who are deeply obsessed with helping founders launch faster.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+
+      <!-- Value 1 -->
+      <div class="perk-card bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow">
+        <div class="value-icon-wrap w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <span class="material-symbols-outlined text-white fill-icon">rocket_launch</span>
+        </div>
+        <h3 class="font-extrabold text-lg mb-2 tracking-tight">Ship fast, learn faster</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">We don't have 6-month roadmaps. We have weekly releases. If you thrive in an environment where you can see your work live within days, you'll love it here.</p>
+      </div>
+
+      <!-- Value 2 -->
+      <div class="perk-card bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow">
+        <div class="value-icon-wrap w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <span class="material-symbols-outlined text-white fill-icon">handshake</span>
+        </div>
+        <h3 class="font-extrabold text-lg mb-2 tracking-tight">Founders, not users</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">The people who use what we build are putting their savings and dreams on the line. We take that seriously. Everything we ship is done with that weight in mind.</p>
+      </div>
+
+      <!-- Value 3 -->
+      <div class="perk-card bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow">
+        <div class="value-icon-wrap w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <span class="material-symbols-outlined text-white fill-icon">psychology</span>
+        </div>
+        <h3 class="font-extrabold text-lg mb-2 tracking-tight">Own it completely</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">No "that's not my job" here. If you see a problem, you fix it. Everyone here — engineers, designers, growth — has full context on what's shipping and why.</p>
+      </div>
+
+      <!-- Value 4 -->
+      <div class="perk-card bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow">
+        <div class="value-icon-wrap w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <span class="material-symbols-outlined text-white fill-icon">diversity_3</span>
+        </div>
+        <h3 class="font-extrabold text-lg mb-2 tracking-tight">Context over process</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">We give people context, not instructions. If you know why something matters, you'll make better decisions than any process document could tell you to make.</p>
+      </div>
+
+      <!-- Value 5 -->
+      <div class="perk-card bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow">
+        <div class="value-icon-wrap w-12 h-12 rounded-2xl flex items-center justify-center mb-5 shadow-sm">
+          <span class="material-symbols-outlined text-white fill-icon">trending_up</span>
+        </div>
+        <h3 class="font-extrabold text-lg mb-2 tracking-tight">Grow with the company</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">We're at an early stage where the work you do now shapes what the company looks like in 3 years. The people who join now will lead the functions they build.</p>
+      </div>
+
+      <!-- Value 6 — dark accent -->
+      <div class="perk-card rounded-3xl p-8 relative overflow-hidden" style="background:linear-gradient(135deg,#0d3320 0%,#1a3626 100%);box-shadow:0 8px 40px rgba(22,108,60,0.2);">
+        <div class="absolute top-0 right-0 w-40 h-40 opacity-10 rounded-full pointer-events-none" style="background:radial-gradient(circle,#4ade80 0%,transparent 70%)"></div>
+        <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-white fill-icon">balance</span>
+        </div>
+        <h3 class="font-extrabold text-lg mb-2 tracking-tight text-white">Work hard, rest well</h3>
+        <p class="text-white/65 text-sm leading-relaxed">We push hard during the week and actually switch off on weekends. High output doesn't mean always online. We believe in sustainable pace for a team that's here for the long run.</p>
+        <div class="mt-5 flex gap-4">
+          <div><p class="font-extrabold text-2xl text-emerald-400">5-day</p><p class="text-white/40 text-xs mt-0.5">Work week</p></div>
+          <div class="w-px bg-white/10"></div>
+          <div><p class="font-extrabold text-2xl text-emerald-400">Remote</p><p class="text-white/40 text-xs mt-0.5">Friendly</p></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     PERKS & BENEFITS
+═══════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block">Perks & Benefits</span>
+      <h2 class="font-headline text-4xl font-extrabold tracking-tighter">
+        What comes with the <span class="text-primary italic">job.</span>
+      </h2>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 reveal">
+
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow text-center perk-card">
+        <span class="material-symbols-outlined text-primary text-3xl fill-icon mb-3 block">laptop_mac</span>
+        <h4 class="font-bold text-sm mb-1">MacBook + Setup</h4>
+        <p class="text-xs text-on-surface-variant leading-snug">Top-spec MacBook Pro and a fully equipped home office setup on us.</p>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow text-center perk-card">
+        <span class="material-symbols-outlined text-primary text-3xl fill-icon mb-3 block">health_and_safety</span>
+        <h4 class="font-bold text-sm mb-1">Health Insurance</h4>
+        <p class="text-xs text-on-surface-variant leading-snug">Comprehensive health cover for you and your immediate family.</p>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow text-center perk-card">
+        <span class="material-symbols-outlined text-primary text-3xl fill-icon mb-3 block">home_work</span>
+        <h4 class="font-bold text-sm mb-1">Hybrid / Remote</h4>
+        <p class="text-xs text-on-surface-variant leading-snug">Work from our Noida office or fully remote — you choose what works.</p>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow text-center perk-card">
+        <span class="material-symbols-outlined text-primary text-3xl fill-icon mb-3 block">school</span>
+        <h4 class="font-bold text-sm mb-1">Learning Budget</h4>
+        <p class="text-xs text-on-surface-variant leading-snug">₹30,000/year for courses, books, conferences — invest in yourself.</p>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow text-center perk-card">
+        <span class="material-symbols-outlined text-primary text-3xl fill-icon mb-3 block">beach_access</span>
+        <h4 class="font-bold text-sm mb-1">Unlimited Leave</h4>
+        <p class="text-xs text-on-surface-variant leading-snug">No counting days. Take what you need, when you need it. We trust you.</p>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow text-center perk-card">
+        <span class="material-symbols-outlined text-primary text-3xl fill-icon mb-3 block">payments</span>
+        <h4 class="font-bold text-sm mb-1">Competitive Salary</h4>
+        <p class="text-xs text-on-surface-variant leading-snug">Top-of-market compensation + ESOP for early team members.</p>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow text-center perk-card">
+        <span class="material-symbols-outlined text-primary text-3xl fill-icon mb-3 block">lunch_dining</span>
+        <h4 class="font-bold text-sm mb-1">Team Lunches</h4>
+        <p class="text-xs text-on-surface-variant leading-snug">Weekly team lunches and quarterly off-sites to connect as humans.</p>
+      </div>
+
+      <div class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow text-center perk-card">
+        <span class="material-symbols-outlined text-primary text-3xl fill-icon mb-3 block">child_care</span>
+        <h4 class="font-bold text-sm mb-1">Parental Leave</h4>
+        <p class="text-xs text-on-surface-variant leading-snug">6 months fully paid maternity leave, 4 weeks paternity leave.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     OPEN ROLES
+═══════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface" id="open-roles">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block">Join the Team</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">
+        Open <span class="text-primary italic">positions.</span>
+      </h2>
+      <p class="text-on-surface-variant text-lg max-w-xl mx-auto">7 roles across engineering, design, growth, and operations. All based in Noida with remote options.</p>
+    </div>
+
+    <!-- Department filter -->
+    <div class="flex flex-wrap gap-3 justify-center mb-10 reveal">
+      <button class="dept-pill active px-5 py-2.5 rounded-full text-sm font-bold border border-outline-variant/30 text-on-surface-variant" onclick="filterJobs('all', this)">All Roles</button>
+      <button class="dept-pill px-5 py-2.5 rounded-full text-sm font-bold border border-outline-variant/30 text-on-surface-variant" onclick="filterJobs('engineering', this)">Engineering</button>
+      <button class="dept-pill px-5 py-2.5 rounded-full text-sm font-bold border border-outline-variant/30 text-on-surface-variant" onclick="filterJobs('design', this)">Design</button>
+      <button class="dept-pill px-5 py-2.5 rounded-full text-sm font-bold border border-outline-variant/30 text-on-surface-variant" onclick="filterJobs('growth', this)">Growth</button>
+      <button class="dept-pill px-5 py-2.5 rounded-full text-sm font-bold border border-outline-variant/30 text-on-surface-variant" onclick="filterJobs('operations', this)">Operations</button>
+    </div>
+
+    <!-- Jobs list -->
+    <div class="space-y-4 max-w-4xl mx-auto" id="jobs-list">
+
+      <!-- Engineering: Flutter -->
+      <div class="job-item visible" data-dept="engineering">
+        <a href="#apply" onclick="openApply('Senior Flutter Developer', 'Engineering')" class="job-card block bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/10 card-shadow">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 rounded-xl emerald-gradient flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-white text-xl fill-icon">code</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                  <h3 class="font-extrabold text-lg tracking-tight">Senior Flutter Developer</h3>
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" style="background:rgba(22,108,60,0.1);color:#166c3c;">New</span>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">work</span>Engineering</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span>Noida / Remote</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span>Full-time</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Build and maintain cross-platform mobile apps (iOS + Android) for our 7 quick commerce products. You'll own entire feature flows and ship weekly.</p>
+              </div>
+            </div>
+            <div class="shrink-0 flex items-center gap-2 btn-primary px-5 py-2.5 rounded-xl font-bold text-sm">
+              Apply <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Engineering: Backend -->
+      <div class="job-item visible" data-dept="engineering">
+        <a href="#apply" onclick="openApply('Backend Engineer — Node.js', 'Engineering')" class="job-card block bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/10 card-shadow">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 rounded-xl emerald-gradient flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-white text-xl fill-icon">storage</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                  <h3 class="font-extrabold text-lg tracking-tight">Backend Engineer — Node.js</h3>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">work</span>Engineering</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span>Noida / Remote</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span>Full-time</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Design and scale the API infrastructure powering our quick commerce platforms. Work with real-time order management, geolocation, and payments systems.</p>
+              </div>
+            </div>
+            <div class="shrink-0 flex items-center gap-2 btn-primary px-5 py-2.5 rounded-xl font-bold text-sm">
+              Apply <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Engineering: DevOps -->
+      <div class="job-item visible" data-dept="engineering">
+        <a href="#apply" onclick="openApply('DevOps / Infrastructure Engineer', 'Engineering')" class="job-card block bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/10 card-shadow">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 rounded-xl emerald-gradient flex items-center justify-center shrink-0">
+                <span class="material-symbols-outlined text-white text-xl fill-icon">cloud_done</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                  <h3 class="font-extrabold text-lg tracking-tight">DevOps / Infrastructure Engineer</h3>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">work</span>Engineering</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span>Noida / Remote</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span>Full-time</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Own the AWS infrastructure for 500+ live client platforms. Ensure 99.9% uptime across all deployments and build CI/CD pipelines that let us ship in 7 days.</p>
+              </div>
+            </div>
+            <div class="shrink-0 flex items-center gap-2 btn-primary px-5 py-2.5 rounded-xl font-bold text-sm">
+              Apply <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Design: Product Designer -->
+      <div class="job-item visible" data-dept="design">
+        <a href="#apply" onclick="openApply('Product Designer', 'Design')" class="job-card block bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/10 card-shadow">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:linear-gradient(135deg,#6d28d9,#7c3aed)">
+                <span class="material-symbols-outlined text-white text-xl fill-icon">palette</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                  <h3 class="font-extrabold text-lg tracking-tight">Product Designer</h3>
+                  <span class="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full" style="background:rgba(109,40,217,0.1);color:#6d28d9;">Urgent</span>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">work</span>Design</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span>Noida / Hybrid</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span>Full-time</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Design beautiful, conversion-optimised UX across all 7 of our product verticals. Own the design system and ship full product screens every week.</p>
+              </div>
+            </div>
+            <div class="shrink-0 flex items-center gap-2 btn-primary px-5 py-2.5 rounded-xl font-bold text-sm">
+              Apply <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Growth: Content -->
+      <div class="job-item visible" data-dept="growth">
+        <a href="#apply" onclick="openApply('Content & SEO Strategist', 'Growth')" class="job-card block bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/10 card-shadow">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:linear-gradient(135deg,#b45309,#d97706)">
+                <span class="material-symbols-outlined text-white text-xl fill-icon">edit_note</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                  <h3 class="font-extrabold text-lg tracking-tight">Content & SEO Strategist</h3>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">work</span>Growth</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span>Remote</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span>Full-time</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Own Applume's content engine — blog posts, case studies, SEO strategy, and founder community content. Make us the go-to resource for quick commerce founders in India.</p>
+              </div>
+            </div>
+            <div class="shrink-0 flex items-center gap-2 btn-primary px-5 py-2.5 rounded-xl font-bold text-sm">
+              Apply <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Growth: Performance Marketing -->
+      <div class="job-item visible" data-dept="growth">
+        <a href="#apply" onclick="openApply('Performance Marketing Manager', 'Growth')" class="job-card block bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/10 card-shadow">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:linear-gradient(135deg,#b45309,#d97706)">
+                <span class="material-symbols-outlined text-white text-xl fill-icon">ads_click</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                  <h3 class="font-extrabold text-lg tracking-tight">Performance Marketing Manager</h3>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">work</span>Growth</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span>Noida / Remote</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span>Full-time</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Run paid acquisition across Google, Meta, and LinkedIn for Applume. Own the funnel from awareness to activation and obsess over CAC and LTV.</p>
+              </div>
+            </div>
+            <div class="shrink-0 flex items-center gap-2 btn-primary px-5 py-2.5 rounded-xl font-bold text-sm">
+              Apply <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Operations: Onboarding -->
+      <div class="job-item visible" data-dept="operations">
+        <a href="#apply" onclick="openApply('Customer Onboarding Specialist', 'Operations')" class="job-card block bg-surface-container-lowest rounded-2xl p-7 border border-outline-variant/10 card-shadow">
+          <div class="flex items-start justify-between gap-4">
+            <div class="flex items-start gap-5">
+              <div class="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style="background:linear-gradient(135deg,#0f766e,#14b8a6)">
+                <span class="material-symbols-outlined text-white text-xl fill-icon">support_agent</span>
+              </div>
+              <div>
+                <div class="flex items-center gap-2 flex-wrap mb-1.5">
+                  <h3 class="font-extrabold text-lg tracking-tight">Customer Onboarding Specialist</h3>
+                </div>
+                <div class="flex items-center gap-3 flex-wrap">
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">work</span>Operations</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">location_on</span>Noida</span>
+                  <span class="text-xs text-on-surface-variant flex items-center gap-1"><span class="material-symbols-outlined text-sm">schedule</span>Full-time</span>
+                </div>
+                <p class="text-sm text-on-surface-variant mt-2 leading-relaxed">Guide new founders through their 7-day launch journey. Be the human behind Applume's 7-day promise — configure platforms, coordinate teams, and make every launch seamless.</p>
+              </div>
+            </div>
+            <div class="shrink-0 flex items-center gap-2 btn-primary px-5 py-2.5 rounded-xl font-bold text-sm">
+              Apply <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+    </div>
+
+    <!-- No results message -->
+    <div id="no-jobs" class="hidden text-center py-16 text-on-surface-variant">
+      <span class="material-symbols-outlined text-5xl mb-4 block text-outline-variant">search_off</span>
+      <p class="font-bold text-lg">No open roles in this department right now.</p>
+      <p class="text-sm mt-2">Check back soon — or <a href="#general-app" class="text-primary hover:underline">send a general application.</a></p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     HIRING PROCESS
+═══════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block">Our Process</span>
+      <h2 class="font-headline text-4xl font-extrabold tracking-tighter">
+        How we hire — <span class="text-primary italic">no nonsense.</span>
+      </h2>
+      <p class="text-on-surface-variant text-base max-w-lg mx-auto mt-4">We respect your time. Our hiring process is designed to be fast, transparent, and to show you what it's actually like to work here.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 reveal">
+
+      <div class="relative bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow">
+        <div class="absolute top-6 right-6 font-headline text-6xl font-extrabold" style="color:rgba(22,108,60,0.07)">01</div>
+        <div class="w-12 h-12 rounded-2xl emerald-gradient flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-white fill-icon">description</span>
+        </div>
+        <h4 class="font-extrabold text-base mb-2">Apply Online</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed">Submit your CV and a short note on why you want to work on quick commerce. No cover letter essays — tell us what excites you in 3–4 sentences.</p>
+        <p class="text-xs text-primary font-bold mt-4">1–2 days response</p>
+      </div>
+
+      <div class="relative bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow">
+        <div class="absolute top-6 right-6 font-headline text-6xl font-extrabold" style="color:rgba(22,108,60,0.07)">02</div>
+        <div class="w-12 h-12 rounded-2xl emerald-gradient flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-white fill-icon">video_call</span>
+        </div>
+        <h4 class="font-extrabold text-base mb-2">30-Min Intro Call</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed">A casual video call with the hiring manager. We'll tell you everything about the role, the team, and the company. You ask us the hard questions.</p>
+        <p class="text-xs text-primary font-bold mt-4">30 minutes</p>
+      </div>
+
+      <div class="relative bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow">
+        <div class="absolute top-6 right-6 font-headline text-6xl font-extrabold" style="color:rgba(22,108,60,0.07)">03</div>
+        <div class="w-12 h-12 rounded-2xl emerald-gradient flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-white fill-icon">task_alt</span>
+        </div>
+        <h4 class="font-extrabold text-base mb-2">Take-Home Task</h4>
+        <p class="text-sm text-on-surface-variant leading-relaxed">A short, paid assignment that mirrors real work. Max 3–4 hours. We compensate your time regardless of outcome. No trick questions, no whiteboard puzzles.</p>
+        <p class="text-xs text-primary font-bold mt-4">Paid · 3–4 hours</p>
+      </div>
+
+      <div class="relative rounded-3xl p-8 relative overflow-hidden" style="background:linear-gradient(135deg,#0d3320 0%,#1a3626 100%);box-shadow:0 8px 40px rgba(22,108,60,0.2);">
+        <div class="absolute top-6 right-6 font-headline text-6xl font-extrabold" style="color:rgba(255,255,255,0.07)">04</div>
+        <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center mb-5">
+          <span class="material-symbols-outlined text-white fill-icon">handshake</span>
+        </div>
+        <h4 class="font-extrabold text-base mb-2 text-white">Offer & Onboard</h4>
+        <p class="text-sm text-white/60 leading-relaxed">If we're a fit, you'll have an offer within 24 hours of your final call. We move fast because we respect your time and don't believe in dragging things out.</p>
+        <p class="text-xs font-bold mt-4" style="color:#87d89d">Offer in 24 hours</p>
+      </div>
+
+    </div>
+    <p class="text-center text-sm text-on-surface-variant mt-8">Total process: <strong class="text-on-surface">under 2 weeks</strong> from application to offer.</p>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     APPLICATION MODAL / FORM
+═══════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface" id="apply">
+  <div class="max-w-4xl mx-auto px-6">
+    <div class="bg-surface-container-lowest rounded-3xl card-shadow border border-outline-variant/10 overflow-hidden">
+      <!-- Header -->
+      <div class="emerald-gradient p-8 md:p-10 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 opacity-10 pointer-events-none" style="background:radial-gradient(circle,white 0%,transparent 70%)"></div>
+        <div class="relative z-10">
+          <span class="text-primary-fixed/70 text-xs font-bold uppercase tracking-widest block mb-3">Apply Now</span>
+          <h2 class="font-headline text-3xl md:text-4xl font-extrabold text-white tracking-tighter mb-2" id="apply-role-title">Send Your Application</h2>
+          <p class="text-primary-fixed/70 text-sm" id="apply-role-dept">We'll get back to you within 48 hours.</p>
+        </div>
+      </div>
+      <!-- Form body -->
+      <div class="p-8 md:p-10">
+        <div class="space-y-5">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Full Name *</label>
+              <input type="text" placeholder="e.g. Rahul Mehta" class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm"/>
+            </div>
+            <div>
+              <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Email Address *</label>
+              <input type="email" placeholder="you@email.com" class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm"/>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <div>
+              <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Role Applying For *</label>
+              <select id="apply-role-select" class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm text-on-surface-variant appearance-none">
+                <option value="">Select a role...</option>
+                <option>Senior Flutter Developer</option>
+                <option>Backend Engineer — Node.js</option>
+                <option>DevOps / Infrastructure Engineer</option>
+                <option>Product Designer</option>
+                <option>Content & SEO Strategist</option>
+                <option>Performance Marketing Manager</option>
+                <option>Customer Onboarding Specialist</option>
+                <option>General Application</option>
+              </select>
+            </div>
+            <div>
+              <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Years of Experience</label>
+              <select class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm text-on-surface-variant appearance-none">
+                <option>0–1 years</option>
+                <option>2–3 years</option>
+                <option>4–6 years</option>
+                <option>7+ years</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">LinkedIn / Portfolio URL</label>
+            <input type="url" placeholder="https://linkedin.com/in/yourname" class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm"/>
+          </div>
+          <div>
+            <label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Why Applume? (3–4 sentences) *</label>
+            <textarea rows="4" placeholder="What excites you about building quick commerce platforms? What do you want to work on at Applume?" class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm resize-none"></textarea>
+          </div>
+          <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center justify-between pt-2">
+            <p class="text-xs text-on-surface-variant">We'll respond within 48 hours. No automated rejections — every application is read by a human.</p>
+            <button class="btn-primary px-8 py-4 rounded-xl font-bold text-base inline-flex items-center gap-2 shrink-0">
+              <span class="material-symbols-outlined">send</span> Submit Application
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     GENERAL APPLICATION STRIP
+═══════════════════════════════════════════════════ -->
+<section class="py-16 bg-surface-container-low border-t border-outline-variant/20" id="general-app">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+    <span class="material-symbols-outlined text-primary text-4xl fill-icon mb-4 block">diversity_1</span>
+    <h3 class="font-headline text-2xl font-extrabold tracking-tighter mb-3">Don't see your role?</h3>
+    <p class="text-on-surface-variant text-base leading-relaxed max-w-xl mx-auto mb-7">We're always looking for exceptional people. If you believe in what we're building and think you can contribute, send us a general application. We read every one.</p>
+    <a href="mailto:careers@applume.io" class="btn-primary px-8 py-4 rounded-xl font-bold text-base inline-flex items-center gap-2">
+      <span class="material-symbols-outlined">mail</span> careers@applume.io
+    </a>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════
+     CTA BANNER
+═══════════════════════════════════════════════════ -->
+<section class="relative overflow-hidden" style="background:linear-gradient(135deg,#0d4a28 0%,#166c3c 40%,#1e8f50 70%,#0d6e4a 100%);">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-20" style="background:radial-gradient(circle,#4ade80 0%,transparent 70%)"></div>
+    <div class="absolute -bottom-24 -right-24 w-[32rem] h-[32rem] rounded-full opacity-15" style="background:radial-gradient(circle,#86efac 0%,transparent 70%)"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+    <h2 class="font-headline text-4xl md:text-5xl font-extrabold text-white tracking-tighter mb-5">
+      Come build something that matters.
+    </h2>
+    <p class="text-emerald-100/70 text-lg max-w-xl mx-auto mb-10">
+      500+ founders have launched their businesses on Applume. Join the team that makes it happen — in 7 days.
+    </p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#open-roles" class="inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all shadow-lg hover:-translate-y-0.5 duration-200">
+        <span class="material-symbols-outlined">work</span>See Open Roles
+      </a>
+      <a href="mailto:careers@applume.io" class="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-all duration-200">
+        <span class="material-symbols-outlined">mail</span>Email Us Directly
+      </a>
+    </div>
+  </div>
+</section>
+
+
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+<script>
+  // Mobile menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    hamburger.querySelector('.material-symbols-outlined').textContent =
+      mobileMenu.classList.contains('open') ? 'close' : 'menu';
+  });
+
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => { el.classList.add('anim'); observer.observe(el); });
+
+  // Department filter
+  function filterJobs(dept, btn) {
+    // Update pills
+    document.querySelectorAll('.dept-pill').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+
+    // Filter cards
+    const items = document.querySelectorAll('.job-item');
+    let visible = 0;
+    items.forEach(item => {
+      const show = dept === 'all' || item.dataset.dept === dept;
+      item.classList.toggle('visible', show);
+      item.style.display = show ? 'block' : 'none';
+      if (show) visible++;
+    });
+
+    document.getElementById('no-jobs').classList.toggle('hidden', visible > 0);
+  }
+
+  // Pre-set display for all items (override .visible CSS default)
+  document.querySelectorAll('.job-item').forEach(el => { el.style.display = 'block'; });
+
+  // Open apply modal with pre-filled role
+  function openApply(role, dept) {
+    document.getElementById('apply-role-title').textContent = 'Apply for: ' + role;
+    document.getElementById('apply-role-dept').textContent = dept + ' · We'll get back to you within 48 hours.';
+    const sel = document.getElementById('apply-role-select');
+    for (let opt of sel.options) {
+      if (opt.value === role || opt.text === role) { sel.value = opt.value || opt.text; break; }
+    }
+    document.getElementById('apply').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    return false;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,1185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-commerce App | Applume — Launch Your Online Store in 7 Days</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#166c3c",
+            "primary-dark": "#0d4a28",
+            "primary-light": "#1e8f50",
+            "primary-fixed": "#a2f5b8",
+            "primary-fixed-dim": "#87d89d",
+            "primary-container": "#bdf1ca",
+            "on-primary": "#ffffff",
+            "on-primary-container": "#00210d",
+            "on-primary-fixed": "#00210d",
+            "on-primary-fixed-variant": "#00522a",
+            secondary: "#53634f",
+            "secondary-container": "#d7e8cf",
+            "secondary-fixed": "#d7e8cf",
+            "secondary-fixed-dim": "#bbcbb4",
+            "on-secondary": "#ffffff",
+            "on-secondary-container": "#111f0f",
+            "on-secondary-fixed": "#111f0f",
+            "on-secondary-fixed-variant": "#394d14",
+            tertiary: "#5d5e61",
+            "tertiary-container": "#e1e2e5",
+            "tertiary-fixed": "#e4e2dc",
+            "tertiary-fixed-dim": "#c8c6c1",
+            "on-tertiary": "#ffffff",
+            "on-tertiary-container": "#1d1c1a",
+            "on-tertiary-fixed": "#1b1c18",
+            "on-tertiary-fixed-variant": "#474743",
+            error: "#ba1a1a",
+            "error-container": "#ffdad6",
+            "on-error": "#ffffff",
+            "on-error-container": "#93000a",
+            background: "#F6F6F6",
+            surface: "#F6F6F6",
+            "surface-dim": "#d9dbd8",
+            "surface-bright": "#f6f6f6",
+            "surface-variant": "#dee5dc",
+            "surface-container-lowest": "#ffffff",
+            "surface-container-low": "#f1f4f1",
+            "surface-container": "#edf0ed",
+            "surface-container-high": "#e7e9e6",
+            "surface-container-highest": "#e1e3e0",
+            "on-surface": "#191c19",
+            "on-surface-variant": "#414941",
+            "on-background": "#191c19",
+            outline: "#717971",
+            "outline-variant": "#c1c9be",
+            "inverse-surface": "#2e312e",
+            "inverse-on-surface": "#f0f1ec",
+            "inverse-primary": "#87d89d",
+            "surface-tint": "#166c3c",
+          },
+          fontFamily: {
+            headline: ["Nunito Sans", "sans-serif"],
+            body: ["Nunito Sans", "sans-serif"],
+            label: ["Nunito Sans", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            sm: "0.25rem",
+            md: "0.5rem",
+            lg: "0.75rem",
+            xl: "1rem",
+            "2xl": "1.5rem",
+            "3xl": "2rem",
+            full: "9999px",
+          },
+          animation: {
+            "float": "float 6s ease-in-out infinite",
+            "float-delay": "float 6s ease-in-out 2s infinite",
+            "spin-slow": "spin 20s linear infinite",
+            "pulse-slow": "pulse 4s ease-in-out infinite",
+            "slide-up": "slideUp 0.6s ease-out forwards",
+            "fade-in": "fadeIn 0.8s ease-out forwards",
+            "marquee": "marquee 30s linear infinite",
+          },
+          keyframes: {
+            float: {
+              "0%, 100%": { transform: "translateY(0px)" },
+              "50%": { transform: "translateY(-16px)" },
+            },
+            slideUp: {
+              from: { opacity: "0", transform: "translateY(30px)" },
+              to: { opacity: "1", transform: "translateY(0)" },
+            },
+            fadeIn: {
+              from: { opacity: "0" },
+              to: { opacity: "1" },
+            },
+            marquee: {
+              "0%": { transform: "translateX(0)" },
+              "100%": { transform: "translateX(-50%)" },
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    :root {
+      --primary: #166c3c;
+      --primary-dark: #0d4a28;
+      --primary-light: #1e8f50;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: "Nunito Sans", sans-serif;
+      background-color: #F6F6F6;
+      color: #191c19;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .font-headline {
+      font-family: "Nunito Sans", sans-serif; font-weight: 800;
+    }
+
+    .material-symbols-outlined {
+      font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+    }
+    .fill-icon { font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24; }
+
+    /* Glass nav */
+    .glass-nav {
+      background: rgba(246, 246, 246, 0.85);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+    }
+
+    /* Mega menu — full width fixed */
+    .mega-menu {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-8px);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none;
+    }
+    .nav-item:hover .mega-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      pointer-events: all;
+    }
+
+    /* Gradients */
+    .emerald-gradient { background: linear-gradient(135deg, #006948 0%, #1e8f50 100%); }
+    .emerald-gradient-subtle { background: linear-gradient(135deg, rgba(22, 108, 60, 0.08) 0%, rgba(22, 108, 60, 0.03) 100%); }
+    .dark-gradient { background: linear-gradient(135deg, #0d1f15 0%, #1a3626 100%); }
+
+    /* Glow effects */
+    .glow-primary { box-shadow: 0 0 40px rgba(22, 108, 60, 0.2); }
+    .glow-primary-sm { box-shadow: 0 0 20px rgba(22, 108, 60, 0.15); }
+    .editorial-shadow { box-shadow: 0px 12px 40px rgba(26, 28, 28, 0.06); }
+    .card-shadow { box-shadow: 0 4px 24px rgba(26, 28, 28, 0.08); }
+
+    /* Glass surface */
+    .glass-surface {
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.5);
+    }
+
+    /* Noise texture overlay */
+    .noise::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      border-radius: inherit;
+    }
+
+    /* Hero orb */
+    .hero-orb {
+      background: radial-gradient(circle at center, rgba(22,108,60,0.15) 0%, transparent 70%);
+    }
+
+    /* Ticker */
+    .ticker-track { display: flex; width: max-content; }
+
+    /* Accordion */
+    .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+    .accordion-content.open { max-height: 400px; }
+
+    /* Active nav link */
+    .nav-link-active {
+      color: var(--primary);
+      position: relative;
+    }
+    .nav-link-active::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: var(--primary);
+      border-radius: 99px;
+    }
+
+    /* Scroll reveal — safe: visible by default, JS adds .anim */
+    .reveal { opacity: 1; transform: none; }
+    .reveal.anim { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.anim.visible { opacity: 1; transform: translateY(0); }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f1f4f1; }
+    ::-webkit-scrollbar-thumb { background: #c1c9be; border-radius: 99px; }
+    ::-webkit-scrollbar-thumb:hover { background: #717971; }
+
+    /* Mobile menu */
+    #mobile-menu {
+      transition: max-height 0.35s ease, opacity 0.35s ease;
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    #mobile-menu.open {
+      max-height: 80vh;
+      opacity: 1;
+      overflow-y: auto;
+    }
+
+    /* Button states */
+    .btn-primary {
+      background: linear-gradient(135deg, #006948, #1e8f50);
+      color: white;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.2s ease;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(22, 108, 60, 0.35); }
+    .btn-primary:active { transform: scale(0.97); }
+
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      transition: all 0.2s ease;
+    }
+    .btn-outline:hover { background: var(--primary); color: white; transform: translateY(-2px); }
+    .btn-outline:active { transform: scale(0.97); }
+
+    /* Plan card hover */
+    .plan-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .plan-card:hover { transform: translateY(-6px); }
+
+    /* Stat ring animation */
+    @keyframes ring-fill {
+      from { stroke-dashoffset: 300; }
+      to { stroke-dashoffset: var(--dash-offset); }
+    }
+
+    /* Floating badge */
+    @keyframes badgeFloat {
+      0%,100% { transform: translateY(0) rotate(-2deg); }
+      50% { transform: translateY(-8px) rotate(-2deg); }
+    }
+    .badge-float { animation: badgeFloat 4s ease-in-out infinite; }
+    .badge-float-2 { animation: badgeFloat 4s ease-in-out 1.5s infinite; }
+
+    /* Ticker */
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .ticker-inner { animation: ticker 28s linear infinite; }
+    .ticker-inner:hover { animation-play-state: paused; }
+  </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-on-primary-container">
+    <div id="nav-bar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("nav-bar").innerHTML = data;
+        });
+    </script>
+<!-- ═══════════════════════════════════════════════════
+     HERO — GROCERY
+═══════════════════════════════════════════════════ -->
+<section class="relative px-8 md:px-20 pt-[100px] pb-20 md:pt-[130px] md:pb-28 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center overflow-hidden" style="background:linear-gradient(135deg,#f5f0ff 0%,#ede9fe 45%,#F6F6F6 100%);">
+  <div class="absolute top-0 right-0 w-[600px] h-[600px] opacity-[0.06] pointer-events-none" style="background:radial-gradient(circle,#6d28d9 0%,transparent 65%);"></div>
+  <div class="space-y-8 max-w-2xl relative z-10">
+    <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold tracking-widest uppercase text-primary" style="background:rgba(22,108,60,0.08);border:1px solid rgba(22,108,60,0.2);">
+      <span class="w-2 h-2 rounded-full bg-primary inline-block animate-pulse"></span>
+      <span class="material-symbols-outlined text-sm fill-icon">shopping_cart</span>
+      E-commerce Suite
+    </div>
+    <h1 class="text-5xl md:text-7xl font-extrabold text-on-surface leading-[1.05] tracking-tighter">
+      Launch Your <span class="italic" style="color:#6d28d9;">Online Store</span> in 7 Days
+    </h1>
+    <p class="text-on-surface-variant text-xl leading-relaxed">Deploy a full-stack multi-vendor marketplace. From product listings to order management — built to scale with your business ambition.</p>
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+      <a href="pricing.html" class="btn-primary px-8 py-4 rounded-xl text-lg font-bold inline-flex items-center gap-2.5" style="box-shadow:0 8px 32px rgba(22,108,60,0.35);">
+        <span class="material-symbols-outlined text-xl">rocket_launch</span>Get Started Now
+      </a>
+    </div>
+  </div>
+  <div class="relative lg:h-[600px] flex items-center justify-center">
+    <div class="absolute inset-0 bg-primary/5 rounded-full blur-3xl scale-75 -z-10"></div>
+    <div class="badge-float absolute top-8 -left-4 z-20 bg-white rounded-2xl px-4 py-3 card-shadow border border-outline-variant/10 flex items-center gap-3">
+      <div class="w-9 h-9 rounded-xl emerald-gradient flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-white text-base fill-icon">bolt</span></div>
+      <div><p class="font-extrabold text-sm leading-tight">7 Days</p><p class="text-xs text-on-surface-variant">Avg launch</p></div>
+    </div>
+    <div class="badge-float-2 absolute bottom-16 -right-2 z-20 bg-white rounded-2xl px-4 py-3 card-shadow border border-outline-variant/10">
+      <div class="flex items-center gap-1.5 mb-1"><span class="w-2 h-2 rounded-full bg-emerald-400 inline-block animate-pulse"></span><span class="text-[10px] font-bold text-emerald-600 uppercase tracking-wider">E-commerce Live</span></div>
+      <p class="font-extrabold text-lg leading-none">10,000+ Orders</p><p class="text-xs text-on-surface-variant mt-0.5">This month</p>
+    </div>
+    <img alt="Product Mockup" class="w-full max-w-lg object-contain rounded-3xl" style="filter:drop-shadow(0 24px 48px rgba(22,108,60,0.14));" src="./assets/ecommerce.webp">
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     STATS BANNER
+═══════════════════════════════════════════════════ -->
+<section class="py-16 bg-surface-container-low border-y border-outline-variant/20">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="emerald-gradient p-8 rounded-2xl flex flex-col items-center text-center relative overflow-hidden glow-primary">
+        <div class="absolute inset-0 opacity-10"><div class="absolute -top-8 -right-8 w-32 h-32 rounded-full bg-white"></div><div class="absolute -bottom-8 -left-8 w-24 h-24 rounded-full bg-white"></div></div>
+        <span class="material-symbols-outlined text-primary-fixed text-4xl mb-3 animate-pulse fill-icon">bolt</span>
+        <h3 class="text-3xl font-headline font-extrabold text-white mb-1">7-Day Launch</h3>
+        <p class="text-primary-fixed/80 text-sm font-medium">From concept to App Store in record time.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center text-center border border-outline-variant/20 card-shadow plan-card">
+        <span class="material-symbols-outlined text-primary text-4xl mb-3">shopping_cart</span>
+        <h3 class="text-3xl font-headline font-extrabold mb-1">Multi-vendor Ready</h3>
+        <p class="text-on-surface-variant text-sm">Sellers, buyers & admin in one.</p>
+      </div>
+      <div class="bg-surface-container-lowest p-8 rounded-2xl flex flex-col items-center text-center border border-outline-variant/20 card-shadow plan-card">
+        <span class="material-symbols-outlined text-primary text-4xl mb-3">verified_user</span>
+        <h3 class="text-3xl font-headline font-extrabold mb-1">100% Owned</h3>
+        <p class="text-on-surface-variant text-sm">Your data, your IP, your future.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     TRUST LOGOS TICKER
+═══════════════════════════════════════════════════ -->
+<section class="py-14 bg-surface overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 text-center mb-8">
+    <p class="text-xs font-bold tracking-[0.25em] uppercase text-on-surface-variant/50">Trusted by 500+ Visionary Founders</p>
+  </div>
+   <div
+        class="max-w-7xl mx-auto flex flex-wrap justify-center items-center gap-12 lg:gap-24"
+      >
+        <div class="" style="">
+          <img src="./assets/astrotalk.webp" alt="astrotalk" />
+        </div>
+        <div class="" style="">
+          <img src="./assets/broopi.webp" alt="broopi" />
+        </div>
+        <div class="" style="">
+          <img src="./assets/feel-good.webp" alt="feel-good" />
+        </div>
+        <div class="text-2xl font-black italic tracking-tighter" style="">
+          <img src="./assets/health-mug.webp" alt="health" />
+        </div>
+        <div class="" style="">
+          <img src="./assets/number-dekho.webp" alt="number" />
+        </div>
+      </div>
+</section>
+
+<!-- BUILD VS BUY -->
+<section class="py-24 bg-surface">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center mb-14 reveal">
+      <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block">Why Applume</span>
+      <h2 class="font-headline text-4xl font-extrabold tracking-tighter">
+        Build it vs <span class="text-primary italic">buy it.</span>
+      </h2>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-5 reveal">
+      <!-- Build from scratch -->
+      <div class="rounded-3xl p-8 border-2 border-outline-variant/20 bg-surface-container-lowest">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-error/10 flex items-center justify-center"><span class="material-symbols-outlined text-error text-xl">build</span></div>
+          <h3 class="font-bold text-base">Build from Scratch</h3>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-error text-base mt-0.5 fill-icon">cancel</span><span>6–12 months development</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-error text-base mt-0.5 fill-icon">cancel</span><span>₹30–80 lakh upfront cost</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-error text-base mt-0.5 fill-icon">cancel</span><span>Large dev team required</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-error text-base mt-0.5 fill-icon">cancel</span><span>High risk of delays &amp; bugs</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-error text-base mt-0.5 fill-icon">cancel</span><span>Ongoing maintenance burden</span></li>
+        </ul>
+      </div>
+      <!-- Applume highlighted -->
+      <div class="rounded-3xl p-8 relative overflow-hidden" style="background:linear-gradient(135deg,#0d3320 0%,#1a3626 100%);box-shadow:0 16px 60px rgba(22,108,60,0.25);">
+        <div class="absolute top-4 right-4 bg-emerald-400 text-on-surface text-[9px] font-extrabold uppercase tracking-widest px-3 py-1 rounded-full">Recommended</div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center"><span class="material-symbols-outlined text-white text-xl fill-icon">rocket_launch</span></div>
+          <h3 class="font-bold text-base text-white">Applume</h3>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2.5 text-sm text-white/80"><span class="material-symbols-outlined text-emerald-400 text-base mt-0.5 fill-icon">check_circle</span><span>Live in <strong class="text-white">7 days</strong></span></li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80"><span class="material-symbols-outlined text-emerald-400 text-base mt-0.5 fill-icon">check_circle</span><span>Affordable plans available</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80"><span class="material-symbols-outlined text-emerald-400 text-base mt-0.5 fill-icon">check_circle</span><span>Zero developers needed</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80"><span class="material-symbols-outlined text-emerald-400 text-base mt-0.5 fill-icon">check_circle</span><span>Battle-tested infrastructure</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-white/80"><span class="material-symbols-outlined text-emerald-400 text-base mt-0.5 fill-icon">check_circle</span><span>24/7 support included</span></li>
+        </ul>
+        <a href="pricing.html" class="mt-8 w-full btn-primary py-3 rounded-xl font-bold text-sm flex items-center justify-center gap-2 block text-center">Get Started Now</a>
+      </div>
+      <!-- Other platforms -->
+      <div class="rounded-3xl p-8 border-2 border-outline-variant/20 bg-surface-container-lowest">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-10 h-10 rounded-xl bg-surface-container flex items-center justify-center"><span class="material-symbols-outlined text-on-surface-variant text-xl">content_copy</span></div>
+          <h3 class="font-bold text-base">Other Platforms</h3>
+        </div>
+        <ul class="space-y-3">
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-outline text-base mt-0.5 fill-icon">remove_circle</span><span>2–4 weeks setup</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-outline text-base mt-0.5 fill-icon">remove_circle</span><span>High monthly fees</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-outline text-base mt-0.5 fill-icon">remove_circle</span><span>Limited customization</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-outline text-base mt-0.5 fill-icon">remove_circle</span><span>No source code access</span></li>
+          <li class="flex items-start gap-2.5 text-sm text-on-surface-variant"><span class="material-symbols-outlined text-outline text-base mt-0.5 fill-icon">remove_circle</span><span>Vendor lock-in risk</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FEATURES
+═══════════════════════════════════════════════════ -->
+<section class="bg-surface py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-10 reveal">
+      <div>
+        <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-2 block">What's Included</span>
+        <h2 class="font-headline text-4xl lg:text-5xl font-extrabold tracking-tighter text-on-surface leading-tight">Everything your <span class="text-primary italic">platform needs.</span></h2>
+      </div>
+      <div class="hidden md:flex items-center gap-6">
+        <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full emerald-gradient flex items-center justify-center text-white font-extrabold text-[10px]">1</div><span class="text-xs font-semibold text-on-surface-variant">Customer Shopping App</span></div>
+        <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full emerald-gradient flex items-center justify-center text-white font-extrabold text-[10px]">2</div><span class="text-xs font-semibold text-on-surface-variant">Seller / Vendor Panel</span></div>
+        <div class="flex items-center gap-2"><div class="w-6 h-6 rounded-full emerald-gradient flex items-center justify-center text-white font-extrabold text-[10px]">3</div><span class="text-xs font-semibold text-on-surface-variant">Super Admin Dashboard</div>
+      </div>
+    </div>
+    <div class="flex flex-col gap-6">
+      <!-- CARD 01 -->
+      <div class="rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 bg-surface-container-lowest grid lg:grid-cols-2 reveal" style="min-height:520px;">
+        <div class="p-10 flex flex-col justify-center">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">01</span>
+            <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Buyer Experience</span>
+          </div>
+          <h3 class="font-headline text-3xl lg:text-4xl font-extrabold tracking-tighter mb-3">Customer Shopping App</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-6">A seamless, conversion-optimised shopping experience — browse, search, cart, and checkout in seconds.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg emerald-gradient text-white flex items-center justify-center font-extrabold text-xs shadow-sm mt-0.5">1</div><div><h4 class="font-bold text-sm text-on-surface">Smart Product Discovery</h4><p class="text-on-surface-variant text-xs leading-relaxed mt-0.5">AI-powered search and personalised recommendations keep buyers engaged and purchasing.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg emerald-gradient text-white flex items-center justify-center font-extrabold text-xs shadow-sm mt-0.5">2</div><div><h4 class="font-bold text-sm text-on-surface">Multi-Vendor Cart</h4><p class="text-on-surface-variant text-xs leading-relaxed mt-0.5">Shop from multiple sellers in one cart — combined checkout, split delivery tracking.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg emerald-gradient text-white flex items-center justify-center font-extrabold text-xs shadow-sm mt-0.5">3</div><div><h4 class="font-bold text-sm text-on-surface">Secure Payments</h4><p class="text-on-surface-variant text-xs leading-relaxed mt-0.5">Razorpay, UPI, cards, wallets — every payment method your customers expect.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg emerald-gradient text-white flex items-center justify-center font-extrabold text-xs shadow-sm mt-0.5">4</div><div><h4 class="font-bold text-sm text-on-surface">Order Tracking</h4><p class="text-on-surface-variant text-xs leading-relaxed mt-0.5">Real-time order status and delivery tracking from confirmation to doorstep.</p></div></li>
+          </ul>
+        </div>
+        <div class="hidden lg:flex bg-surface-container-low items-center justify-center p-8 relative h-[560px]">
+          <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+          <img src="./assets/customer.png" alt="Customer Shopping App" class="w-full h-full object-contain" style="filter:drop-shadow(0 12px 32px rgba(22,108,60,0.18));">
+        </div>
+      </div>
+      <!-- CARD 02 -->
+      <div class="rounded-3xl overflow-hidden card-shadow grid lg:grid-cols-2 reveal" style="background:linear-gradient(135deg,#0d1f15 0%,#1a3626 100%);min-height:520px;">
+        <div class="p-10 flex flex-col justify-center">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">02</span>
+            <span class="bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Seller Experience</span>
+          </div>
+          <h3 class="font-headline text-3xl lg:text-4xl font-extrabold tracking-tighter mb-3 text-white">Seller / Vendor Panel</h3>
+          <p class="text-emerald-100/70 text-sm leading-relaxed mb-6">Give every seller a powerful self-service dashboard — manage products, orders, and payouts independently.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 flex items-center justify-center font-extrabold text-xs mt-0.5">1</div><div><h4 class="font-bold text-sm text-white">Product Catalogue Management</h4><p class="text-emerald-100/60 text-xs leading-relaxed mt-0.5">Bulk upload, variants, pricing tiers, and inventory — all in one clean interface.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 flex items-center justify-center font-extrabold text-xs mt-0.5">2</div><div><h4 class="font-bold text-sm text-white">Order & Fulfilment Control</h4><p class="text-emerald-100/60 text-xs leading-relaxed mt-0.5">Accept, process, and dispatch orders with live status updates pushed to buyers.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 flex items-center justify-center font-extrabold text-xs mt-0.5">3</div><div><h4 class="font-bold text-sm text-white">Earnings & Payouts</h4><p class="text-emerald-100/60 text-xs leading-relaxed mt-0.5">Transparent commission structure and instant payout visibility for every transaction.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg bg-emerald-500/30 border border-emerald-500/40 text-emerald-300 flex items-center justify-center font-extrabold text-xs mt-0.5">4</div><div><h4 class="font-bold text-sm text-white">Analytics Dashboard</h4><p class="text-emerald-100/60 text-xs leading-relaxed mt-0.5">Sales trends, top products, and return rates — data that helps sellers grow.</p></div></li>
+          </ul>
+        </div>
+        <div class="hidden lg:flex items-center justify-center p-8 relative" style="background:rgba(255,255,255,0.04);">
+          <img src="./assets/vendor.png" alt="Seller / Vendor Panel" class="w-full h-full object-contain" style="filter:drop-shadow(0 12px 32px rgba(16,185,129,0.25));">
+        </div>
+      </div>
+      <!-- CARD 03 -->
+      <div class="rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 bg-surface-container-lowest grid lg:grid-cols-2 reveal" style="min-height:520px;">
+        <div class="p-10 flex flex-col justify-center">
+          <div class="flex items-center gap-2 mb-5">
+            <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">03</span>
+            <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Operations Control</span>
+          </div>
+          <h3 class="font-headline text-3xl lg:text-4xl font-extrabold tracking-tighter mb-3">Super Admin Dashboard</h3>
+          <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Total platform control — manage all sellers, buyers, orders, commissions, and logistics from a single command centre.</p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg emerald-gradient text-white flex items-center justify-center font-extrabold text-xs shadow-sm mt-0.5">1</div><div><h4 class="font-bold text-sm text-on-surface">Seller Onboarding & KYC</h4><p class="text-on-surface-variant text-xs leading-relaxed mt-0.5">Approve, verify, and manage sellers with built-in KYC workflow and document checks.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg emerald-gradient text-white flex items-center justify-center font-extrabold text-xs shadow-sm mt-0.5">2</div><div><h4 class="font-bold text-sm text-on-surface">Platform Revenue Tracking</h4><p class="text-on-surface-variant text-xs leading-relaxed mt-0.5">Commission reports, GMV dashboards, and revenue breakdowns in real time.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg emerald-gradient text-white flex items-center justify-center font-extrabold text-xs shadow-sm mt-0.5">3</div><div><h4 class="font-bold text-sm text-on-surface">Dispute & Return Management</h4><p class="text-on-surface-variant text-xs leading-relaxed mt-0.5">Handle buyer disputes and return requests with a structured, automated workflow.</p></div></li>
+            <li class="flex items-start gap-3"><div class="flex-shrink-0 w-7 h-7 rounded-lg emerald-gradient text-white flex items-center justify-center font-extrabold text-xs shadow-sm mt-0.5">4</div><div><h4 class="font-bold text-sm text-on-surface">Promotions & Offers Engine</h4><p class="text-on-surface-variant text-xs leading-relaxed mt-0.5">Run flash sales, coupons, category deals, and banner promotions across the platform.</p></div></li>
+          </ul>
+        </div>
+        <div class="hidden lg:flex bg-surface-container-low items-center justify-center p-8 relative h-[560px]">
+          <div class="absolute inset-0 bg-primary/5 pointer-events-none"></div>
+          <img src="./assets/banner.png" alt="Super Admin Dashboard" class="w-full h-full object-contain" style="filter:drop-shadow(0 12px 32px rgba(22,108,60,0.18));">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+WHY CHOOSE US
+═══════════════════════════════════════════════════ -->
+<section class="py-24 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block">Why Applume</span>
+      <h2 class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter mb-4">The smarter way to<br/><span class="text-primary italic">build and launch.</span></h2>
+      <p class="text-on-surface-variant text-lg max-w-xl mx-auto leading-relaxed">Everything you need to go from idea to revenue-generating platform — without the usual cost, complexity, or delays.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 reveal">
+      <div class="bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow plan-card">
+        <div class="w-12 h-12 rounded-2xl emerald-gradient flex items-center justify-center mb-5 shadow-sm"><span class="material-symbols-outlined text-white fill-icon">bolt</span></div>
+        <h3 class="font-extrabold text-lg text-on-surface tracking-tight mb-2">Live in 7 Days</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Skip months of development. Our pre-built architecture means your branded app hits the App Store in exactly one week — every time.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow plan-card">
+        <div class="w-12 h-12 rounded-2xl emerald-gradient flex items-center justify-center mb-5 shadow-sm"><span class="material-symbols-outlined text-white fill-icon">savings</span></div>
+        <h3 class="font-extrabold text-lg text-on-surface tracking-tight mb-2">Affordable Pricing</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Enterprise-grade infrastructure at a startup-friendly price. No massive upfront investment. Launch lean, validate your market, then scale.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow plan-card">
+        <div class="w-12 h-12 rounded-2xl emerald-gradient flex items-center justify-center mb-5 shadow-sm"><span class="material-symbols-outlined text-white fill-icon">code_off</span></div>
+        <h3 class="font-extrabold text-lg text-on-surface tracking-tight mb-2">Zero Coding Required</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">You don't need a tech team. We handle the entire setup — development, configuration, deployment, and App Store submission.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow plan-card">
+        <div class="w-12 h-12 rounded-2xl emerald-gradient flex items-center justify-center mb-5 shadow-sm"><span class="material-symbols-outlined text-white fill-icon">verified_user</span></div>
+        <h3 class="font-extrabold text-lg text-on-surface tracking-tight mb-2">100% White-label</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">Your brand, your logo, your colors — applied across every screen. Customers see your business, not ours. Complete brand ownership.</p>
+      </div>
+      <div class="bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow plan-card">
+        <div class="w-12 h-12 rounded-2xl emerald-gradient flex items-center justify-center mb-5 shadow-sm"><span class="material-symbols-outlined text-white fill-icon">support_agent</span></div>
+        <h3 class="font-extrabold text-lg text-on-surface tracking-tight mb-2">24/7 Support</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed">We don't disappear after launch. Our team monitors your platform around the clock and is always on hand for updates, fixes, and growth.</p>
+      </div>
+      <div class="rounded-3xl p-8 relative overflow-hidden plan-card" style="background:linear-gradient(135deg,#0d3320 0%,#1a3626 100%);box-shadow:0 8px 40px rgba(22,108,60,0.2);">
+        <div class="absolute top-0 right-0 w-40 h-40 opacity-10 rounded-full" style="background:radial-gradient(circle,#4ade80 0%,transparent 70%);"></div>
+        <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center mb-5"><span class="material-symbols-outlined text-white fill-icon">trending_up</span></div>
+        <h3 class="font-extrabold text-lg text-white tracking-tight mb-2">Built to Scale</h3>
+        <p class="text-white/65 text-sm leading-relaxed">Our infrastructure handles growth automatically. From your first order to your millionth, the platform scales without you worrying about a single line of code.</p>
+        <div class="mt-6 flex items-center gap-3">
+          <div class="text-center"><p class="font-extrabold text-2xl text-emerald-400 leading-none">500+</p><p class="text-white/40 text-xs mt-1">Apps launched</p></div>
+          <div class="w-px h-8 bg-white/15"></div>
+          <div class="text-center"><p class="font-extrabold text-2xl text-emerald-400 leading-none">₹50Cr+</p><p class="text-white/40 text-xs mt-1">Revenue generated</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     MISSION SECTION
+═══════════════════════════════════════════════════ -->
+<section class="py-28 bg-surface-container-low overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="grid md:grid-cols-2 gap-20 items-center">
+      <div class="reveal relative">
+        <div class="w-full aspect-[4/5] rounded-3xl overflow-hidden editorial-shadow relative">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6HHECl82zEGllQtzq9_vDBdf2sXk1KUS5UA1N2PihUd1-yQ56zJYQF6I4Q5YOUJ3aLedxyYVA_tBDPdFFhUDEZzqbj3SHxyLu90eqXnV6zKsigKiKfmdqM7OpCbirYYg4maIK1wvmN-JR5MpdlsFGiSEcjV_npbG8juprj_n3bnMvMBv7KyaLywQT-317btAA9AHlKOGPpb3ssJW5ct93qJqBTSzQPjIiDH060ymi5WJ3Z6gAgZY-hF0VkDALnhBizngzurmw5-c" alt="Team working together" />
+          <div class="absolute inset-0" style="background:linear-gradient(to top,rgba(13,26,20,0.4),transparent 50%)"></div>
+        </div>
+        <div class="absolute -right-12 top-1/2 -translate-y-1/2 w-48 h-48 bg-primary-fixed rounded-full blur-3xl opacity-25 -z-10"></div>
+        <div class="absolute bottom-8 left-8 right-8 glass-surface p-5 rounded-2xl">
+          <div class="flex items-center justify-between">
+            <div><p class="text-2xl font-headline font-extrabold text-primary">500+</p><p class="text-xs text-on-surface-variant">Apps Launched</p></div>
+            <div class="w-px h-10 bg-outline-variant/30"></div>
+            <div><p class="text-2xl font-headline font-extrabold text-primary">₹50Cr+</p><p class="text-xs text-on-surface-variant">Revenue Generated</p></div>
+            <div class="w-px h-10 bg-outline-variant/30"></div>
+            <div><p class="text-2xl font-headline font-extrabold text-primary">98%</p><p class="text-xs text-on-surface-variant">Satisfaction Rate</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-4 block">Our Mission</span>
+        <h2 class="font-headline text-4xl md:text-5xl font-bold leading-tight mb-8 tracking-tight">
+          Remove the barriers of technology and turn ideas into <span class="text-primary italic"> real, revenue-generating</span> platforms.
+        </h2>
+        <div class="space-y-7">
+          <div class="flex gap-5">
+            <div class="w-12 h-12 shrink-0 rounded-2xl bg-white flex items-center justify-center card-shadow"><span class="material-symbols-outlined text-primary">speed</span></div>
+            <div><h4 class="font-bold text-base mb-1.5">Skip long development cycles</h4><p class="text-on-surface-variant text-sm leading-relaxed">We've pre-engineered the core. You focus on brand and market — we handle the complex architecture.</p></div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-12 h-12 shrink-0 rounded-2xl bg-white flex items-center justify-center card-shadow"><span class="material-symbols-outlined text-primary">savings</span></div>
+            <div><h4 class="font-bold text-base mb-1.5">Skip high upfront costs</h4><p class="text-on-surface-variant text-sm leading-relaxed">Don't burn your seed capital on infrastructure. Launch lean, validate fast, scale when ready.</p></div>
+          </div>
+          <div class="flex gap-5">
+            <div class="w-12 h-12 shrink-0 rounded-2xl bg-white flex items-center justify-center card-shadow"><span class="material-symbols-outlined text-primary">rocket_launch</span></div>
+            <div><h4 class="font-bold text-base mb-1.5">Launch in 7 days. Guaranteed.</h4><p class="text-on-surface-variant text-sm leading-relaxed">Our optimized process takes your idea to the App Store in exactly one week — every time.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="process-scroll-space" class="relative" style="height:400vh">
+  <div id="process-sticky" class="sticky top-0 h-screen overflow-hidden bg-surface-container-low">
+    <div class="h-full max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-0">
+      <!-- LEFT COL -->
+      <div class="lg:col-span-4 flex flex-col justify-center h-full py-16 lg:py-0 border-r border-outline-variant/20 pr-0 lg:pr-12">
+        <div class="flex items-center gap-2 mb-6">
+          <div class="h-px w-8 bg-primary/40"></div>
+          <span class="text-primary text-[10px] font-bold uppercase tracking-[0.3em]">How It Works</span>
+        </div>
+        <h2 class="font-headline text-4xl lg:text-5xl font-extrabold tracking-tighter text-on-surface leading-[1.08] mb-6">THE<br/><span class="text-primary">PROCESS</span></h2>
+        <p class="text-on-surface-variant text-base leading-relaxed max-w-xs mb-10">From idea to a live, revenue-generating app in as little as 7 days.</p>
+        <div class="flex flex-col gap-3">
+          <button class="ps-nav-pill group flex items-center gap-3 text-left transition-all duration-300" data-target="0">
+            <div class="ps-nav-num w-7 h-7 rounded-full border border-outline-variant/40 flex items-center justify-center text-[10px] font-extrabold text-on-surface-variant transition-all duration-300">1</div>
+            <span class="ps-nav-label text-sm font-semibold text-on-surface-variant transition-all duration-300">Sign Up</span>
+          </button>
+          <button class="ps-nav-pill group flex items-center gap-3 text-left transition-all duration-300" data-target="1">
+            <div class="ps-nav-num w-7 h-7 rounded-full border border-outline-variant/40 flex items-center justify-center text-[10px] font-extrabold text-on-surface-variant transition-all duration-300">2</div>
+            <span class="ps-nav-label text-sm font-semibold text-on-surface-variant transition-all duration-300">Build</span>
+          </button>
+          <button class="ps-nav-pill group flex items-center gap-3 text-left transition-all duration-300" data-target="2">
+            <div class="ps-nav-num w-7 h-7 rounded-full border border-outline-variant/40 flex items-center justify-center text-[10px] font-extrabold text-on-surface-variant transition-all duration-300">3</div>
+            <span class="ps-nav-label text-sm font-semibold text-on-surface-variant transition-all duration-300">Go Live</span>
+          </button>
+        </div>
+        <div class="mt-10 h-1 bg-outline-variant/20 rounded-full overflow-hidden max-w-[120px]">
+          <div id="ps-bar" class="h-full bg-primary rounded-full transition-all duration-150" style="width:0%"></div>
+        </div>
+      </div>
+      <!-- RIGHT COL -->
+      <div class="lg:col-span-8 flex items-center h-full py-16 lg:py-0 pl-0 lg:pl-16">
+        <div id="ps-panels" class="relative w-full" style="height:420px">
+          <!-- STEP 1 -->
+          <div class="ps-panel absolute inset-0" data-index="0">
+            <div class="h-full bg-white rounded-3xl p-10 lg:p-12 flex flex-col justify-between overflow-hidden relative border border-outline-variant/10" style="box-shadow:0 8px 40px rgba(22,108,60,0.08)">
+              <div class="relative z-10">
+                <div class="flex items-start justify-between mb-8">
+                  <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#166c3c,#1e8f50)">
+                    <span class="material-symbols-outlined text-white text-2xl fill-icon">person_add</span>
+                  </div>
+                  <span class="font-headline text-7xl font-extrabold leading-none select-none" style="color:rgba(22,108,60,0.08)">01</span>
+                </div>
+                <h3 class="font-headline text-3xl font-extrabold text-on-surface tracking-tight mb-4">Sign Up</h3>
+                <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">Tell us about your idea in a quick 30-minute call. Pick your app category — taxi, food delivery, home services, grocery, and more. No tech knowledge needed, zero commitment to start.</p>
+              </div>
+              <div class="relative z-10 flex flex-wrap gap-3 mt-8">
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">call</span><span class="text-on-surface text-xs font-semibold">Free 30-min call</span></div>
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">category</span><span class="text-on-surface text-xs font-semibold">Choose category</span></div>
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">verified</span><span class="text-on-surface text-xs font-semibold">No commitment</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- STEP 2 -->
+          <div class="ps-panel absolute inset-0" data-index="1" style="opacity:0;transform:translateY(64px)">
+            <div class="h-full bg-white rounded-3xl p-10 lg:p-12 flex flex-col justify-between overflow-hidden relative border border-outline-variant/10" style="box-shadow:0 8px 40px rgba(22,108,60,0.08)">
+              <div class="relative z-10">
+                <div class="flex items-start justify-between mb-8">
+                  <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#166c3c,#1e8f50)">
+                    <span class="material-symbols-outlined text-white text-2xl fill-icon">build</span>
+                  </div>
+                  <span class="font-headline text-7xl font-extrabold leading-none select-none" style="color:rgba(22,108,60,0.08)">02</span>
+                </div>
+                <h3 class="font-headline text-3xl font-extrabold text-on-surface tracking-tight mb-4">Build</h3>
+                <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">We apply your brand, configure payments, geolocation, and onboarding flows. You review a live demo build before anything goes public. We handle 100% of the technical setup.</p>
+              </div>
+              <div class="relative z-10 flex flex-wrap gap-3 mt-8">
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">palette</span><span class="text-on-surface text-xs font-semibold">Brand & logo</span></div>
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">payments</span><span class="text-on-surface text-xs font-semibold">Payment gateway</span></div>
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">location_on</span><span class="text-on-surface text-xs font-semibold">Live tracking</span></div>
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">preview</span><span class="text-on-surface text-xs font-semibold">Demo preview</span></div>
+              </div>
+            </div>
+          </div>
+          <!-- STEP 3 -->
+          <div class="ps-panel absolute inset-0" data-index="2" style="opacity:0;transform:translateY(64px)">
+            <div class="h-full bg-white rounded-3xl p-10 lg:p-12 flex flex-col justify-between overflow-hidden relative border border-outline-variant/10" style="box-shadow:0 8px 40px rgba(22,108,60,0.08)">
+              <div class="relative z-10">
+                <div class="flex items-start justify-between mb-8">
+                  <div class="w-14 h-14 rounded-2xl flex items-center justify-center" style="background:linear-gradient(135deg,#166c3c,#1e8f50)">
+                    <span class="material-symbols-outlined text-white text-2xl fill-icon">rocket_launch</span>
+                  </div>
+                  <span class="font-headline text-7xl font-extrabold leading-none select-none" style="color:rgba(22,108,60,0.08)">03</span>
+                </div>
+                <h3 class="font-headline text-3xl font-extrabold text-on-surface tracking-tight mb-4">Go Live</h3>
+                <p class="text-on-surface-variant text-base leading-relaxed max-w-lg">Your app goes live on iOS, Android and web in as little as 7 days. We handle App Store and Play Store submissions, server infrastructure, and stay on call for post-launch support.</p>
+              </div>
+              <div class="relative z-10 flex flex-wrap gap-3 mt-8">
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">phone_iphone</span><span class="text-on-surface text-xs font-semibold">iOS & Android</span></div>
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">web</span><span class="text-on-surface text-xs font-semibold">Web app</span></div>
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">schedule</span><span class="text-on-surface text-xs font-semibold">Live in 7 days</span></div>
+                <div class="flex items-center gap-2 bg-primary/8 border border-primary/15 rounded-xl px-4 py-2.5"><span class="material-symbols-outlined text-primary text-sm fill-icon">support_agent</span><span class="text-on-surface text-xs font-semibold">Post-launch support</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function loadScript(src,cb){var s=document.createElement('script');s.src=src;s.onload=cb;document.head.appendChild(s);}
+  function init(){
+    gsap.registerPlugin(ScrollTrigger);
+    var panels=gsap.utils.toArray('.ps-panel');
+    var navs=gsap.utils.toArray('.ps-nav-pill');
+    var bar=document.getElementById('ps-bar');
+    var TOTAL=panels.length;
+    var current=-1;
+    function activateNav(idx){
+      navs.forEach(function(n,i){
+        var num=n.querySelector('.ps-nav-num');
+        var label=n.querySelector('.ps-nav-label');
+        if(i===idx){num.style.background='#166c3c';num.style.borderColor='#166c3c';num.style.color='#fff';label.style.color='#166c3c';label.style.fontWeight='700';gsap.to(n,{x:6,duration:0.3,ease:'power2.out'});}
+        else{num.style.background='transparent';num.style.borderColor='rgba(113,121,113,0.4)';num.style.color='#717971';label.style.color='#717971';label.style.fontWeight='600';gsap.to(n,{x:0,duration:0.3,ease:'power2.out'});}
+      });
+    }
+    function showStep(idx){
+      if(idx===current)return;
+      var prev=current;current=idx;
+      activateNav(idx);
+      bar.style.width=(idx/(TOTAL-1))*100+'%';
+      if(prev>=0){gsap.to(panels[prev],{opacity:0,y:idx>prev?-50:50,duration:0.4,ease:'power2.in'});}
+      gsap.fromTo(panels[idx],{opacity:0,y:idx>prev?70:-70},{opacity:1,y:0,duration:0.6,ease:'power3.out'});
+    }
+    gsap.set(panels[0],{opacity:1,y:0});activateNav(0);current=0;bar.style.width='0%';
+    ScrollTrigger.create({trigger:'#process-scroll-space',start:'top top',end:'bottom bottom',
+      onUpdate:function(self){var idx=Math.min(Math.floor(self.progress*TOTAL),TOTAL-1);bar.style.width=self.progress*100+'%';showStep(idx);}
+    });
+    if(window.innerWidth<1024){
+      var sticky=document.getElementById('process-sticky');
+      var space=document.getElementById('process-scroll-space');
+      sticky.style.position='relative';sticky.style.height='auto';space.style.height='auto';
+      document.getElementById('ps-panels').style.position='relative';document.getElementById('ps-panels').style.height='auto';
+      panels.forEach(function(p){p.style.position='relative';p.style.opacity='1';p.style.transform='none';p.style.marginBottom='1.5rem';});
+    }
+  }
+  if(typeof gsap!=='undefined'&&typeof ScrollTrigger!=='undefined'){init();}
+  else{loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',function(){loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',init);});}
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+     SUCCESS STORIES  — GSAP Pinned Horizontal Scroll
+═══════════════════════════════════════════════════ -->
+<section id="cs-outer" class="bg-surface">
+  <div class="max-w-7xl mx-auto px-6 pt-20 pb-10">
+    <div class="flex items-end justify-between">
+      <div>
+        <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block">Success Stories</span>
+        <h2 class="font-headline text-4xl lg:text-5xl font-extrabold tracking-tighter leading-tight">
+          Brands that <span class="text-primary italic">launched</span> with Applume.
+        </h2>
+      </div>
+      <p class="hidden md:block text-on-surface-variant text-sm max-w-xs text-right leading-relaxed">Scroll down to explore their journeys →</p>
+    </div>
+  </div>
+  <div id="cs-pin-wrapper" class="relative overflow-hidden" style="height:100vh">
+    <div class="absolute top-0 left-0 right-0 h-[3px] bg-outline-variant/20 z-30">
+      <div id="cs-progress" class="h-full bg-gradient-to-r from-primary to-primary-light w-0 rounded-full"></div>
+    </div>
+    <div id="cs-counter" class="absolute top-6 right-6 z-30 flex items-center gap-2">
+      <span id="cs-current" class="font-headline text-3xl font-extrabold text-primary leading-none">01</span>
+      <span class="text-outline text-lg leading-none">/</span>
+      <span class="text-on-surface-variant text-lg font-medium leading-none">03</span>
+    </div>
+    <div id="cs-track" class="absolute top-0 left-0 flex items-center h-full" style="will-change:transform">
+
+      <!-- ── CARD 1 — Blue Basket ── -->
+      <div class="cs-card shrink-0 w-screen h-full flex items-center justify-center px-6 md:px-16">
+        <div class="w-full max-w-6xl bg-surface-container-lowest rounded-3xl overflow-hidden card-shadow grid lg:grid-cols-2 h-[480px] lg:h-[520px]">
+          <div class="p-10 lg:p-14 flex flex-col justify-center">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Grocery</span>
+              <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Quick Commerce</span>
+            </div>
+            <h3 class="font-headline text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight mb-5">
+              Blue Basket went live in <span class="text-primary">6 days</span> and hit 10,000 orders in month one.
+            </h3>
+            <blockquote class="text-base text-on-surface-variant leading-relaxed mb-7 italic border-l-4 border-primary pl-5">
+              "Applume had the entire grocery stack ready — user app, store panel, delivery tracking, payments. We just added our brand and we were live. The platform handled every order flawlessly."
+            </blockquote>
+            <div class="flex items-center gap-4 mt-auto">
+              <div class="w-11 h-11 rounded-full flex items-center justify-center shrink-0 font-bold text-white text-sm" style="background:linear-gradient(135deg,#065f46,#059669)">BB</div>
+              <div>
+                <p class="font-bold text-sm">Blue Basket</p>
+                <p class="text-xs text-on-surface-variant">Grocery Delivery · India</p>
+              </div>
+              <a href="case-studies.html" class="ml-auto text-primary text-sm font-bold flex items-center gap-1 hover:underline">Read story <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+            </div>
+          </div>
+          <div class="relative hidden lg:block overflow-hidden bg-surface-container-high">
+            <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?w=800&q=80" alt="Grocery delivery" class="w-full h-full object-cover opacity-30 mix-blend-multiply contrast-125"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="glass-surface p-10 rounded-2xl shadow-2xl text-center">
+                <div class="font-headline text-6xl font-extrabold text-primary mb-2">10k+</div>
+                <div class="text-sm font-bold uppercase tracking-widest text-on-surface">Orders in Month 1</div>
+                <div class="mt-4 flex gap-4 justify-center">
+                  <div class="text-center">
+                    <div class="font-headline text-2xl font-extrabold text-primary">6</div>
+                    <div class="text-[10px] uppercase tracking-wider text-on-surface-variant">Days to Launch</div>
+                  </div>
+                  <div class="w-px bg-outline-variant/30"></div>
+                  <div class="text-center">
+                    <div class="font-headline text-2xl font-extrabold text-primary">98%</div>
+                    <div class="text-[10px] uppercase tracking-wider text-on-surface-variant">Uptime</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 2 — Galimart ── -->
+      <div class="cs-card shrink-0 w-screen h-full flex items-center justify-center px-6 md:px-16">
+        <div class="w-full max-w-6xl rounded-3xl overflow-hidden card-shadow grid lg:grid-cols-2 h-[480px] lg:h-[520px]" style="background:linear-gradient(135deg,#0d1f15 0%,#1a3626 100%)">
+          <div class="p-10 lg:p-14 flex flex-col justify-center">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">E-commerce</span>
+              <span class="bg-emerald-500/20 text-emerald-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Multi-vendor</span>
+            </div>
+            <h3 class="font-headline text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight mb-5 text-white">
+              Galimart scaled to <span class="text-emerald-400">500+ sellers</span> in their first quarter.
+            </h3>
+            <blockquote class="text-base text-emerald-100/70 leading-relaxed mb-7 italic border-l-4 border-emerald-500 pl-5">
+              "We needed a multi-vendor platform fast. Applume built exactly what we imagined — seller onboarding, product listings, delivery tracking, and an admin panel that runs itself. Our sellers love it."
+            </blockquote>
+            <div class="flex items-center gap-4 mt-auto">
+              <div class="w-11 h-11 rounded-full bg-emerald-500/20 border border-emerald-500/30 flex items-center justify-center font-bold text-emerald-300 text-sm">GM</div>
+              <div>
+                <p class="font-bold text-sm text-white">Galimart</p>
+                <p class="text-xs text-emerald-300/70">E-commerce · India</p>
+              </div>
+              <a href="case-studies.html" class="ml-auto text-emerald-400 text-sm font-bold flex items-center gap-1 hover:underline">Read story <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+            </div>
+          </div>
+          <div class="relative hidden lg:block overflow-hidden" style="background:rgba(255,255,255,0.03)">
+            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=800&q=80" alt="E-commerce" class="w-full h-full object-cover opacity-20 mix-blend-luminosity"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="text-center">
+                <div class="font-headline text-7xl font-extrabold text-emerald-400 mb-2 leading-none">500+</div>
+                <div class="text-sm font-bold uppercase tracking-widest text-emerald-300/70">Active Sellers</div>
+                <div class="mt-6 flex gap-4 justify-center">
+                  <div class="text-center">
+                    <div class="font-headline text-3xl font-extrabold text-white">Q1</div>
+                    <div class="text-[10px] uppercase tracking-wider text-emerald-300/50">To Scale</div>
+                  </div>
+                  <div class="w-px bg-emerald-500/20"></div>
+                  <div class="text-center">
+                    <div class="font-headline text-3xl font-extrabold text-white">7d</div>
+                    <div class="text-[10px] uppercase tracking-wider text-emerald-300/50">Launch Time</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── CARD 3 — Dukancart ── -->
+      <div class="cs-card shrink-0 w-screen h-full flex items-center justify-center px-6 md:px-16">
+        <div class="w-full max-w-6xl bg-surface-container-lowest rounded-3xl overflow-hidden card-shadow grid lg:grid-cols-2 h-[480px] lg:h-[520px]">
+          <div class="p-10 lg:p-14 flex flex-col justify-center">
+            <div class="flex items-center gap-2 mb-5">
+              <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Grocery</span>
+              <span class="bg-primary/10 text-primary text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">Hyperlocal</span>
+            </div>
+            <h3 class="font-headline text-3xl lg:text-4xl font-extrabold tracking-tighter leading-tight mb-5">
+              Dukancart built a <span class="text-primary">hyperlocal empire</span> without a single dev hire.
+            </h3>
+            <blockquote class="text-base text-on-surface-variant leading-relaxed mb-7 italic border-l-4 border-primary pl-5">
+              "We're a team of two non-technical founders. Applume gave us a complete hyperlocal grocery platform — we run 3 cities now. Never wrote a single line of code. Our customers think we built it ourselves."
+            </blockquote>
+            <div class="flex items-center gap-4 mt-auto">
+              <div class="w-11 h-11 rounded-full flex items-center justify-center shrink-0 font-bold text-white text-sm" style="background:linear-gradient(135deg,#166c3c,#1e8f50)">DC</div>
+              <div>
+                <p class="font-bold text-sm">Dukancart</p>
+                <p class="text-xs text-on-surface-variant">Hyperlocal Grocery · 3 Cities</p>
+              </div>
+              <a href="case-studies.html" class="ml-auto text-primary text-sm font-bold flex items-center gap-1 hover:underline">Read story <span class="material-symbols-outlined text-base">arrow_forward</span></a>
+            </div>
+          </div>
+          <div class="relative hidden lg:block overflow-hidden bg-surface-container-high">
+            <img src="https://images.unsplash.com/photo-1578916171728-46686eac8d58?w=800&q=80" alt="Local store" class="w-full h-full object-cover opacity-25 mix-blend-multiply contrast-125"/>
+            <div class="absolute inset-0 flex items-center justify-center">
+              <div class="glass-surface p-10 rounded-2xl shadow-2xl text-center">
+                <div class="font-headline text-6xl font-extrabold text-primary mb-2">3</div>
+                <div class="text-sm font-bold uppercase tracking-widest text-on-surface">Cities Covered</div>
+                <div class="mt-4">
+                  <div class="text-xs text-on-surface-variant">0 developers hired</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3" id="cs-dots">
+      <button class="cs-dot w-8 h-2 rounded-full bg-primary transition-all duration-300" data-index="0"></button>
+      <button class="cs-dot w-2 h-2 rounded-full bg-outline-variant/40 transition-all duration-300" data-index="1"></button>
+      <button class="cs-dot w-2 h-2 rounded-full bg-outline-variant/40 transition-all duration-300" data-index="2"></button>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  function loadScript(src,cb){const s=document.createElement('script');s.src=src;s.onload=cb;document.head.appendChild(s);}
+  loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',function(){
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',function(){
+      gsap.registerPlugin(ScrollTrigger);
+      const isMobile=window.innerWidth<768;
+      const cards=gsap.utils.toArray('.cs-card');
+      const track=document.getElementById('cs-track');
+      const progress=document.getElementById('cs-progress');
+      const counter=document.getElementById('cs-current');
+      const dots=gsap.utils.toArray('.cs-dot');
+      const total=cards.length;
+      cards.forEach(function(card,i){if(i===0)return;gsap.set(card,{opacity:0.4,scale:0.92});});
+      if(!isMobile){
+        const tl=gsap.timeline({scrollTrigger:{trigger:'#cs-pin-wrapper',start:'top top',end:'+='+window.innerHeight*(total-1)*1.2,pin:true,scrub:1.2,anticipatePin:1,
+          onUpdate:function(self){
+            gsap.set(progress,{width:self.progress*100+'%'});
+            const idx=Math.round(self.progress*(total-1));
+            counter.textContent=String(idx+1).padStart(2,'0');
+            dots.forEach(function(d,i){if(i===idx){gsap.to(d,{width:32,backgroundColor:'#166c3c',duration:0.3});}else{gsap.to(d,{width:8,backgroundColor:'rgba(113,121,113,0.3)',duration:0.3});}});
+          }}});
+        tl.to(track,{x:'-'+(total-1)*100+'vw',ease:'none'},0);
+        cards.forEach(function(card,i){
+          if(i===0){tl.to(card,{opacity:0.4,scale:0.92,ease:'none'},(1/(total-1))*0.5);}
+          else if(i===total-1){tl.to(card,{opacity:1,scale:1,ease:'none'},(i-1)/(total-1)+0.2);}
+          else{tl.to(card,{opacity:1,scale:1,ease:'none'},(i-0.5)/(total-1));tl.to(card,{opacity:0.4,scale:0.92,ease:'none'},(i+0.5)/(total-1));}
+        });
+      } else {
+        document.getElementById('cs-pin-wrapper').style.height='auto';
+        track.style.position='relative';track.style.flexDirection='column';
+        cards.forEach(function(card){card.style.width='100%';card.style.height='auto';card.style.paddingTop='2rem';card.style.paddingBottom='2rem';gsap.set(card,{opacity:1,scale:1});});
+        document.getElementById('cs-dots').style.display='none';
+        document.getElementById('cs-counter').style.display='none';
+        progress.parentElement.style.display='none';
+      }
+    });
+  });
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+     TESTIMONIALS  (GSAP ScrollTrigger)
+═══════════════════════════════════════════════════ -->
+<section id="testimonials-section" class="py-28 bg-surface-container-low overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex items-end justify-between mb-20" id="testi-header">
+      <div>
+        <span id="testi-eyebrow" class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block" style="opacity:0;transform:translateY(16px)">Founder Feedback</span>
+        <h2 id="testi-headline" class="font-headline text-4xl font-extrabold tracking-tighter" style="opacity:0;transform:translateY(24px)">
+          What founders <span class="text-primary italic">say.</span>
+        </h2>
+      </div>
+      <a href="case-studies.html" id="testi-link" class="hidden md:flex items-center gap-1 text-primary text-sm font-bold hover:underline" style="opacity:0;transform:translateX(16px)">
+        All stories <span class="material-symbols-outlined text-base">arrow_forward</span>
+      </a>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="testi-grid">
+      <!-- Card 1 -->
+      <div class="testi-card bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 card-shadow relative overflow-hidden" style="opacity:0;transform:translateY(60px) scale(0.95)">
+        <div class="testi-quote-bg absolute -top-4 -left-2 text-[8rem] font-serif leading-none text-primary/5 select-none pointer-events-none">"</div>
+        <div class="flex gap-0.5 mb-5 testi-stars">
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+        </div>
+        <p class="text-base font-medium mb-6 leading-relaxed italic text-on-surface-variant">"The speed of execution was unlike anything I've seen in 15 years of tech. Applume built our core competitive advantage."</p>
+        <div class="flex items-center gap-3 testi-author" style="opacity:0;transform:translateX(-12px)">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCS5w-GbUwDZUEoJuEa7bKGQOMWVGve_bU-q3BuXI2APrh89P0uOiHdMiTj_0Ymc0WaEOiunUE6t33EEHGk9lUyoKQQFnkdXs-sTFbUrCvNyDidurIvDqgXn40Dffv9Tf4Qyvm8emg8xaKATQ0i9J1LjZO_LbK53sK1WX4oJzRmBhR-6Agx55NxvE5NdtCR3Q93dFB6wH6VvxOTQkueuaDWqbLoCpNLORH8tFoexfbIyLYxFlvIvtlAEDIEwhmMsSTbLnlV8vu9upE" alt="Marcus Chen" class="w-11 h-11 rounded-full object-cover"/>
+          <div><p class="font-bold text-sm">Marcus Chen</p><p class="text-xs text-on-surface-variant">CEO, Nexus.co</p></div>
+        </div>
+        <div class="testi-line absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-primary to-primary-light rounded-full"></div>
+      </div>
+      <!-- Card 2 -->
+      <div class="testi-card bg-surface-container-lowest p-8 rounded-2xl border border-outline-variant/10 card-shadow relative overflow-hidden" style="opacity:0;transform:translateY(60px) scale(0.95)">
+        <div class="testi-quote-bg absolute -top-4 -left-2 text-[8rem] font-serif leading-none text-primary/5 select-none pointer-events-none">"</div>
+        <div class="flex gap-0.5 mb-5 testi-stars">
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+        </div>
+        <p class="text-base font-medium mb-6 leading-relaxed italic text-on-surface-variant">"Seamless integration, stable performance, and a team that genuinely cares about the growth of the product. Highly recommended."</p>
+        <div class="flex items-center gap-3 testi-author" style="opacity:0;transform:translateX(-12px)">
+          <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBh4DLchZ4ceucsVqjj4u0gRjNjPMItIycOeP9WgBFaM9BGKks_C0GTW7g7MvLcI86ScsVe7WvyAxs58gpjdiY3zPNegnpepgf1UO24zgSTiSFnjhWCpBRWlCPvvyqMtxtK8Ic58KFX_57xJliTDB9sUwGK8tiOQ3YLrktS-aPaGQiqy1vRaWinTg9jKijLKexINGbVGBGZXZiK0D4BfRbXtFoVDID--qEixK7FPKETMdGQrZu_Bukh8deZI_ESVk7okyz6pi7Xc3E" alt="Sarah Jenkins" class="w-11 h-11 rounded-full object-cover"/>
+          <div><p class="font-bold text-sm">Sarah Jenkins</p><p class="text-xs text-on-surface-variant">Founder, Lumina</p></div>
+        </div>
+        <div class="testi-line absolute bottom-0 left-0 h-[3px] w-0 bg-gradient-to-r from-primary to-primary-light rounded-full"></div>
+      </div>
+      <!-- Card 3 accent -->
+      <div class="testi-card emerald-gradient p-8 rounded-2xl card-shadow relative overflow-hidden" style="opacity:0;transform:translateY(60px) scale(0.95)">
+        <div class="testi-quote-bg absolute -top-4 -left-2 text-[8rem] font-serif leading-none text-white/10 select-none pointer-events-none">"</div>
+        <div class="flex gap-0.5 mb-5 testi-stars">
+          <span class="material-symbols-outlined text-primary-fixed text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+          <span class="material-symbols-outlined text-primary-fixed text-sm fill-icon star-icon" style="opacity:0;transform:scale(0)">star</span>
+        </div>
+        <p class="text-base font-medium mb-6 leading-relaxed italic text-white/90">"We went from zero to 50,000 daily orders in 4 months. Applume's infrastructure never broke a sweat. Remarkable team."</p>
+        <div class="flex items-center gap-3 testi-author" style="opacity:0;transform:translateX(-12px)">
+          <div class="w-11 h-11 rounded-full bg-white/20 flex items-center justify-center font-bold text-white text-sm">AR</div>
+          <div><p class="font-bold text-sm text-white">Arjun Rao</p><p class="text-xs text-primary-fixed/80">CTO, FoodRush</p></div>
+        </div>
+        <div class="testi-line absolute bottom-0 left-0 h-[3px] w-0 bg-white/40 rounded-full"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+  function loadScript(src,cb){const s=document.createElement('script');s.src=src;s.onload=cb;document.head.appendChild(s);}
+  loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',function(){
+    loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',function(){
+      gsap.registerPlugin(ScrollTrigger);
+      gsap.to('#testi-eyebrow',{opacity:1,y:0,duration:0.6,ease:'power3.out',scrollTrigger:{trigger:'#testi-header',start:'top 82%'}});
+      gsap.to('#testi-headline',{opacity:1,y:0,duration:0.75,ease:'power3.out',delay:0.1,scrollTrigger:{trigger:'#testi-header',start:'top 82%'}});
+      gsap.to('#testi-link',{opacity:1,x:0,duration:0.6,ease:'power3.out',delay:0.25,scrollTrigger:{trigger:'#testi-header',start:'top 82%'}});
+      const cards=gsap.utils.toArray('.testi-card');
+      cards.forEach(function(card,i){
+        gsap.to(card,{opacity:1,y:0,scale:1,duration:0.8,ease:'power3.out',delay:i*0.15,scrollTrigger:{trigger:'#testi-grid',start:'top 78%'}});
+        const stars=card.querySelectorAll('.star-icon');
+        gsap.to(stars,{opacity:1,scale:1,duration:0.35,ease:'back.out(2.5)',stagger:0.07,delay:i*0.15+0.45,scrollTrigger:{trigger:'#testi-grid',start:'top 78%'}});
+        gsap.to(card.querySelector('.testi-author'),{opacity:1,x:0,duration:0.55,ease:'power2.out',delay:i*0.15+0.65,scrollTrigger:{trigger:'#testi-grid',start:'top 78%'}});
+        gsap.to(card.querySelector('.testi-line'),{width:'100%',duration:0.9,ease:'power2.out',delay:i*0.15+0.75,scrollTrigger:{trigger:'#testi-grid',start:'top 78%'}});
+        gsap.to(card,{y:i%2===0?-18:-10,ease:'none',scrollTrigger:{trigger:card,start:'top bottom',end:'bottom top',scrub:1.5}});
+        card.addEventListener('mouseenter',function(){gsap.to(card,{scale:1.03,y:'-=6',duration:0.3,ease:'power2.out'});});
+        card.addEventListener('mouseleave',function(){gsap.to(card,{scale:1,y:'+=6',duration:0.4,ease:'power2.inOut'});});
+      });
+      gsap.utils.toArray('.testi-quote-bg').forEach(function(q){
+        gsap.to(q,{y:-30,rotation:-5,ease:'none',scrollTrigger:{trigger:q.closest('.testi-card'),start:'top bottom',end:'bottom top',scrub:2}});
+      });
+    });
+  });
+})();
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+     FAQ + CONTACT
+═══════════════════════════════════════════════════ -->
+<section class="py-28 bg-surface-container-low">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16">
+    <div class="lg:col-span-5 reveal">
+      <span class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-4 block">Common Questions</span>
+      <h2 class="font-headline text-5xl font-extrabold tracking-tighter mb-10">Common <span class="text-primary italic">Inquiries.</span></h2>
+      <div class="space-y-3" id="faq">
+        <div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden">
+          <button class="accordion-trigger w-full p-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)"><span class="font-bold text-sm">How is it launched in 7 days?</span><span class="material-symbols-outlined text-on-surface-variant transition-transform text-xl accordion-icon">add</span></button>
+          <div class="accordion-content px-6 pb-6"><p class="text-on-surface-variant text-sm leading-relaxed">We've spent years pre-building all the foundational modules — auth, payments, maps, notifications, admin dashboards. Your 7-day sprint is focused purely on customizing these to your brand, configuring your business rules, and deploying. No reinventing the wheel.</p></div>
+        </div>
+        <div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden">
+          <button class="accordion-trigger w-full p-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)"><span class="font-bold text-sm">Do I really own the code?</span><span class="material-symbols-outlined text-on-surface-variant transition-transform text-xl accordion-icon">add</span></button>
+          <div class="accordion-content px-6 pb-6"><p class="text-on-surface-variant text-sm leading-relaxed">With our White-label Ownership plan, yes — absolutely. You receive the full source code, documentation, and a formal IP transfer agreement. You can host it anywhere, modify anything, and hire any developer to work on it.</p></div>
+        </div>
+        <div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden">
+          <button class="accordion-trigger w-full p-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)"><span class="font-bold text-sm">What about ongoing maintenance?</span><span class="material-symbols-outlined text-on-surface-variant transition-transform text-xl accordion-icon">add</span></button>
+          <div class="accordion-content px-6 pb-6"><p class="text-on-surface-variant text-sm leading-relaxed">Our Subscription plan includes 24/7 monitoring, updates, and bug fixes. The Ownership plan can optionally add a maintenance retainer. You'll never be left alone to figure things out.</p></div>
+        </div>
+        <div class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden">
+          <button class="accordion-trigger w-full p-6 flex justify-between items-center text-left" onclick="toggleAccordion(this)"><span class="font-bold text-sm">Can I customize everything?</span><span class="material-symbols-outlined text-on-surface-variant transition-transform text-xl accordion-icon">add</span></button>
+          <div class="accordion-content px-6 pb-6"><p class="text-on-surface-variant text-sm leading-relaxed">Yes. Your brand colors, logo, features, flows — everything is configurable. The Ownership plan gives you full source code access for unlimited deep customizations.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="lg:col-span-7 reveal">
+      <div class="bg-surface-container-lowest p-10 lg:p-12 rounded-3xl card-shadow relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-3xl -mr-32 -mt-32 pointer-events-none"></div>
+        <div class="relative z-10">
+          <h3 class="font-headline text-3xl font-extrabold tracking-tighter mb-2">Get in Touch</h3>
+          <p class="text-on-surface-variant text-sm mb-8">Tell us about your idea and we'll get back within 24 hours.</p>
+          <div class="space-y-5">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div><label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Your Name</label><input type="text" placeholder="e.g. Rahul Mehta" class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm" /></div>
+              <div><label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">App Category</label><select class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm text-on-surface-variant appearance-none"><option selected>Customer</option><option>E-commerce</option><option>Food Delivery</option><option>Pharmacy</option><option>Dairy</option><option>Laundry</option><option>Salon</option></select></div>
+            </div>
+            <div><label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Business Email</label><input type="email" placeholder="you@company.com" class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm" /></div>
+            <div><label class="text-xs font-bold uppercase tracking-widest text-on-surface-variant block mb-2">Your Vision</label><textarea rows="4" placeholder="Describe the e-commerce platform you want to build — your target market, key features, and goals..." class="w-full bg-surface px-4 py-3.5 rounded-xl border border-outline-variant/20 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all text-sm resize-none"></textarea></div>
+            <button class="btn-primary w-full py-4 rounded-xl font-bold text-base flex items-center justify-center gap-2"><span class="material-symbols-outlined">send</span>Send Message</button>
+            <p class="text-xs text-center text-on-surface-variant">By submitting, you agree to our <a href="#" class="text-primary hover:underline">Terms</a> and <a href="#" class="text-primary hover:underline">Privacy Policy</a>.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="relative overflow-hidden" style="background:linear-gradient(135deg,#0d4a28 0%,#166c3c 40%,#1e8f50 70%,#0d6e4a 100%);">
+  <div class="absolute inset-0 pointer-events-none">
+    <div class="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-20" style="background:radial-gradient(circle,#4ade80 0%,transparent 70%);"></div>
+    <div class="absolute -bottom-24 -right-24 w-[32rem] h-[32rem] rounded-full opacity-15" style="background:radial-gradient(circle,#86efac 0%,transparent 70%);"></div>
+    <svg class="absolute inset-0 w-full h-full opacity-5" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="cta-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="white" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#cta-grid)"/></svg>
+  </div>
+  <div class="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
+    <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8">
+      <span class="material-symbols-outlined text-emerald-300 text-base fill-icon">bolt</span>
+      <span class="text-emerald-200 text-xs font-bold uppercase tracking-widest">Ready to launch?</span>
+    </div>
+    <h2 class="font-headline text-4xl md:text-6xl font-extrabold text-white tracking-tighter leading-tight mb-6">Your app could be live<br/><span style="color:#86efac;">in 7 days.</span></h2>
+    <p class="text-emerald-100/80 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed mb-12">Stop waiting. Hundreds of founders have already shipped with Applume — faster, leaner, and more beautifully than they thought possible.</p>
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="pricing.html" class="inline-flex items-center gap-2.5 bg-white text-primary font-bold text-base px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 duration-200"><span class="material-symbols-outlined text-xl">rocket_launch</span>Start Building Today</a>
+      <a href="#products" class="inline-flex items-center gap-2.5 bg-white/10 border border-white/25 text-white font-semibold text-base px-8 py-4 rounded-xl hover:bg-white/20 transition-all duration-200"><span class="material-symbols-outlined text-xl">grid_view</span>View All Products</a>
+    </div>
+    <div class="mt-14 flex flex-wrap items-center justify-center gap-8 text-emerald-200/60 text-sm">
+      <div class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-base fill-icon">verified</span><span>500+ apps delivered</span></div>
+      <div class="w-px h-4 bg-white/20 hidden sm:block"></div>
+      <div class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-base fill-icon">schedule</span><span>Avg. launch in 7 days</span></div>
+      <div class="w-px h-4 bg-white/20 hidden sm:block"></div>
+      <div class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400 text-base fill-icon">star</span><span>4.9 / 5 client rating</span></div>
+    </div>
+  </div>
+</section>
+
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+    hamburger.querySelector('.material-symbols-outlined').textContent = mobileMenu.classList.contains('open') ? 'close' : 'menu';
+  });
+
+  function toggleAccordion(trigger) {
+    const content = trigger.nextElementSibling;
+    const icon = trigger.querySelector('.accordion-icon');
+    const isOpen = content.classList.contains('open');
+    document.querySelectorAll('.accordion-content').forEach(el => el.classList.remove('open'));
+    document.querySelectorAll('.accordion-icon').forEach(el => { el.textContent = 'add'; el.style.transform = 'rotate(0deg)'; });
+    if (!isOpen) { content.classList.add('open'); icon.textContent = 'remove'; }
+  }
+
+  // Scroll reveal — progressive enhancement
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach(el => { el.classList.add('anim'); observer.observe(el); });
+</script>
+</body>
+</html>

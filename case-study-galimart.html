@@ -1,0 +1,1232 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Galimart Case Study | Applume</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#166c3c",
+              "primary-dark": "#0d4a28",
+              "primary-light": "#1e8f50",
+              "primary-fixed": "#a2f5b8",
+              "primary-fixed-dim": "#87d89d",
+              "primary-container": "#bdf1ca",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#00210d",
+              "on-primary-fixed": "#00210d",
+              "on-primary-fixed-variant": "#00522a",
+              secondary: "#53634f",
+              "secondary-container": "#d7e8cf",
+              "secondary-fixed": "#d7e8cf",
+              "secondary-fixed-dim": "#bbcbb4",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#111f0f",
+              "on-secondary-fixed": "#111f0f",
+              "on-secondary-fixed-variant": "#394d14",
+              tertiary: "#5d5e61",
+              "tertiary-container": "#e1e2e5",
+              "tertiary-fixed": "#e4e2dc",
+              "tertiary-fixed-dim": "#c8c6c1",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#1d1c1a",
+              "on-tertiary-fixed": "#1b1c18",
+              "on-tertiary-fixed-variant": "#474743",
+              error: "#ba1a1a",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              background: "#F6F6F6",
+              surface: "#F6F6F6",
+              "surface-dim": "#d9dbd8",
+              "surface-bright": "#f6f6f6",
+              "surface-variant": "#dee5dc",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f1f4f1",
+              "surface-container": "#edf0ed",
+              "surface-container-high": "#e7e9e6",
+              "surface-container-highest": "#e1e3e0",
+              "on-surface": "#191c19",
+              "on-surface-variant": "#414941",
+              "on-background": "#191c19",
+              outline: "#717971",
+              "outline-variant": "#c1c9be",
+              "inverse-surface": "#2e312e",
+              "inverse-on-surface": "#f0f1ec",
+              "inverse-primary": "#87d89d",
+              "surface-tint": "#166c3c",
+            },
+            fontFamily: {
+              headline: ["Nunito Sans", "sans-serif"],
+              body: ["Nunito Sans", "sans-serif"],
+              label: ["Nunito Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              sm: "0.25rem",
+              md: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              "3xl": "2rem",
+              full: "9999px",
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "float-delay": "float 6s ease-in-out 2s infinite",
+              "spin-slow": "spin 20s linear infinite",
+              "pulse-slow": "pulse 4s ease-in-out infinite",
+              "slide-up": "slideUp 0.6s ease-out forwards",
+              "fade-in": "fadeIn 0.8s ease-out forwards",
+              marquee: "marquee 30s linear infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-16px)" },
+              },
+              slideUp: {
+                from: { opacity: "0", transform: "translateY(30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeIn: {
+                from: { opacity: "0" },
+                to: { opacity: "1" },
+              },
+              marquee: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --primary: #166c3c;
+        --primary-dark: #0d4a28;
+        --primary-light: #1e8f50;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        background-color: #f6f6f6;
+        color: #191c19;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-headline {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      .fill-icon {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* Glass nav */
+      .glass-nav {
+        background: rgba(246, 246, 246, 0.85);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+
+      /* Mega menu — full width fixed */
+      .mega-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+      }
+
+      .nav-item:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: all;
+      }
+
+      /* Gradients */
+      .emerald-gradient {
+        background: linear-gradient(135deg, #006948 0%, #1e8f50 100%);
+      }
+
+      .emerald-gradient-subtle {
+        background: linear-gradient(
+          135deg,
+          rgba(22, 108, 60, 0.08) 0%,
+          rgba(22, 108, 60, 0.03) 100%
+        );
+      }
+
+      .dark-gradient {
+        background: linear-gradient(135deg, #0d1f15 0%, #1a3626 100%);
+      }
+
+      /* Glow effects */
+      .glow-primary {
+        box-shadow: 0 0 40px rgba(22, 108, 60, 0.2);
+      }
+
+      .glow-primary-sm {
+        box-shadow: 0 0 20px rgba(22, 108, 60, 0.15);
+      }
+
+      .editorial-shadow {
+        box-shadow: 0px 12px 40px rgba(26, 28, 28, 0.06);
+      }
+
+      .card-shadow {
+        box-shadow: 0 4px 24px rgba(26, 28, 28, 0.08);
+      }
+
+      /* Glass surface */
+      .glass-surface {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Noise texture overlay */
+      .noise::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        border-radius: inherit;
+      }
+
+      /* Hero orb */
+      .hero-orb {
+        background: radial-gradient(
+          circle at center,
+          rgba(22, 108, 60, 0.15) 0%,
+          transparent 70%
+        );
+      }
+
+      /* Ticker */
+      .ticker-track {
+        display: flex;
+        width: max-content;
+      }
+
+      /* Accordion */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+
+      .accordion-content.open {
+        max-height: 400px;
+      }
+
+      /* Active nav link */
+      .nav-link-active {
+        color: var(--primary);
+        position: relative;
+      }
+
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 99px;
+      }
+
+      /* Scroll reveal — safe: visible by default, JS adds .anim */
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .reveal.anim {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .reveal.anim.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: #f1f4f1;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #c1c9be;
+        border-radius: 99px;
+      }
+
+      ::-webkit-scrollbar-thumb:hover {
+        background: #717971;
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        transition:
+          max-height 0.35s ease,
+          opacity 0.35s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+
+      #mobile-menu.open {
+        max-height: 80vh;
+        opacity: 1;
+        overflow-y: auto;
+      }
+
+      /* Button states */
+      .btn-primary {
+        background: linear-gradient(135deg, #006948, #1e8f50);
+        color: white;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          opacity 0.2s ease;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(22, 108, 60, 0.35);
+      }
+
+      .btn-primary:active {
+        transform: scale(0.97);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        transition: all 0.2s ease;
+      }
+
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      .btn-outline:active {
+        transform: scale(0.97);
+      }
+
+      /* Plan card hover */
+      .plan-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+
+      .plan-card:hover {
+        transform: translateY(-6px);
+      }
+
+      /* Stat ring animation */
+      @keyframes ring-fill {
+        from {
+          stroke-dashoffset: 300;
+        }
+
+        to {
+          stroke-dashoffset: var(--dash-offset);
+        }
+      }
+
+      /* Floating badge */
+      @keyframes badgeFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+
+        50% {
+          transform: translateY(-8px) rotate(-2deg);
+        }
+      }
+
+      .badge-float {
+        animation: badgeFloat 4s ease-in-out infinite;
+      }
+
+      .badge-float-2 {
+        animation: badgeFloat 4s ease-in-out 1.5s infinite;
+      }
+
+      /* Ticker */
+      @keyframes ticker {
+        0% {
+          transform: translateX(0);
+        }
+
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      .ticker-inner {
+        animation: ticker 28s linear infinite;
+      }
+
+      .ticker-inner:hover {
+        animation-play-state: paused;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 4px 12px;
+        border-radius: 99px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .timeline-line {
+        position: absolute;
+        left: 19px;
+        top: 40px;
+        bottom: 0;
+        width: 2px;
+        background: linear-gradient(to bottom, #166c3c, transparent);
+      }
+
+      .pullquote {
+        border-left: 4px solid var(--primary);
+        padding: 24px 28px;
+        background: rgba(22, 108, 60, 0.04);
+        border-radius: 0 16px 16px 0;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+
+      .reveal.anim {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+
+      .reveal.anim.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body
+    class="antialiased selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <div id="nav-bar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("nav-bar").innerHTML = data;
+        });
+    </script>
+    <section
+      style="
+        background: linear-gradient(
+          135deg,
+          #0a1a10 0%,
+          #0f2318 55%,
+          #0d1f15 100%
+        );
+        position: relative;
+        padding-top: 72px;
+        overflow: hidden;
+      "
+    >
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          class="absolute top-0 right-1/3 w-[600px] h-[600px] rounded-full opacity-20"
+          style="
+            background: radial-gradient(circle, #6d28d9 0%, transparent 65%);
+          "
+        ></div>
+        <svg
+          class="absolute inset-0 w-full h-full opacity-[0.03]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern
+              id="hgrid"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="#a2f5b8"
+                stroke-width="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#hgrid)" />
+        </svg>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-6 pt-16 pb-0">
+        <a
+          href="case-studies.html"
+          class="inline-flex items-center gap-2 text-sm mb-10 hover:opacity-80 transition-opacity"
+          style="color: rgba(255, 255, 255, 0.5)"
+          ><span class="material-symbols-outlined text-base">arrow_back</span>
+          All Case Studies</a
+        >
+        <div class="grid lg:grid-cols-12 gap-12 items-end">
+          <div class="lg:col-span-7">
+            <div class="flex items-center gap-2 mb-6 flex-wrap">
+              <span
+                class="tag"
+                style="
+                  background: rgba(255, 255, 255, 0.1);
+                  color: rgba(255, 255, 255, 0.8);
+                  border: 1px solid rgba(255, 255, 255, 0.15);
+                "
+                >E-commerce</span
+              >
+              <span
+                class="tag"
+                style="
+                  background: rgba(255, 255, 255, 0.1);
+                  color: rgba(255, 255, 255, 0.8);
+                  border: 1px solid rgba(255, 255, 255, 0.15);
+                "
+                >Multi-vendor</span
+              >
+              <span
+                class="tag"
+                style="
+                  background: rgba(255, 255, 255, 0.1);
+                  color: rgba(255, 255, 255, 0.8);
+                  border: 1px solid rgba(255, 255, 255, 0.15);
+                "
+                >Marketplace</span
+              >
+            </div>
+            <div class="flex items-center gap-4 mb-8">
+              <div
+                class="w-16 h-16 rounded-2xl flex items-center justify-center font-extrabold text-white text-xl shrink-0"
+                style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+              >
+                GM
+              </div>
+              <div>
+                <h1
+                  class="font-extrabold text-3xl md:text-4xl text-white tracking-tight"
+                >
+                  Galimart
+                </h1>
+                <p class="text-sm" style="color: rgba(255, 255, 255, 0.5)">
+                  E-commerce · Multi-vendor Marketplace · India
+                </p>
+              </div>
+            </div>
+            <h2
+              class="font-headline font-extrabold text-white tracking-tighter leading-tight mb-8"
+              style="font-size: clamp(1.9rem, 3.5vw, 3rem)"
+            >
+              500+ sellers onboarded in Q1 — built, launched, and scaled without
+              a single developer.
+            </h2>
+            <p
+              class="text-lg leading-relaxed mb-12"
+              style="color: rgba(255, 255, 255, 0.55)"
+            >
+              Galimart wanted to build a local alternative to large e-commerce
+              platforms — a marketplace where small sellers in their region
+              could sell online. Applume gave them the full stack in 7 days.
+            </p>
+          </div>
+          <div class="lg:col-span-5">
+            <div class="grid grid-cols-2 gap-3 pb-16">
+              <div
+                class="rounded-2xl p-6 text-center"
+                style="
+                  background: rgba(255, 255, 255, 0.07);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                "
+              >
+                <p
+                  class="font-headline text-4xl font-extrabold mb-1"
+                  style="color: #7c3aed"
+                >
+                  7
+                </p>
+                <p class="font-bold text-sm text-white mb-0.5">
+                  Days to Launch
+                </p>
+                <p class="text-xs" style="color: rgba(255, 255, 255, 0.4)">
+                  Full multi-vendor marketplace
+                </p>
+              </div>
+              <div
+                class="rounded-2xl p-6 text-center"
+                style="
+                  background: rgba(255, 255, 255, 0.07);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                "
+              >
+                <p
+                  class="font-headline text-4xl font-extrabold mb-1"
+                  style="color: #7c3aed"
+                >
+                  500+
+                </p>
+                <p class="font-bold text-sm text-white mb-0.5">
+                  Sellers Onboarded
+                </p>
+                <p class="text-xs" style="color: rgba(255, 255, 255, 0.4)">
+                  In the first quarter
+                </p>
+              </div>
+              <div
+                class="rounded-2xl p-6 text-center"
+                style="
+                  background: rgba(255, 255, 255, 0.07);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                "
+              >
+                <p
+                  class="font-headline text-4xl font-extrabold mb-1"
+                  style="color: #7c3aed"
+                >
+                  Q1
+                </p>
+                <p class="font-bold text-sm text-white mb-0.5">
+                  To Profitability
+                </p>
+                <p class="text-xs" style="color: rgba(255, 255, 255, 0.4)">
+                  Commission revenue from day one
+                </p>
+              </div>
+              <div
+                class="rounded-2xl p-6 text-center"
+                style="
+                  background: rgba(255, 255, 255, 0.07);
+                  border: 1px solid rgba(255, 255, 255, 0.12);
+                "
+              >
+                <p
+                  class="font-headline text-4xl font-extrabold mb-1"
+                  style="color: #7c3aed"
+                >
+                  0
+                </p>
+                <p class="font-bold text-sm text-white mb-0.5">
+                  Developers Hired
+                </p>
+                <p class="text-xs" style="color: rgba(255, 255, 255, 0.4)">
+                  Fully managed by Applume
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="py-16 bg-surface-container-low border-b border-outline-variant/20"
+    >
+      <div class="max-w-4xl mx-auto px-6">
+        <div class="pullquote reveal">
+          <p
+            class="text-xl md:text-2xl font-medium leading-relaxed italic text-on-surface mb-5"
+          >
+            &ldquo;We needed a multi-vendor platform fast. Applume built exactly
+            what we imagined — seller onboarding, product listings, delivery
+            tracking, and an admin panel that runs itself. Our sellers love
+            it.&rdquo;
+          </p>
+          <p class="font-bold text-sm text-primary">— Founder, Galimart</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-surface">
+      <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-16">
+        <div class="lg:col-span-7">
+          <span
+            class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-6 block"
+            >The Journey</span
+          >
+          <h3
+            class="font-headline text-3xl font-extrabold tracking-tighter mb-10"
+          >
+            How it happened,
+            <span class="text-primary italic">step by step.</span>
+          </h3>
+          <div class="space-y-0">
+            <div class="flex gap-5">
+              <div class="relative shrink-0">
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-sm text-white"
+                  style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+                >
+                  1
+                </div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="pb-10">
+                <span
+                  class="tag mb-3 inline-flex"
+                  style="
+                    background: rgba(22, 108, 60, 0.08);
+                    color: #166c3c;
+                    border: 1px solid rgba(22, 108, 60, 0.2);
+                  "
+                  >The Problem</span
+                >
+                <h4 class="font-bold text-lg text-on-surface mb-2">
+                  Wanted a local marketplace — quote was ₹60 lakhs
+                </h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">
+                  Galimart's founder had approached 3 dev agencies. The cheapest
+                  quote was ₹60 lakhs and 8 months. He needed something faster
+                  and far more affordable.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-5">
+              <div class="relative shrink-0">
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-sm text-white"
+                  style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+                >
+                  2
+                </div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="pb-10">
+                <span
+                  class="tag mb-3 inline-flex"
+                  style="
+                    background: rgba(22, 108, 60, 0.08);
+                    color: #166c3c;
+                    border: 1px solid rgba(22, 108, 60, 0.2);
+                  "
+                  >Discovery</span
+                >
+                <h4 class="font-bold text-lg text-on-surface mb-2">
+                  Applume's E-commerce platform matched perfectly
+                </h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">
+                  After reviewing Applume's E-commerce product, Galimart
+                  realised it had everything they needed — seller dashboards,
+                  buyer apps, payment splits, and admin controls. The decision
+                  took one call.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-5">
+              <div class="relative shrink-0">
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-sm text-white"
+                  style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+                >
+                  3
+                </div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="pb-10">
+                <span
+                  class="tag mb-3 inline-flex"
+                  style="
+                    background: rgba(22, 108, 60, 0.08);
+                    color: #166c3c;
+                    border: 1px solid rgba(22, 108, 60, 0.2);
+                  "
+                  >Build</span
+                >
+                <h4 class="font-bold text-lg text-on-surface mb-2">
+                  Brand, seller flows, payment gateway — 7 days
+                </h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">
+                  Applume configured Galimart's brand across the buyer app and
+                  seller panel, set up commission structures, integrated payment
+                  gateway, and deployed to AWS. App Store submission done by Day
+                  6.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-5">
+              <div class="relative shrink-0">
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-sm text-white"
+                  style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+                >
+                  4
+                </div>
+                <div class="timeline-line"></div>
+              </div>
+              <div class="pb-10">
+                <span
+                  class="tag mb-3 inline-flex"
+                  style="
+                    background: rgba(22, 108, 60, 0.08);
+                    color: #166c3c;
+                    border: 1px solid rgba(22, 108, 60, 0.2);
+                  "
+                  >Launch</span
+                >
+                <h4 class="font-bold text-lg text-on-surface mb-2">
+                  Live Day 7 — first seller signed up within 2 hours
+                </h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">
+                  Galimart went live on Day 7. Their first seller registered
+                  within 2 hours. The seller onboarding flow — with product
+                  upload, KYC, and payout setup — worked flawlessly from day
+                  one.
+                </p>
+              </div>
+            </div>
+            <div class="flex gap-5">
+              <div class="relative shrink-0">
+                <div
+                  class="w-10 h-10 rounded-full flex items-center justify-center font-extrabold text-sm text-white"
+                  style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+                >
+                  5
+                </div>
+              </div>
+              <div class="pb-10">
+                <span
+                  class="tag mb-3 inline-flex"
+                  style="
+                    background: rgba(22, 108, 60, 0.08);
+                    color: #166c3c;
+                    border: 1px solid rgba(22, 108, 60, 0.2);
+                  "
+                  >Scale</span
+                >
+                <h4 class="font-bold text-lg text-on-surface mb-2">
+                  500+ sellers, commission revenue from month one
+                </h4>
+                <p class="text-on-surface-variant text-sm leading-relaxed">
+                  Within Q1, Galimart had onboarded 500+ active sellers. The
+                  commission engine automatically distributed payments. Galimart
+                  became profitable on day one of their first sale.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="lg:col-span-5">
+          <div class="sticky top-24 space-y-6">
+            <div
+              class="bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow"
+            >
+              <h4 class="font-extrabold text-base mb-5 text-on-surface">
+                About Galimart
+              </h4>
+              <div class="space-y-4">
+                <div class="flex items-start gap-3">
+                  <span
+                    class="material-symbols-outlined text-primary text-lg mt-0.5 fill-icon"
+                    >shopping_cart</span
+                  >
+                  <div>
+                    <p
+                      class="text-xs text-on-surface-variant font-bold uppercase tracking-wider"
+                    >
+                      Industry
+                    </p>
+                    <p class="text-sm text-on-surface font-semibold mt-0.5">
+                      Multi-vendor E-commerce
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span
+                    class="material-symbols-outlined text-primary text-lg mt-0.5 fill-icon"
+                    >location_on</span
+                  >
+                  <div>
+                    <p
+                      class="text-xs text-on-surface-variant font-bold uppercase tracking-wider"
+                    >
+                      Location
+                    </p>
+                    <p class="text-sm text-on-surface font-semibold mt-0.5">
+                      North India
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span
+                    class="material-symbols-outlined text-primary text-lg mt-0.5 fill-icon"
+                    >group</span
+                  >
+                  <div>
+                    <p
+                      class="text-xs text-on-surface-variant font-bold uppercase tracking-wider"
+                    >
+                      Sellers
+                    </p>
+                    <p class="text-sm text-on-surface font-semibold mt-0.5">
+                      500+ active sellers in Q1
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start gap-3">
+                  <span
+                    class="material-symbols-outlined text-primary text-lg mt-0.5 fill-icon"
+                    >calendar_month</span
+                  >
+                  <div>
+                    <p
+                      class="text-xs text-on-surface-variant font-bold uppercase tracking-wider"
+                    >
+                      Launch Year
+                    </p>
+                    <p class="text-sm text-on-surface font-semibold mt-0.5">
+                      2024
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="bg-surface-container-lowest rounded-3xl p-8 border border-outline-variant/10 card-shadow"
+            >
+              <h4 class="font-extrabold text-base mb-5 text-on-surface">
+                Applume Products Used
+              </h4>
+              <div class="space-y-3">
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style="
+                      background: linear-gradient(135deg, #6d28d9, #7c3aed);
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined text-white text-sm fill-icon"
+                      >shopping_cart</span
+                    >
+                  </div>
+                  <p class="text-sm font-semibold text-on-surface">
+                    E-commerce Buyer App
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style="
+                      background: linear-gradient(135deg, #6d28d9, #7c3aed);
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined text-white text-sm fill-icon"
+                      >storefront</span
+                    >
+                  </div>
+                  <p class="text-sm font-semibold text-on-surface">
+                    Seller / Vendor Panel
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style="
+                      background: linear-gradient(135deg, #6d28d9, #7c3aed);
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined text-white text-sm fill-icon"
+                      >dashboard</span
+                    >
+                  </div>
+                  <p class="text-sm font-semibold text-on-surface">
+                    Super Admin Dashboard
+                  </p>
+                </div>
+                <div class="flex items-center gap-3">
+                  <div
+                    class="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                    style="
+                      background: linear-gradient(135deg, #6d28d9, #7c3aed);
+                    "
+                  >
+                    <span
+                      class="material-symbols-outlined text-white text-sm fill-icon"
+                      >payments</span
+                    >
+                  </div>
+                  <p class="text-sm font-semibold text-on-surface">
+                    Commission & Payout Engine
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-20 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-12 reveal">
+          <span
+            class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block"
+            >Measured Outcomes</span
+          >
+          <h3 class="font-headline text-3xl font-extrabold tracking-tighter">
+            Results that <span class="text-primary italic">matter.</span>
+          </h3>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-5 reveal">
+          <div
+            class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow"
+          >
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+              style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+            >
+              <span
+                class="material-symbols-outlined text-white text-xl fill-icon"
+                >bolt</span
+              >
+            </div>
+            <p class="font-extrabold text-2xl mb-1 text-primary">7 Days</p>
+            <p class="font-bold text-sm text-on-surface mb-1">
+              Concept to Live Platform
+            </p>
+            <p class="text-xs text-on-surface-variant">
+              Full multi-vendor stack
+            </p>
+          </div>
+          <div
+            class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow"
+          >
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+              style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+            >
+              <span
+                class="material-symbols-outlined text-white text-xl fill-icon"
+                >group</span
+              >
+            </div>
+            <p class="font-extrabold text-2xl mb-1 text-primary">500+</p>
+            <p class="font-bold text-sm text-on-surface mb-1">Sellers Q1</p>
+            <p class="text-xs text-on-surface-variant">
+              Active sellers, verified KYC
+            </p>
+          </div>
+          <div
+            class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow"
+          >
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+              style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+            >
+              <span
+                class="material-symbols-outlined text-white text-xl fill-icon"
+                >attach_money</span
+              >
+            </div>
+            <p class="font-extrabold text-2xl mb-1 text-primary">Day 1</p>
+            <p class="font-bold text-sm text-on-surface mb-1">
+              Revenue Generated
+            </p>
+            <p class="text-xs text-on-surface-variant">
+              Commission from first sale
+            </p>
+          </div>
+          <div
+            class="bg-surface-container-lowest rounded-2xl p-6 border border-outline-variant/10 card-shadow"
+          >
+            <div
+              class="w-10 h-10 rounded-xl flex items-center justify-center mb-4"
+              style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+            >
+              <span
+                class="material-symbols-outlined text-white text-xl fill-icon"
+                >trending_up</span
+              >
+            </div>
+            <p class="font-extrabold text-2xl mb-1 text-primary">0</p>
+            <p class="font-bold text-sm text-on-surface mb-1">
+              Developers Needed
+            </p>
+            <p class="text-xs text-on-surface-variant">
+              Applume handles everything
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16 bg-surface border-t border-outline-variant/20">
+      <div
+        class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6"
+      >
+        <div>
+          <p
+            class="text-xs font-bold tracking-widest uppercase text-on-surface-variant mb-1"
+          >
+            Next Case Study
+          </p>
+          <p class="font-extrabold text-xl text-on-surface">
+            Dukancart — Hyperlocal Grocery
+          </p>
+        </div>
+        <a
+          href="case-study-dukancart.html"
+          class="btn-primary px-8 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2"
+          >Read their story
+          <span class="material-symbols-outlined text-base"
+            >arrow_forward</span
+          ></a
+        >
+      </div>
+    </section>
+
+    <section
+      class="relative overflow-hidden"
+      style="
+        background: linear-gradient(
+          135deg,
+          #0d4a28 0%,
+          #166c3c 40%,
+          #1e8f50 70%,
+          #0d6e4a 100%
+        );
+      "
+    >
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-20"
+          style="
+            background: radial-gradient(circle, #4ade80 0%, transparent 70%);
+          "
+        ></div>
+      </div>
+      <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+        <h2
+          class="font-headline text-4xl md:text-5xl font-extrabold text-white tracking-tighter mb-5"
+        >
+          Ready to write your own story?
+        </h2>
+        <p class="text-emerald-100/70 text-lg max-w-xl mx-auto mb-10">
+          Join the founders who skipped the 12-month dev cycle and launched in 7
+          days with Applume.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            href="pricing.html"
+            class="inline-flex items-center gap-2 bg-white text-primary font-bold px-8 py-4 rounded-xl hover:bg-emerald-50 transition-all shadow-lg hover:-translate-y-0.5 duration-200"
+            ><span class="material-symbols-outlined">rocket_launch</span>Start
+            Building Today</a
+          ><a
+            href="case-studies.html"
+            class="inline-flex items-center gap-2 bg-white/10 border border-white/25 text-white font-semibold px-8 py-4 rounded-xl hover:bg-white/20 transition-all duration-200"
+            ><span class="material-symbols-outlined">arrow_back</span>All Case
+            Studies</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        hamburger.querySelector(".material-symbols-outlined").textContent =
+          mobileMenu.classList.contains("open") ? "close" : "menu";
+      });
+      const reveals = document.querySelectorAll(".reveal");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add("visible"), i * 80);
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08 },
+      );
+      reveals.forEach((el) => {
+        el.classList.add("anim");
+        obs.observe(el);
+      });
+    </script>
+  </body>
+</html>
