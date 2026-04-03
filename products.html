@@ -1,0 +1,3002 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Products | Applume — 7 Quick Commerce Platforms, Live in 7 Days
+    </title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#166c3c",
+              "primary-dark": "#0d4a28",
+              "primary-light": "#1e8f50",
+              "primary-fixed": "#a2f5b8",
+              "primary-fixed-dim": "#87d89d",
+              "primary-container": "#bdf1ca",
+              "on-primary": "#ffffff",
+              "on-primary-container": "#00210d",
+              "on-primary-fixed": "#00210d",
+              "on-primary-fixed-variant": "#00522a",
+              secondary: "#53634f",
+              "secondary-container": "#d7e8cf",
+              "secondary-fixed": "#d7e8cf",
+              "secondary-fixed-dim": "#bbcbb4",
+              "on-secondary": "#ffffff",
+              "on-secondary-container": "#111f0f",
+              "on-secondary-fixed": "#111f0f",
+              "on-secondary-fixed-variant": "#394d14",
+              tertiary: "#5d5e61",
+              "tertiary-container": "#e1e2e5",
+              "tertiary-fixed": "#e4e2dc",
+              "tertiary-fixed-dim": "#c8c6c1",
+              "on-tertiary": "#ffffff",
+              "on-tertiary-container": "#1d1c1a",
+              "on-tertiary-fixed": "#1b1c18",
+              "on-tertiary-fixed-variant": "#474743",
+              error: "#ba1a1a",
+              "error-container": "#ffdad6",
+              "on-error": "#ffffff",
+              "on-error-container": "#93000a",
+              background: "#F6F6F6",
+              surface: "#F6F6F6",
+              "surface-dim": "#d9dbd8",
+              "surface-bright": "#f6f6f6",
+              "surface-variant": "#dee5dc",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-low": "#f1f4f1",
+              "surface-container": "#edf0ed",
+              "surface-container-high": "#e7e9e6",
+              "surface-container-highest": "#e1e3e0",
+              "on-surface": "#191c19",
+              "on-surface-variant": "#414941",
+              "on-background": "#191c19",
+              outline: "#717971",
+              "outline-variant": "#c1c9be",
+              "inverse-surface": "#2e312e",
+              "inverse-on-surface": "#f0f1ec",
+              "inverse-primary": "#87d89d",
+              "surface-tint": "#166c3c",
+            },
+            fontFamily: {
+              headline: ["Nunito Sans", "sans-serif"],
+              body: ["Nunito Sans", "sans-serif"],
+              label: ["Nunito Sans", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              sm: "0.25rem",
+              md: "0.5rem",
+              lg: "0.75rem",
+              xl: "1rem",
+              "2xl": "1.5rem",
+              "3xl": "2rem",
+              full: "9999px",
+            },
+            animation: {
+              float: "float 6s ease-in-out infinite",
+              "float-delay": "float 6s ease-in-out 2s infinite",
+              "spin-slow": "spin 20s linear infinite",
+              "pulse-slow": "pulse 4s ease-in-out infinite",
+              "slide-up": "slideUp 0.6s ease-out forwards",
+              "fade-in": "fadeIn 0.8s ease-out forwards",
+              marquee: "marquee 30s linear infinite",
+            },
+            keyframes: {
+              float: {
+                "0%, 100%": { transform: "translateY(0px)" },
+                "50%": { transform: "translateY(-16px)" },
+              },
+              slideUp: {
+                from: { opacity: "0", transform: "translateY(30px)" },
+                to: { opacity: "1", transform: "translateY(0)" },
+              },
+              fadeIn: {
+                from: { opacity: "0" },
+                to: { opacity: "1" },
+              },
+              marquee: {
+                "0%": { transform: "translateX(0)" },
+                "100%": { transform: "translateX(-50%)" },
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        --primary: #166c3c;
+        --primary-dark: #0d4a28;
+        --primary-light: #1e8f50;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Nunito Sans", sans-serif;
+        background-color: #f6f6f6;
+        color: #191c19;
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      .font-headline {
+        font-family: "Nunito Sans", sans-serif;
+        font-weight: 800;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .fill-icon {
+        font-variation-settings:
+          "FILL" 1,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+
+      /* Glass nav */
+      .glass-nav {
+        background: rgba(246, 246, 246, 0.85);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+      }
+
+      /* Mega menu — full width fixed */
+      .mega-menu {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-8px);
+        transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        pointer-events: none;
+      }
+      .nav-item:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: all;
+      }
+
+      /* Gradients */
+      .emerald-gradient {
+        background: linear-gradient(135deg, #006948 0%, #1e8f50 100%);
+      }
+      .emerald-gradient-subtle {
+        background: linear-gradient(
+          135deg,
+          rgba(22, 108, 60, 0.08) 0%,
+          rgba(22, 108, 60, 0.03) 100%
+        );
+      }
+      .dark-gradient {
+        background: linear-gradient(135deg, #0d1f15 0%, #1a3626 100%);
+      }
+
+      /* Glow effects */
+      .glow-primary {
+        box-shadow: 0 0 40px rgba(22, 108, 60, 0.2);
+      }
+      .glow-primary-sm {
+        box-shadow: 0 0 20px rgba(22, 108, 60, 0.15);
+      }
+      .editorial-shadow {
+        box-shadow: 0px 12px 40px rgba(26, 28, 28, 0.06);
+      }
+      .card-shadow {
+        box-shadow: 0 4px 24px rgba(26, 28, 28, 0.08);
+      }
+
+      /* Glass surface */
+      .glass-surface {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.5);
+      }
+
+      /* Noise texture overlay */
+      .noise::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        border-radius: inherit;
+      }
+
+      /* Hero orb */
+      .hero-orb {
+        background: radial-gradient(
+          circle at center,
+          rgba(22, 108, 60, 0.15) 0%,
+          transparent 70%
+        );
+      }
+
+      /* Ticker */
+      .ticker-track {
+        display: flex;
+        width: max-content;
+      }
+
+      /* Accordion */
+      .accordion-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.35s ease;
+      }
+      .accordion-content.open {
+        max-height: 400px;
+      }
+
+      /* Active nav link */
+      .nav-link-active {
+        color: var(--primary);
+        position: relative;
+      }
+      .nav-link-active::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: var(--primary);
+        border-radius: 99px;
+      }
+
+      /* Scroll reveal — safe: visible by default, JS adds .anim */
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal.anim {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.anim.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #f1f4f1;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #c1c9be;
+        border-radius: 99px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #717971;
+      }
+
+      /* Mobile menu */
+      #mobile-menu {
+        transition:
+          max-height 0.35s ease,
+          opacity 0.35s ease;
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+      }
+      #mobile-menu.open {
+        max-height: 80vh;
+        opacity: 1;
+        overflow-y: auto;
+      }
+
+      /* Button states */
+      .btn-primary {
+        background: linear-gradient(135deg, #006948, #1e8f50);
+        color: white;
+        transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease,
+          opacity 0.2s ease;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(22, 108, 60, 0.35);
+      }
+      .btn-primary:active {
+        transform: scale(0.97);
+      }
+
+      .btn-outline {
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        transition: all 0.2s ease;
+      }
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+        transform: translateY(-2px);
+      }
+      .btn-outline:active {
+        transform: scale(0.97);
+      }
+
+      /* Plan card hover */
+      .plan-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+      }
+      .plan-card:hover {
+        transform: translateY(-6px);
+      }
+
+      /* Stat ring animation */
+      @keyframes ring-fill {
+        from {
+          stroke-dashoffset: 300;
+        }
+        to {
+          stroke-dashoffset: var(--dash-offset);
+        }
+      }
+
+      /* Floating badge */
+      @keyframes badgeFloat {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-8px) rotate(-2deg);
+        }
+      }
+      .badge-float {
+        animation: badgeFloat 4s ease-in-out infinite;
+      }
+      .badge-float-2 {
+        animation: badgeFloat 4s ease-in-out 1.5s infinite;
+      }
+
+      /* Ticker */
+      @keyframes ticker {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .ticker-inner {
+        animation: ticker 28s linear infinite;
+      }
+      .ticker-inner:hover {
+        animation-play-state: paused;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+      .reveal.anim {
+        opacity: 0;
+        transform: translateY(24px);
+        transition:
+          opacity 0.6s ease,
+          transform 0.6s ease;
+      }
+      .reveal.anim.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .prod-card {
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease,
+          border-color 0.3s ease;
+      }
+      .prod-card:hover {
+        transform: translateY(-6px);
+      }
+      .feature-tab {
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+      .feature-tab.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+      .feature-tab:not(.active):hover {
+        border-color: rgba(22, 108, 60, 0.4);
+        color: var(--primary);
+      }
+      .tab-panel {
+        display: none;
+      }
+      .tab-panel.active {
+        display: grid;
+      }
+      .ticker-inner {
+        animation: ticker 32s linear infinite;
+      }
+      .ticker-inner:hover {
+        animation-play-state: paused;
+      }
+      @keyframes ticker {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+      .stack-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 14px;
+        border-radius: 99px;
+        font-size: 11px;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body
+    class="antialiased selection:bg-primary-container selection:text-on-primary-container"
+  >
+    <div id="nav-bar"></div>
+
+    <script>
+      fetch("nav.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("nav-bar").innerHTML = data;
+        });
+    </script>
+
+    <!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+    <section
+      class="relative pt-[72px] overflow-hidden"
+      style="
+        background: linear-gradient(
+          135deg,
+          #0a1a10 0%,
+          #0f2318 55%,
+          #0d1f15 100%
+        );
+      "
+    >
+      <div class="absolute inset-0 pointer-events-none overflow-hidden">
+        <div
+          class="absolute top-0 right-1/4 w-[700px] h-[700px] rounded-full opacity-[0.18]"
+          style="
+            background: radial-gradient(circle, #166c3c 0%, transparent 65%);
+          "
+        ></div>
+        <div
+          class="absolute -bottom-20 left-0 w-[400px] h-[400px] rounded-full opacity-10"
+          style="
+            background: radial-gradient(circle, #1e8f50 0%, transparent 70%);
+          "
+        ></div>
+        <svg
+          class="absolute inset-0 w-full h-full opacity-[0.035]"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern
+              id="g"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="#a2f5b8"
+                stroke-width="1"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#g)" />
+        </svg>
+      </div>
+      <div class="relative max-w-7xl mx-auto px-6 pt-20 pb-24">
+        <div class="max-w-4xl mx-auto text-center">
+          <div
+            class="inline-flex items-center gap-2 px-4 py-2 mb-7 rounded-full text-xs font-bold tracking-widest uppercase"
+            style="
+              background: rgba(162, 245, 184, 0.1);
+              color: #a2f5b8;
+              border: 1px solid rgba(162, 245, 184, 0.2);
+            "
+          >
+            <span
+              class="w-1.5 h-1.5 rounded-full bg-primary-fixed animate-pulse"
+            ></span>
+            7 Ready-to-Launch Platforms
+          </div>
+          <h1
+            class="font-extrabold text-white tracking-tighter leading-[0.93] mb-6"
+            style="font-size: clamp(3rem, 6.5vw, 5.5rem)"
+          >
+            Every on-demand vertical.<br /><span
+              class="italic"
+              style="color: #87d89d"
+              >Live in 7 days.</span
+            >
+          </h1>
+          <p
+            class="text-xl leading-relaxed mb-10 max-w-2xl mx-auto"
+            style="color: rgba(255, 255, 255, 0.5)"
+          >
+            Pre-built, production-ready quick commerce platforms. Pick your
+            vertical, apply your brand, launch in one week. No coding. No dev
+            team. No compromise.
+          </p>
+          <!-- Product pill nav -->
+          <div class="flex flex-wrap gap-2.5 justify-center mb-10">
+            <a
+              href="#grocery"
+              class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all hover:-translate-y-0.5"
+              style="
+                background: rgba(255, 255, 255, 0.07);
+                color: rgba(255, 255, 255, 0.75);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+              "
+              ><span
+                class="material-symbols-outlined text-sm"
+                style="color: #059669"
+                >shopping_basket</span
+              >Grocery</a
+            ><a
+              href="#ecommerce"
+              class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all hover:-translate-y-0.5"
+              style="
+                background: rgba(255, 255, 255, 0.07);
+                color: rgba(255, 255, 255, 0.75);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+              "
+              ><span
+                class="material-symbols-outlined text-sm"
+                style="color: #7c3aed"
+                >shopping_cart</span
+              >E-commerce</a
+            ><a
+              href="#food"
+              class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all hover:-translate-y-0.5"
+              style="
+                background: rgba(255, 255, 255, 0.07);
+                color: rgba(255, 255, 255, 0.75);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+              "
+              ><span
+                class="material-symbols-outlined text-sm"
+                style="color: #d97706"
+                >restaurant</span
+              >Food Delivery</a
+            ><a
+              href="#pharmacy"
+              class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all hover:-translate-y-0.5"
+              style="
+                background: rgba(255, 255, 255, 0.07);
+                color: rgba(255, 255, 255, 0.75);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+              "
+              ><span
+                class="material-symbols-outlined text-sm"
+                style="color: #0d9488"
+                >medical_services</span
+              >Pharmacy</a
+            ><a
+              href="#dairy"
+              class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all hover:-translate-y-0.5"
+              style="
+                background: rgba(255, 255, 255, 0.07);
+                color: rgba(255, 255, 255, 0.75);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+              "
+              ><span
+                class="material-symbols-outlined text-sm"
+                style="color: #166c3c"
+                >water_drop</span
+              >Dairy</a
+            ><a
+              href="#laundry"
+              class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all hover:-translate-y-0.5"
+              style="
+                background: rgba(255, 255, 255, 0.07);
+                color: rgba(255, 255, 255, 0.75);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+              "
+              ><span
+                class="material-symbols-outlined text-sm"
+                style="color: #be185d"
+                >local_laundry_service</span
+              >Laundry</a
+            ><a
+              href="#salon"
+              class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold transition-all hover:-translate-y-0.5"
+              style="
+                background: rgba(255, 255, 255, 0.07);
+                color: rgba(255, 255, 255, 0.75);
+                border: 1px solid rgba(255, 255, 255, 0.12);
+              "
+              ><span
+                class="material-symbols-outlined text-sm"
+                style="color: #c2410c"
+                >content_cut</span
+              >Salon</a
+            >
+          </div>
+          <!-- Key proof points -->
+          <div class="flex flex-wrap gap-4 justify-center">
+            <div
+              class="flex items-center gap-2 px-4 py-2.5 rounded-xl"
+              style="
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              "
+            >
+              <span
+                class="material-symbols-outlined text-sm fill-icon"
+                style="color: #87d89d"
+                >bolt</span
+              >
+              <span class="text-sm font-semibold text-white"
+                >Live in 7 days</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-2 px-4 py-2.5 rounded-xl"
+              style="
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              "
+            >
+              <span
+                class="material-symbols-outlined text-sm fill-icon"
+                style="color: #87d89d"
+                >code_off</span
+              >
+              <span class="text-sm font-semibold text-white"
+                >No coding needed</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-2 px-4 py-2.5 rounded-xl"
+              style="
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              "
+            >
+              <span
+                class="material-symbols-outlined text-sm fill-icon"
+                style="color: #87d89d"
+                >verified_user</span
+              >
+              <span class="text-sm font-semibold text-white"
+                >100% white-label</span
+              >
+            </div>
+            <div
+              class="flex items-center gap-2 px-4 py-2.5 rounded-xl"
+              style="
+                background: rgba(255, 255, 255, 0.06);
+                border: 1px solid rgba(255, 255, 255, 0.1);
+              "
+            >
+              <span
+                class="material-symbols-outlined text-sm fill-icon"
+                style="color: #87d89d"
+                >support_agent</span
+              >
+              <span class="text-sm font-semibold text-white">24/7 support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     STATS STRIP
+═══════════════════════════════════════════════════ -->
+    <section
+      class="py-14 bg-surface-container-low border-y border-outline-variant/20"
+    >
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div class="reveal">
+            <p class="font-headline text-4xl font-extrabold text-primary mb-1">
+              7
+            </p>
+            <p class="font-bold text-sm">Verticals</p>
+            <p class="text-xs text-on-surface-variant mt-0.5">
+              Quick commerce focused
+            </p>
+          </div>
+          <div class="reveal">
+            <p class="font-headline text-4xl font-extrabold text-primary mb-1">
+              500+
+            </p>
+            <p class="font-bold text-sm">Live Platforms</p>
+            <p class="text-xs text-on-surface-variant mt-0.5">
+              Across India & beyond
+            </p>
+          </div>
+          <div class="reveal">
+            <p class="font-headline text-4xl font-extrabold text-primary mb-1">
+              7 Days
+            </p>
+            <p class="font-bold text-sm">Avg Launch Time</p>
+            <p class="text-xs text-on-surface-variant mt-0.5">
+              Concept to App Store
+            </p>
+          </div>
+          <div class="reveal">
+            <p class="font-headline text-4xl font-extrabold text-primary mb-1">
+              ₹50Cr+
+            </p>
+            <p class="font-bold text-sm">GMV Enabled</p>
+            <p class="text-xs text-on-surface-variant mt-0.5">
+              Across all platforms
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     PRODUCTS GRID — Featured 2 + 5 smaller
+═══════════════════════════════════════════════════ -->
+    <section class="py-24 bg-surface" id="all-products">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+          <span
+            class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block"
+            >Our Platforms</span
+          >
+          <h2
+            class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter mb-4"
+          >
+            Pick your vertical.<br /><span class="text-primary italic"
+              >We handle the rest.</span
+            >
+          </h2>
+          <p class="text-on-surface-variant text-lg max-w-2xl mx-auto">
+            Every platform includes a customer app (iOS + Android), delivery
+            agent app, partner/vendor panel, and a full admin dashboard. Out of
+            the box.
+          </p>
+        </div>
+
+        <!-- Featured row: Grocery + Ecommerce -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6 reveal">
+          <!-- Grocery — FEATURED -->
+          <div
+            class="prod-card lg:col-span-2 relative rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 grid lg:grid-cols-2"
+            style="
+              background: rgba(5, 150, 105, 0.07);
+              border-color: rgba(5, 150, 105, 0.3);
+            "
+            id="grocery"
+          >
+            <span
+              class="absolute top-5 right-5 text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full"
+              style="
+                background: rgba(5, 150, 105, 0.12);
+                color: #059669;
+                border: 1px solid rgba(5, 150, 105, 0.25);
+              "
+              >Most Popular</span
+            >
+            <div class="p-8 lg:p-10 flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 shadow-sm"
+                  style="background: linear-gradient(135deg, #065f46, #059669)"
+                >
+                  <span
+                    class="material-symbols-outlined text-white text-2xl fill-icon"
+                    >shopping_basket</span
+                  >
+                </div>
+                <h3
+                  class="font-headline text-2xl font-extrabold tracking-tight mb-2"
+                >
+                  Grocery
+                </h3>
+                <p class="text-on-surface-variant text-sm mb-4">
+                  10-min delivery like Zepto or Blinkit
+                </p>
+                <p class="text-sm leading-relaxed text-on-surface mb-6">
+                  Launch a full hyperlocal grocery delivery platform — customer
+                  app, store panel, and delivery agent app — in 7 days.
+                </p>
+                <ul class="space-y-2.5 mb-6">
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #059669"
+                      >check_circle</span
+                    >Real-time order tracking
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #059669"
+                      >check_circle</span
+                    >Dark store management
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #059669"
+                      >check_circle</span
+                    >Hyperlocal delivery zones
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #059669"
+                      >check_circle</span
+                    >Customer wallet & loyalty
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #059669"
+                      >check_circle</span
+                    >Route-optimised agent app
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #059669"
+                      >check_circle</span
+                    >Live inventory sync
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div
+                  class="flex gap-6 mb-6 pt-5 border-t border-outline-variant/15"
+                >
+                  <div class="text-center">
+                    <p class="font-extrabold text-lg text-on-surface">10 min</p>
+                    <p class="text-xs text-on-surface-variant">Avg delivery</p>
+                  </div>
+                  <div class="text-center">
+                    <p class="font-extrabold text-lg text-on-surface">98%</p>
+                    <p class="text-xs text-on-surface-variant">Uptime SLA</p>
+                  </div>
+                  <div class="text-center">
+                    <p class="font-extrabold text-lg text-on-surface">0</p>
+                    <p class="text-xs text-on-surface-variant">
+                      Dev hires needed
+                    </p>
+                  </div>
+                </div>
+                <a
+                  href="grocery.html"
+                  class="btn-primary px-6 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2"
+                >
+                  Explore Grocery
+                  <span class="material-symbols-outlined text-base"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+            </div>
+            <div
+              class="hidden lg:flex items-center justify-center p-8 relative"
+              style="background: linear-gradient(135deg, #065f46, #059669)"
+            >
+              <div
+                class="absolute inset-0 opacity-20"
+                style="
+                  background: radial-gradient(
+                    circle at 30% 50%,
+                    rgba(255, 255, 255, 0.3),
+                    transparent 70%
+                  );
+                "
+              ></div>
+              <div class="text-center relative z-10">
+                <span
+                  class="material-symbols-outlined fill-icon text-white"
+                  style="font-size: 80px"
+                  >shopping_basket</span
+                >
+                <p
+                  class="font-headline text-5xl font-extrabold text-white mt-4"
+                >
+                  10 min
+                </p>
+                <p class="text-white/60 text-sm uppercase tracking-widest mt-1">
+                  Avg delivery
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- E-commerce — FEATURED -->
+          <div
+            class="prod-card lg:col-span-2 relative rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 grid lg:grid-cols-2"
+            style="
+              background: rgba(109, 40, 217, 0.07);
+              border-color: rgba(109, 40, 217, 0.3);
+            "
+            id="ecommerce"
+          >
+            <span
+              class="absolute top-5 right-5 text-[10px] font-extrabold uppercase tracking-wider px-3 py-1 rounded-full"
+              style="
+                background: rgba(109, 40, 217, 0.1);
+                color: #7c3aed;
+                border: 1px solid rgba(109, 40, 217, 0.2);
+              "
+              >Featured</span
+            >
+            <div class="p-8 lg:p-10 flex flex-col justify-between">
+              <div>
+                <div
+                  class="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 shadow-sm"
+                  style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+                >
+                  <span
+                    class="material-symbols-outlined text-white text-2xl fill-icon"
+                    >shopping_cart</span
+                  >
+                </div>
+                <h3
+                  class="font-headline text-2xl font-extrabold tracking-tight mb-2"
+                >
+                  E-commerce
+                </h3>
+                <p class="text-on-surface-variant text-sm mb-4">
+                  Full-stack multi-vendor marketplace
+                </p>
+                <p class="text-sm leading-relaxed text-on-surface mb-6">
+                  A complete multi-vendor marketplace with buyer app, seller
+                  dashboard, commission engine, and super admin — live in 7
+                  days.
+                </p>
+                <ul class="space-y-2.5 mb-6">
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #7c3aed"
+                      >check_circle</span
+                    >Multi-vendor seller panel
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #7c3aed"
+                      >check_circle</span
+                    >Commission & payout engine
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #7c3aed"
+                      >check_circle</span
+                    >Seller KYC onboarding
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #7c3aed"
+                      >check_circle</span
+                    >Buyer cart & wishlist
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #7c3aed"
+                      >check_circle</span
+                    >Flash sale & coupons
+                  </li>
+                  <li class="flex items-center gap-2 text-sm text-on-surface">
+                    <span
+                      class="material-symbols-outlined fill-icon text-sm"
+                      style="color: #7c3aed"
+                      >check_circle</span
+                    >GMV & revenue dashboard
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <div
+                  class="flex gap-6 mb-6 pt-5 border-t border-outline-variant/15"
+                >
+                  <div class="text-center">
+                    <p class="font-extrabold text-lg text-on-surface">500+</p>
+                    <p class="text-xs text-on-surface-variant">
+                      Sellers Q1 avg
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <p class="font-extrabold text-lg text-on-surface">Day 1</p>
+                    <p class="text-xs text-on-surface-variant">
+                      Revenue possible
+                    </p>
+                  </div>
+                  <div class="text-center">
+                    <p class="font-extrabold text-lg text-on-surface">0</p>
+                    <p class="text-xs text-on-surface-variant">Devs needed</p>
+                  </div>
+                </div>
+                <a
+                  href="ecommerce.html"
+                  class="btn-primary px-6 py-3 rounded-xl font-bold text-sm inline-flex items-center gap-2"
+                >
+                  Explore E-commerce
+                  <span class="material-symbols-outlined text-base"
+                    >arrow_forward</span
+                  >
+                </a>
+              </div>
+            </div>
+            <div
+              class="hidden lg:flex items-center justify-center p-8 relative"
+              style="background: linear-gradient(135deg, #6d28d9, #7c3aed)"
+            >
+              <div
+                class="absolute inset-0 opacity-20"
+                style="
+                  background: radial-gradient(
+                    circle at 30% 50%,
+                    rgba(255, 255, 255, 0.3),
+                    transparent 70%
+                  );
+                "
+              ></div>
+              <div class="text-center relative z-10">
+                <span
+                  class="material-symbols-outlined fill-icon text-white"
+                  style="font-size: 80px"
+                  >shopping_cart</span
+                >
+                <p
+                  class="font-headline text-5xl font-extrabold text-white mt-4"
+                >
+                  500+
+                </p>
+                <p class="text-white/60 text-sm uppercase tracking-widest mt-1">
+                  Sellers Q1 avg
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Remaining 5 products -->
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal"
+        >
+          <!-- Food Delivery -->
+          <div
+            class="prod-card relative rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 bg-surface-container-lowest flex flex-col"
+            id="food"
+          >
+            <div class="p-7 flex flex-col flex-1">
+              <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                style="background: linear-gradient(135deg, #b45309, #d97706)"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-xl fill-icon"
+                  >restaurant</span
+                >
+              </div>
+              <h3
+                class="font-headline text-xl font-extrabold tracking-tight mb-1"
+              >
+                Food Delivery
+              </h3>
+              <p class="text-on-surface-variant text-sm mb-4">
+                Like Swiggy or Zomato, your brand
+              </p>
+              <p class="text-sm leading-relaxed text-on-surface mb-5">
+                End-to-end food delivery platform with customer ordering app,
+                restaurant management panel, and live delivery fleet tracking.
+              </p>
+              <ul class="space-y-2 mb-5 flex-1">
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #d97706"
+                    >check_circle</span
+                  >Restaurant discovery & filters
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #d97706"
+                    >check_circle</span
+                  >Live order tracking map
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #d97706"
+                    >check_circle</span
+                  >Restaurant partner panel
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #d97706"
+                    >check_circle</span
+                  >Menu builder & pricing
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #d97706"
+                    >check_circle</span
+                  >Automated dispatch engine
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #d97706"
+                    >check_circle</span
+                  >Customer loyalty & offers
+                </li>
+              </ul>
+              <div
+                class="flex gap-5 pt-4 border-t border-outline-variant/10 mb-5"
+              >
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">30 min</p>
+                  <p class="text-xs text-on-surface-variant">Avg delivery</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">
+                    Multi-city
+                  </p>
+                  <p class="text-xs text-on-surface-variant">Ready</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">24/7</p>
+                  <p class="text-xs text-on-surface-variant">Support</p>
+                </div>
+              </div>
+              <a
+                href="food.html"
+                class="btn-primary px-5 py-3 rounded-xl font-bold text-sm inline-flex items-center justify-center gap-2"
+              >
+                Explore Food Delivery
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+            <div
+              class="h-1.5 w-full"
+              style="background: linear-gradient(135deg, #b45309, #d97706)"
+            ></div>
+          </div>
+          <!-- Pharmacy -->
+          <div
+            class="prod-card relative rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 bg-surface-container-lowest flex flex-col"
+            id="pharmacy"
+          >
+            <div class="p-7 flex flex-col flex-1">
+              <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                style="background: linear-gradient(135deg, #0f766e, #14b8a6)"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-xl fill-icon"
+                  >medical_services</span
+                >
+              </div>
+              <h3
+                class="font-headline text-xl font-extrabold tracking-tight mb-1"
+              >
+                Pharmacy
+              </h3>
+              <p class="text-on-surface-variant text-sm mb-4">
+                Healthcare delivery like PharmEasy
+              </p>
+              <p class="text-sm leading-relaxed text-on-surface mb-5">
+                Complete medicine delivery platform with prescription
+                management, licensed pharmacy integrations, and 2-hour delivery
+                fulfilment.
+              </p>
+              <ul class="space-y-2 mb-5 flex-1">
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #0d9488"
+                    >check_circle</span
+                  >Prescription upload & validation
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #0d9488"
+                    >check_circle</span
+                  >Medicine search & substitutes
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #0d9488"
+                    >check_circle</span
+                  >Refill reminders
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #0d9488"
+                    >check_circle</span
+                  >Cold chain management
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #0d9488"
+                    >check_circle</span
+                  >Pharmacy partner management
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #0d9488"
+                    >check_circle</span
+                  >Compliance audit logs
+                </li>
+              </ul>
+              <div
+                class="flex gap-5 pt-4 border-t border-outline-variant/10 mb-5"
+              >
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">2 hr</p>
+                  <p class="text-xs text-on-surface-variant">Avg fulfilment</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">Rx</p>
+                  <p class="text-xs text-on-surface-variant">Compliant</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">OTC +</p>
+                  <p class="text-xs text-on-surface-variant">Prescription</p>
+                </div>
+              </div>
+              <a
+                href="pharmacy.html"
+                class="btn-primary px-5 py-3 rounded-xl font-bold text-sm inline-flex items-center justify-center gap-2"
+              >
+                Explore Pharmacy
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+            <div
+              class="h-1.5 w-full"
+              style="background: linear-gradient(135deg, #0f766e, #14b8a6)"
+            ></div>
+          </div>
+          <!-- Dairy -->
+          <div
+            class="prod-card relative rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 bg-surface-container-lowest flex flex-col"
+            id="dairy"
+          >
+            <div class="p-7 flex flex-col flex-1">
+              <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                style="background: linear-gradient(135deg, #0d4a28, #1e8f50)"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-xl fill-icon"
+                  >water_drop</span
+                >
+              </div>
+              <h3
+                class="font-headline text-xl font-extrabold tracking-tight mb-1"
+              >
+                Dairy
+              </h3>
+              <p class="text-on-surface-variant text-sm mb-4">
+                Milk & daily essentials, on schedule
+              </p>
+              <p class="text-sm leading-relaxed text-on-surface mb-5">
+                Subscription-first dairy delivery platform — daily milk, curd,
+                and essentials with flexible subscriptions, pause, and
+                auto-renewal.
+              </p>
+              <ul class="space-y-2 mb-5 flex-1">
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #166c3c"
+                    >check_circle</span
+                  >Flexible subscription plans
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #166c3c"
+                    >check_circle</span
+                  >Pause & vacation mode
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #166c3c"
+                    >check_circle</span
+                  >Demand forecasting
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #166c3c"
+                    >check_circle</span
+                  >Zone & route optimisation
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #166c3c"
+                    >check_circle</span
+                  >Prepaid wallet
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #166c3c"
+                    >check_circle</span
+                  >Daily delivery route sheets
+                </li>
+              </ul>
+              <div
+                class="flex gap-5 pt-4 border-t border-outline-variant/10 mb-5"
+              >
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">6 AM</p>
+                  <p class="text-xs text-on-surface-variant">Daily delivery</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">Sub</p>
+                  <p class="text-xs text-on-surface-variant">Based revenue</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">Auto</p>
+                  <p class="text-xs text-on-surface-variant">Recharge wallet</p>
+                </div>
+              </div>
+              <a
+                href="dairy.html"
+                class="btn-primary px-5 py-3 rounded-xl font-bold text-sm inline-flex items-center justify-center gap-2"
+              >
+                Explore Dairy
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+            <div
+              class="h-1.5 w-full"
+              style="background: linear-gradient(135deg, #0d4a28, #1e8f50)"
+            ></div>
+          </div>
+          <!-- Laundry -->
+          <div
+            class="prod-card relative rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 bg-surface-container-lowest flex flex-col"
+            id="laundry"
+          >
+            <div class="p-7 flex flex-col flex-1">
+              <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                style="background: linear-gradient(135deg, #9d174d, #ec4899)"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-xl fill-icon"
+                  >local_laundry_service</span
+                >
+              </div>
+              <h3
+                class="font-headline text-xl font-extrabold tracking-tight mb-1"
+              >
+                Laundry
+              </h3>
+              <p class="text-on-surface-variant text-sm mb-4">
+                Doorstep dry cleaning & wash
+              </p>
+              <p class="text-sm leading-relaxed text-on-surface mb-5">
+                Complete on-demand laundry and dry cleaning platform with pickup
+                scheduling, garment-level QR tracking, and doorstep delivery.
+              </p>
+              <ul class="space-y-2 mb-5 flex-1">
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #be185d"
+                    >check_circle</span
+                  >Pickup slot booking
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #be185d"
+                    >check_circle</span
+                  >Garment QR tagging
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #be185d"
+                    >check_circle</span
+                  >Live order pipeline kanban
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #be185d"
+                    >check_circle</span
+                  >Service type selection
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #be185d"
+                    >check_circle</span
+                  >Facility shift management
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #be185d"
+                    >check_circle</span
+                  >Weekly subscription option
+                </li>
+              </ul>
+              <div
+                class="flex gap-5 pt-4 border-t border-outline-variant/10 mb-5"
+              >
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">24 hr</p>
+                  <p class="text-xs text-on-surface-variant">
+                    Express turnaround
+                  </p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">QR</p>
+                  <p class="text-xs text-on-surface-variant">
+                    Garment tracking
+                  </p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">0</p>
+                  <p class="text-xs text-on-surface-variant">Mix-ups</p>
+                </div>
+              </div>
+              <a
+                href="laundry.html"
+                class="btn-primary px-5 py-3 rounded-xl font-bold text-sm inline-flex items-center justify-center gap-2"
+              >
+                Explore Laundry
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+            <div
+              class="h-1.5 w-full"
+              style="background: linear-gradient(135deg, #9d174d, #ec4899)"
+            ></div>
+          </div>
+          <!-- Salon -->
+          <div
+            class="prod-card relative rounded-3xl overflow-hidden card-shadow border border-outline-variant/10 bg-surface-container-lowest flex flex-col"
+            id="salon"
+          >
+            <div class="p-7 flex flex-col flex-1">
+              <div
+                class="w-12 h-12 rounded-xl flex items-center justify-center mb-5"
+                style="background: linear-gradient(135deg, #7c2d12, #c2410c)"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-xl fill-icon"
+                  >content_cut</span
+                >
+              </div>
+              <h3
+                class="font-headline text-xl font-extrabold tracking-tight mb-1"
+              >
+                Salon
+              </h3>
+              <p class="text-on-surface-variant text-sm mb-4">
+                Beauty at your doorstep
+              </p>
+              <p class="text-sm leading-relaxed text-on-surface mb-5">
+                Salon and beauty platform with at-home and in-salon booking,
+                stylist profiles, appointment calendar, and portfolio showcase.
+              </p>
+              <ul class="space-y-2 mb-5 flex-1">
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #c2410c"
+                    >check_circle</span
+                  >Service catalogue browsing
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #c2410c"
+                    >check_circle</span
+                  >Stylist profiles & reviews
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #c2410c"
+                    >check_circle</span
+                  >Slot-based calendar booking
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #c2410c"
+                    >check_circle</span
+                  >At-home & in-salon modes
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #c2410c"
+                    >check_circle</span
+                  >Earnings & payout tracking
+                </li>
+                <li class="flex items-center gap-2 text-sm text-on-surface">
+                  <span
+                    class="material-symbols-outlined fill-icon text-sm"
+                    style="color: #c2410c"
+                    >check_circle</span
+                  >Seasonal offers engine
+                </li>
+              </ul>
+              <div
+                class="flex gap-5 pt-4 border-t border-outline-variant/10 mb-5"
+              >
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">Slot</p>
+                  <p class="text-xs text-on-surface-variant">Based booking</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">500+</p>
+                  <p class="text-xs text-on-surface-variant">Stylists ready</p>
+                </div>
+                <div class="text-center">
+                  <p class="font-extrabold text-lg text-on-surface">At-home</p>
+                  <p class="text-xs text-on-surface-variant">+ In-salon</p>
+                </div>
+              </div>
+              <a
+                href="salon.html"
+                class="btn-primary px-5 py-3 rounded-xl font-bold text-sm inline-flex items-center justify-center gap-2"
+              >
+                Explore Salon
+                <span class="material-symbols-outlined text-base"
+                  >arrow_forward</span
+                >
+              </a>
+            </div>
+            <div
+              class="h-1.5 w-full"
+              style="background: linear-gradient(135deg, #7c2d12, #c2410c)"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     WHAT'S INCLUDED — Tabbed feature section
+═══════════════════════════════════════════════════ -->
+    <section class="py-24 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+          <span
+            class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block"
+            >What's Inside Every Platform</span
+          >
+          <h2
+            class="font-headline text-4xl font-extrabold tracking-tighter mb-4"
+          >
+            Three apps. One ecosystem.<br /><span class="text-primary italic"
+              >Completely yours.</span
+            >
+          </h2>
+          <p
+            class="text-on-surface-variant text-base max-w-xl mx-auto leading-relaxed"
+          >
+            Every Applume platform ships with a customer-facing app, a delivery
+            agent app, and a powerful admin dashboard — all fully white-labelled
+            with your brand.
+          </p>
+        </div>
+
+        <!-- Ecosystem visual -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16 reveal">
+          <div
+            class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/10 card-shadow text-center"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl emerald-gradient flex items-center justify-center mx-auto mb-4 shadow-sm"
+            >
+              <span
+                class="material-symbols-outlined text-white text-2xl fill-icon"
+                >phone_iphone</span
+              >
+            </div>
+            <h3 class="font-extrabold text-lg mb-2">Customer App</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              iOS & Android. Your brand, your colours, your name on the App
+              Store. Customers never see Applume.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5 justify-center">
+              <span
+                class="stack-badge"
+                style="background: rgba(22, 108, 60, 0.08); color: #166c3c"
+                >Flutter</span
+              >
+              <span
+                class="stack-badge"
+                style="background: rgba(22, 108, 60, 0.08); color: #166c3c"
+                >iOS + Android</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/10 card-shadow text-center"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl emerald-gradient flex items-center justify-center mx-auto mb-4 shadow-sm"
+            >
+              <span
+                class="material-symbols-outlined text-white text-2xl fill-icon"
+                >delivery_dining</span
+              >
+            </div>
+            <h3 class="font-extrabold text-lg mb-2">Delivery / Partner App</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Optimised for delivery agents, vendors, or stylists — depending on
+              your vertical. Route, track, confirm.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5 justify-center">
+              <span
+                class="stack-badge"
+                style="background: rgba(22, 108, 60, 0.08); color: #166c3c"
+                >Real-time GPS</span
+              >
+              <span
+                class="stack-badge"
+                style="background: rgba(22, 108, 60, 0.08); color: #166c3c"
+                >Offline mode</span
+              >
+            </div>
+          </div>
+          <div
+            class="bg-surface-container-lowest rounded-3xl p-7 border border-outline-variant/10 card-shadow text-center"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl emerald-gradient flex items-center justify-center mx-auto mb-4 shadow-sm"
+            >
+              <span
+                class="material-symbols-outlined text-white text-2xl fill-icon"
+                >dashboard</span
+              >
+            </div>
+            <h3 class="font-extrabold text-lg mb-2">Admin Dashboard</h3>
+            <p class="text-on-surface-variant text-sm leading-relaxed">
+              Web-based command centre. Manage all orders, partners, promotions,
+              and revenue from a single panel.
+            </p>
+            <div class="mt-4 flex flex-wrap gap-1.5 justify-center">
+              <span
+                class="stack-badge"
+                style="background: rgba(22, 108, 60, 0.08); color: #166c3c"
+                >Web app</span
+              >
+              <span
+                class="stack-badge"
+                style="background: rgba(22, 108, 60, 0.08); color: #166c3c"
+                >Live analytics</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="reveal">
+          <div class="flex flex-wrap gap-3 mb-8">
+            <button
+              class="feature-tab active flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm border border-outline-variant/20 text-on-surface-variant whitespace-nowrap"
+              onclick="switchTab('Customer App', this)"
+            >
+              <span class="material-symbols-outlined text-base fill-icon"
+                >phone_iphone</span
+              >Customer App
+            </button>
+            <button
+              class="feature-tab flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm border border-outline-variant/20 text-on-surface-variant whitespace-nowrap"
+              onclick="switchTab('Delivery App', this)"
+            >
+              <span class="material-symbols-outlined text-base fill-icon"
+                >delivery_dining</span
+              >Delivery App
+            </button>
+            <button
+              class="feature-tab flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm border border-outline-variant/20 text-on-surface-variant whitespace-nowrap"
+              onclick="switchTab('Admin Dashboard', this)"
+            >
+              <span class="material-symbols-outlined text-base fill-icon"
+                >dashboard</span
+              >Admin Dashboard
+            </button>
+          </div>
+          <div
+            class="tab-panel active grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            id="tab-Customer_App"
+          >
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >search</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Smart Browse & Search</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Category navigation, search by product or keyword, curated
+                  collections.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >shopping_cart</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">
+                  Seamless Cart & Checkout
+                </h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  One-tap reorder, multiple addresses, saved payment methods.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >location_on</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Live Order Tracking</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Real-time map from the moment an order is placed to doorstep.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >notifications</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Push Notifications</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Order updates, offers, and delivery confirmations — instant.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >loyalty</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Loyalty & Wallet</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  In-app wallet, referral program, and points-based loyalty
+                  system.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >star</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Ratings & Reviews</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Post-delivery rating flow with photo support for every order.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-panel grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            id="tab-Delivery_App"
+          >
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >route</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">
+                  Optimised Route Planning
+                </h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Smart multi-stop routing with live traffic and ETA updates.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >task_alt</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Order Accept & Manage</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Tap-to-accept flow with order details, customer info, and
+                  directions.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >photo_camera</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Proof of Delivery</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Photo capture, OTP verification, and digital signature
+                  support.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >payments</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Earnings Dashboard</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Daily earnings, trip history, and payout tracking in one view.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >support_agent</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">In-App Support</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Direct communication with admin and customers without leaving
+                  the app.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >bar_chart</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Performance Stats</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Delivery count, ratings, and acceptance rate visible to every
+                  agent.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="tab-panel grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"
+            id="tab-Admin_Dashboard"
+          >
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >map</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Live Operations Map</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Real-time view of all active orders and delivery agents on a
+                  live map.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >analytics</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">
+                  Revenue & GMV Analytics
+                </h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Daily, weekly, monthly revenue with drill-down by zone and
+                  category.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >manage_accounts</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Partner Management</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Onboard, verify, and manage all vendor and delivery partners.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >discount</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Promotions Engine</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Create and schedule coupons, flash sales, and category-level
+                  discounts.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >receipt_long</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Order Management</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Full order history, status management, and dispute resolution.
+                </p>
+              </div>
+            </div>
+            <div
+              class="flex items-start gap-4 bg-surface-container-lowest rounded-2xl p-5 border border-outline-variant/10 card-shadow"
+            >
+              <div
+                class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+              >
+                <span
+                  class="material-symbols-outlined text-white text-base fill-icon"
+                  >settings</span
+                >
+              </div>
+              <div>
+                <h4 class="font-bold text-sm mb-0.5">Platform Configuration</h4>
+                <p class="text-xs text-on-surface-variant leading-relaxed">
+                  Delivery zones, commission rates, pricing, and app settings.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     TECH STACK
+═══════════════════════════════════════════════════ -->
+    <section class="py-24 bg-surface">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-20 items-center">
+          <div class="reveal">
+            <span
+              class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-4 block"
+              >The Engine Room</span
+            >
+            <h2
+              class="font-headline text-4xl md:text-5xl font-extrabold tracking-tighter mb-6 leading-tight"
+            >
+              Enterprise-grade tech.<br /><span class="text-primary italic"
+                >Startup-simple pricing.</span
+              >
+            </h2>
+            <p class="text-on-surface-variant text-lg leading-relaxed mb-8">
+              The same infrastructure stack as India's leading unicorns —
+              Flutter, AWS, Firebase, and Node.js — delivered as a fully
+              managed, always-on platform.
+            </p>
+            <div class="space-y-5">
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-white text-sm fill-icon"
+                    >flutter</span
+                  >
+                </div>
+                <div>
+                  <p class="font-bold">Flutter — Native Performance</p>
+                  <p class="text-sm text-on-surface-variant mt-0.5">
+                    One codebase, two platforms. iOS and Android apps that feel
+                    native on every device.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-white text-sm fill-icon"
+                    >cloud_done</span
+                  >
+                </div>
+                <div>
+                  <p class="font-bold">AWS — Auto-Scaling Infrastructure</p>
+                  <p class="text-sm text-on-surface-variant mt-0.5">
+                    Private AWS deployment. Handles traffic spikes
+                    automatically. 99.9% uptime SLA.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-white text-sm fill-icon"
+                    >database</span
+                  >
+                </div>
+                <div>
+                  <p class="font-bold">
+                    Firebase + Node.js — Real-time Backend
+                  </p>
+                  <p class="text-sm text-on-surface-variant mt-0.5">
+                    Sub-second order updates, live tracking, and push
+                    notifications at any scale.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div
+                  class="w-10 h-10 rounded-xl emerald-gradient flex items-center justify-center shrink-0"
+                >
+                  <span
+                    class="material-symbols-outlined text-white text-sm fill-icon"
+                    >payments</span
+                  >
+                </div>
+                <div>
+                  <p class="font-bold">Razorpay — Payments Built In</p>
+                  <p class="text-sm text-on-surface-variant mt-0.5">
+                    UPI, cards, wallets, and cash on delivery — fully configured
+                    before you launch.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Tech cards visual -->
+          <div class="reveal grid grid-cols-2 gap-4">
+            <div class="space-y-4 pt-8">
+              <div
+                class="bg-surface-container-lowest rounded-3xl p-7 card-shadow plan-card aspect-square flex flex-col items-center justify-center text-center"
+              >
+                <span
+                  class="material-symbols-outlined text-primary text-5xl mb-3"
+                  >flutter</span
+                >
+                <p class="font-bold text-sm">Native Performance</p>
+                <p class="text-xs text-on-surface-variant mt-1">
+                  Flutter-powered
+                </p>
+              </div>
+              <div
+                class="emerald-gradient rounded-3xl p-7 card-shadow plan-card aspect-square flex flex-col items-center justify-center text-center glow-primary-sm"
+              >
+                <span class="material-symbols-outlined text-white text-5xl mb-3"
+                  >database</span
+                >
+                <p class="font-bold text-sm text-white">Real-time DB</p>
+                <p class="text-xs text-primary-fixed mt-1">Live data sync</p>
+              </div>
+            </div>
+            <div class="space-y-4">
+              <div
+                class="bg-surface-container rounded-3xl p-7 card-shadow plan-card aspect-square flex flex-col items-center justify-center text-center"
+              >
+                <span
+                  class="material-symbols-outlined text-secondary text-5xl mb-3"
+                  >cloud_done</span
+                >
+                <p class="font-bold text-sm">Auto-Scaling</p>
+                <p class="text-xs text-on-surface-variant mt-1">
+                  Handles any load
+                </p>
+              </div>
+              <div
+                class="bg-surface-container-lowest rounded-3xl p-7 card-shadow plan-card aspect-square flex flex-col items-center justify-center text-center"
+              >
+                <span
+                  class="material-symbols-outlined text-on-surface text-5xl mb-3"
+                  >security</span
+                >
+                <p class="font-bold text-sm">Vault Security</p>
+                <p class="text-xs text-on-surface-variant mt-1">
+                  Enterprise-grade
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     COMPARISON TABLE
+═══════════════════════════════════════════════════ -->
+    <section class="py-24 bg-surface-container-low">
+      <div class="max-w-5xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+          <span
+            class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block"
+            >Why Applume</span
+          >
+          <h2
+            class="font-headline text-4xl font-extrabold tracking-tighter mb-4"
+          >
+            The smartest way to <span class="text-primary italic">launch.</span>
+          </h2>
+        </div>
+        <div class="reveal overflow-x-auto">
+          <table class="w-full text-sm">
+            <thead>
+              <tr>
+                <th
+                  class="text-left py-4 pr-6 font-bold text-on-surface-variant text-xs uppercase tracking-wider w-1/4"
+                >
+                  What you get
+                </th>
+                <th class="py-4 px-4 text-center">
+                  <div
+                    class="inline-block bg-error/10 text-error px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-wider"
+                  >
+                    Build from Scratch
+                  </div>
+                </th>
+                <th class="py-4 px-4 text-center">
+                  <div
+                    class="inline-block bg-outline-variant/20 text-on-surface-variant px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-wider"
+                  >
+                    Other Platforms
+                  </div>
+                </th>
+                <th class="py-4 px-4 text-center">
+                  <div
+                    class="inline-block emerald-gradient text-white px-4 py-2 rounded-xl font-bold text-xs uppercase tracking-wider shadow-sm"
+                  >
+                    Applume ✦
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-outline-variant/15">
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  Time to launch
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  6–12 months
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  2–4 weeks
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  7 days ⚡
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  Upfront cost
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  ₹30–80 lakhs
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  ₹5–20 lakhs
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  Affordable plans
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  Coding required
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Yes — full team
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Some setup
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  None at all
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  White-label
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Yes (you build it)
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Partial
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  100% your brand
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  Source code ownership
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Yes
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  No
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  Yes (Ownership plan)
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  iOS + Android apps
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Custom build
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Varies
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  Both included ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  Admin dashboard
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Custom build
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Limited
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  Full dashboard ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  Payment gateway
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Custom integration
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  May cost extra
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  Razorpay built-in ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  Post-launch support
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Hire a team
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Ticket-based
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  24/7 dedicated ✓
+                </td>
+              </tr>
+              <tr>
+                <td class="py-4 pr-6 font-semibold text-on-surface">
+                  Scalability
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Depends on infra
+                </td>
+                <td class="py-4 px-4 text-center text-on-surface-variant">
+                  Platform limits
+                </td>
+                <td class="py-4 px-4 text-center font-bold text-primary">
+                  AWS auto-scale ✓
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     TRUST TICKER
+═══════════════════════════════════════════════════ -->
+    <section
+      class="py-14 bg-surface overflow-hidden border-y border-outline-variant/20"
+    >
+      <div class="max-w-7xl mx-auto px-6 text-center mb-8">
+        <p
+          class="text-xs font-bold tracking-[0.25em] uppercase text-on-surface-variant/50"
+        >
+          500+ Brands Launched on Applume
+        </p>
+      </div>
+      <div class="relative overflow-hidden">
+        <div
+          class="absolute left-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style="background: linear-gradient(to right, #f6f6f6, transparent)"
+        ></div>
+        <div
+          class="absolute right-0 top-0 bottom-0 w-24 z-10 pointer-events-none"
+          style="background: linear-gradient(to left, #f6f6f6, transparent)"
+        ></div>
+        <div class="ticker-inner flex gap-16 items-center w-max">
+          <div class="flex gap-16 items-center">
+            <img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=BlueBasket"
+              alt="BlueBasket"
+              class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=Galimart"
+              alt="Galimart"
+              class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=Dukancart"
+              alt="Dukancart"
+              class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=FoodRush"
+              alt="FoodRush"
+              class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=NumberDekho"
+              alt="NumberDekho"
+              class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=Lumina"
+              alt="Lumina"
+              class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=HealthMug"
+              alt="HealthMug"
+              class="h-8 opacity-50 hover:opacity-100 transition-opacity grayscale hover:grayscale-0"
+            />
+          </div>
+          <div class="flex gap-16 items-center">
+            <img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=BlueBasket"
+              alt="BlueBasket"
+              class="h-8 opacity-50 grayscale"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=Galimart"
+              alt="Galimart"
+              class="h-8 opacity-50 grayscale"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=Dukancart"
+              alt="Dukancart"
+              class="h-8 opacity-50 grayscale"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=FoodRush"
+              alt="FoodRush"
+              class="h-8 opacity-50 grayscale"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=NumberDekho"
+              alt="NumberDekho"
+              class="h-8 opacity-50 grayscale"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=Lumina"
+              alt="Lumina"
+              class="h-8 opacity-50 grayscale"
+            /><img
+              src="https://via.placeholder.com/120x40/edf0ed/414941?text=HealthMug"
+              alt="HealthMug"
+              class="h-8 opacity-50 grayscale"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════ -->
+    <section class="py-24 bg-surface-container-low">
+      <div class="max-w-3xl mx-auto px-6">
+        <div class="text-center mb-14 reveal">
+          <span
+            class="text-[10px] font-bold tracking-[0.25em] text-primary uppercase mb-3 block"
+            >Common Questions</span
+          >
+          <h2 class="font-headline text-4xl font-extrabold tracking-tighter">
+            Still wondering?
+            <span class="text-primary italic">We've got answers.</span>
+          </h2>
+        </div>
+        <div class="space-y-3 reveal" id="faq">
+          <div
+            class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+          >
+            <button
+              class="accordion-trigger w-full p-6 flex justify-between items-center text-left"
+              onclick="toggleAccordion(this)"
+            >
+              <span class="font-bold text-sm"
+                >Do all 7 platforms include iOS and Android apps?</span
+              >
+              <span
+                class="material-symbols-outlined text-on-surface-variant text-xl accordion-icon"
+                >add</span
+              >
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                Yes — every single platform includes a fully functional iOS app,
+                Android app, delivery/partner app, and web-based admin
+                dashboard. You get the complete stack, not just a frontend.
+              </p>
+            </div>
+          </div>
+          <div
+            class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+          >
+            <button
+              class="accordion-trigger w-full p-6 flex justify-between items-center text-left"
+              onclick="toggleAccordion(this)"
+            >
+              <span class="font-bold text-sm"
+                >Can I launch in a city outside of major metros?</span
+              >
+              <span
+                class="material-symbols-outlined text-on-surface-variant text-xl accordion-icon"
+                >add</span
+              >
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                Absolutely. Many of our most successful clients operate in
+                Tier-2 and Tier-3 cities where there's less competition and
+                strong local demand. The platform is built for any geography.
+              </p>
+            </div>
+          </div>
+          <div
+            class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+          >
+            <button
+              class="accordion-trigger w-full p-6 flex justify-between items-center text-left"
+              onclick="toggleAccordion(this)"
+            >
+              <span class="font-bold text-sm"
+                >What if I need a feature that's not in the standard
+                platform?</span
+              >
+              <span
+                class="material-symbols-outlined text-on-surface-variant text-xl accordion-icon"
+                >add</span
+              >
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                Every platform is configurable, and our Ownership plan gives you
+                full source code access for unlimited customisation. Custom
+                feature development is also available as an add-on.
+              </p>
+            </div>
+          </div>
+          <div
+            class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+          >
+            <button
+              class="accordion-trigger w-full p-6 flex justify-between items-center text-left"
+              onclick="toggleAccordion(this)"
+            >
+              <span class="font-bold text-sm"
+                >Do I need my own App Store developer account?</span
+              >
+              <span
+                class="material-symbols-outlined text-on-surface-variant text-xl accordion-icon"
+                >add</span
+              >
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                We handle App Store and Play Store submission for you. You'll
+                need an Apple Developer Account (₹7,900/year) and a Google Play
+                Developer Account (one-time ₹2,100). We guide you through the
+                setup.
+              </p>
+            </div>
+          </div>
+          <div
+            class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+          >
+            <button
+              class="accordion-trigger w-full p-6 flex justify-between items-center text-left"
+              onclick="toggleAccordion(this)"
+            >
+              <span class="font-bold text-sm"
+                >Can I migrate to my own servers later?</span
+              >
+              <span
+                class="material-symbols-outlined text-on-surface-variant text-xl accordion-icon"
+                >add</span
+              >
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                With the Ownership plan, yes — you receive full source code and
+                can host anywhere. Our Subscription plan runs on managed AWS
+                infrastructure with 99.9% uptime SLA included.
+              </p>
+            </div>
+          </div>
+          <div
+            class="accordion-item bg-surface-container-lowest rounded-2xl border border-outline-variant/10 overflow-hidden"
+          >
+            <button
+              class="accordion-trigger w-full p-6 flex justify-between items-center text-left"
+              onclick="toggleAccordion(this)"
+            >
+              <span class="font-bold text-sm"
+                >How many verticals can I run on one account?</span
+              >
+              <span
+                class="material-symbols-outlined text-on-surface-variant text-xl accordion-icon"
+                >add</span
+              >
+            </button>
+            <div class="accordion-content px-6 pb-6">
+              <p class="text-on-surface-variant text-sm leading-relaxed">
+                Each platform is set up as an independent deployment. If you
+                want to run multiple verticals (e.g., Grocery + Pharmacy), each
+                requires a separate plan. We offer multi-vertical discounts —
+                contact us to discuss.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+     CTA
+═══════════════════════════════════════════════════ -->
+    <section
+      class="relative overflow-hidden"
+      style="
+        background: linear-gradient(
+          135deg,
+          #0d4a28 0%,
+          #166c3c 40%,
+          #1e8f50 70%,
+          #0d6e4a 100%
+        );
+      "
+    >
+      <div class="absolute inset-0 pointer-events-none">
+        <div
+          class="absolute -top-24 -left-24 w-96 h-96 rounded-full opacity-20"
+          style="
+            background: radial-gradient(circle, #4ade80 0%, transparent 70%);
+          "
+        ></div>
+        <div
+          class="absolute -bottom-24 -right-24 w-[32rem] h-[32rem] rounded-full opacity-15"
+          style="
+            background: radial-gradient(circle, #86efac 0%, transparent 70%);
+          "
+        ></div>
+        <svg
+          class="absolute inset-0 w-full h-full opacity-5"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <pattern
+              id="cta-g"
+              width="40"
+              height="40"
+              patternUnits="userSpaceOnUse"
+            >
+              <path
+                d="M 40 0 L 0 0 0 40"
+                fill="none"
+                stroke="white"
+                stroke-width="0.5"
+              />
+            </pattern>
+          </defs>
+          <rect width="100%" height="100%" fill="url(#cta-g)" />
+        </svg>
+      </div>
+      <div class="relative z-10 max-w-5xl mx-auto px-6 py-24 text-center">
+        <div
+          class="inline-flex items-center gap-2 bg-white/10 border border-white/20 rounded-full px-4 py-1.5 mb-8"
+        >
+          <span
+            class="material-symbols-outlined text-emerald-300 text-base fill-icon"
+            >bolt</span
+          >
+          <span
+            class="text-emerald-200 text-xs font-bold uppercase tracking-widest"
+            >Pick your platform. Launch in 7 days.</span
+          >
+        </div>
+        <h2
+          class="font-headline text-4xl md:text-6xl font-extrabold text-white tracking-tighter leading-tight mb-6"
+        >
+          Your app could be live<br /><span style="color: #86efac"
+            >next week.</span
+          >
+        </h2>
+        <p
+          class="text-emerald-100/80 text-lg max-w-2xl mx-auto leading-relaxed mb-12"
+        >
+          500+ founders have already launched on Applume. Pick your vertical and
+          join them — no coding, no dev team, no delays.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mb-10">
+          <a
+            href="product.html"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              color: white;
+            "
+            ><span
+              class="material-symbols-outlined text-sm fill-icon"
+              style="color: #059669"
+              >shopping_basket</span
+            >Grocery</a
+          ><a
+            href="ecommerce.html"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              color: white;
+            "
+            ><span
+              class="material-symbols-outlined text-sm fill-icon"
+              style="color: #7c3aed"
+              >shopping_cart</span
+            >E-commerce</a
+          ><a
+            href="food.html"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              color: white;
+            "
+            ><span
+              class="material-symbols-outlined text-sm fill-icon"
+              style="color: #d97706"
+              >restaurant</span
+            >Food Delivery</a
+          ><a
+            href="pharmacy.html"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              color: white;
+            "
+            ><span
+              class="material-symbols-outlined text-sm fill-icon"
+              style="color: #0d9488"
+              >medical_services</span
+            >Pharmacy</a
+          ><a
+            href="dairy.html"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              color: white;
+            "
+            ><span
+              class="material-symbols-outlined text-sm fill-icon"
+              style="color: #166c3c"
+              >water_drop</span
+            >Dairy</a
+          ><a
+            href="laundry.html"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              color: white;
+            "
+            ><span
+              class="material-symbols-outlined text-sm fill-icon"
+              style="color: #be185d"
+              >local_laundry_service</span
+            >Laundry</a
+          ><a
+            href="salon.html"
+            class="inline-flex items-center gap-2 px-5 py-3 rounded-xl font-bold text-sm transition-all hover:-translate-y-0.5"
+            style="
+              background: rgba(255, 255, 255, 0.1);
+              border: 1px solid rgba(255, 255, 255, 0.2);
+              color: white;
+            "
+            ><span
+              class="material-symbols-outlined text-sm fill-icon"
+              style="color: #c2410c"
+              >content_cut</span
+            >Salon</a
+          >
+        </div>
+        <a
+          href="contact.html"
+          class="inline-flex items-center gap-2 bg-white text-primary font-bold text-base px-10 py-4 rounded-xl hover:bg-emerald-50 transition-all shadow-lg hover:-translate-y-0.5 duration-200"
+        >
+          <span class="material-symbols-outlined">rocket_launch</span>Get
+          Started — It's Free to Talk
+        </a>
+      </div>
+    </section>
+
+    <div id="footer"></div>
+
+    <script>
+      fetch("footer.html")
+        .then((res) => res.text())
+        .then((data) => {
+          document.getElementById("footer").innerHTML = data;
+        });
+    </script>
+    <script>
+      // Mobile menu
+      const hamburger = document.getElementById("hamburger");
+      const mobileMenu = document.getElementById("mobile-menu");
+      hamburger.addEventListener("click", () => {
+        mobileMenu.classList.toggle("open");
+        hamburger.querySelector(".material-symbols-outlined").textContent =
+          mobileMenu.classList.contains("open") ? "close" : "menu";
+      });
+
+      // Accordion FAQ
+      function toggleAccordion(trigger) {
+        const content = trigger.nextElementSibling;
+        const icon = trigger.querySelector(".accordion-icon");
+        const isOpen = content.classList.contains("open");
+        document
+          .querySelectorAll(".accordion-content")
+          .forEach((el) => el.classList.remove("open"));
+        document.querySelectorAll(".accordion-icon").forEach((el) => {
+          el.textContent = "add";
+          el.style.transform = "rotate(0deg)";
+        });
+        if (!isOpen) {
+          content.classList.add("open");
+          icon.textContent = "remove";
+        }
+      }
+
+      // Tab switcher
+      function switchTab(tab, btn) {
+        document
+          .querySelectorAll(".feature-tab")
+          .forEach((b) => b.classList.remove("active"));
+        document.querySelectorAll(".tab-panel").forEach((p) => {
+          p.classList.remove("active");
+          p.style.display = "none";
+        });
+        btn.classList.add("active");
+        const panel = document.getElementById("tab-" + tab.replace(/ /g, "_"));
+        if (panel) {
+          panel.classList.add("active");
+          panel.style.display = "grid";
+        }
+      }
+
+      // Init tab display
+      document.querySelectorAll(".tab-panel").forEach((p, i) => {
+        p.style.display = i === 0 ? "grid" : "none";
+      });
+
+      // Scroll reveal
+      const reveals = document.querySelectorAll(".reveal");
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((e, i) => {
+            if (e.isIntersecting) {
+              setTimeout(() => e.target.classList.add("visible"), i * 80);
+              obs.unobserve(e.target);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -30px 0px" },
+      );
+      reveals.forEach((el) => {
+        el.classList.add("anim");
+        obs.observe(el);
+      });
+
+      // Smooth scroll for hero pills
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.getElementById(
+            a.getAttribute("href").slice(1),
+          );
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
